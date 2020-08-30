@@ -189,6 +189,119 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/29/VC-%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94C-%E8%AF%AD%E8%A8%80%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://gitee.com/studynil/boke/raw/master/ing/20200820223834.jpg">
+      <meta itemprop="name" content="浮名半生">
+      <meta itemprop="description" content="敢于挑战的叫人生，<br>放弃抵抗的是命运！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="万物有灵">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/29/VC-%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94C-%E8%AF%AD%E8%A8%80%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">VC++复习——C++语言面向对象编程基础</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-29 18:13:41" itemprop="dateCreated datePublished" datetime="2020-08-29T18:13:41+08:00">2020-08-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-30 18:07:56" itemprop="dateModified" datetime="2020-08-30T18:07:56+08:00">2020-08-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/VC/" itemprop="url" rel="index"><span itemprop="name">VC++</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="VC-复习"><a href="#VC-复习" class="headerlink" title="VC++复习"></a>VC++复习</h1><!---more--->
+
+<p>​    VC++是面向对象的可视化集成编程系统。</p>
+<hr>
+<h2 id="C-语言面向对象编程基础"><a href="#C-语言面向对象编程基础" class="headerlink" title="C++语言面向对象编程基础"></a>C++语言面向对象编程基础</h2><h3 id="1-一个简单的C-语言程序"><a href="#1-一个简单的C-语言程序" class="headerlink" title="1.一个简单的C++语言程序"></a>1.一个简单的C++语言程序</h3><p><strong>main是主函数名</strong>，函数体用一对大括号括住，函数是C++语言程序里最小的功能单位。</p>
+<p>C++语言程序里**必须有且只能有一个函数main( )**，它是程序执行的入口。</p>
+<p>C++语言所有语句最后都应当有一个分号。</p>
+<hr>
+<h3 id="2-C-语言程序基本要素"><a href="#2-C-语言程序基本要素" class="headerlink" title="2.C++语言程序基本要素"></a>2.C++语言程序基本要素</h3><p>C++语言的字符集：</p>
+<p>(1)英文字母：A<del>Z,a</del>z。</p>
+<p>(2)数字字符：0~9。</p>
+<p>(3)特殊字符：空格、！、#、%、^、&amp;、*、_、+、=、-、~、&lt;、&gt;、/、\、‘、”、；、.、，、()、[]、{}。</p>
+<p>关键字全部由小写字母组成。</p>
+<hr>
+<p>标识符是软件开发者自己声明的单词，用于命名一些实体，如函数名、变量名、类名、对象名等。构成规则：</p>
+<p>(1)以大写字母、小写字母或下画线开头。</p>
+<p>(2)可由大写字母、小写字母、下画线或数字组成。</p>
+<p>(3)字母区分大小写，大写字母和小写字母表示不同的标识符。</p>
+<p>(4)不能用C++语言的关键字。</p>
+<p>尽量<strong>不用下画线开头，</strong>避免与系统定义的关键字冲突。</p>
+<hr>
+<p>分隔符不进行实际操作，只是用于构造程序。</p>
+<p>数据类型指明<strong>变量或表达式的状态和行为，</strong>决定了<strong>数的取值范围和允许执行的运算符集。</strong>可分为<strong>基本类型</strong>和<strong>引用类型</strong>两大类。</p>
+<p>基本类型是指<strong>不能再分解</strong>的数据类型，其数据在函数的调用中是以<strong>传值方式</strong>工作的。</p>
+<p>unsigned (int)    无符号整型</p>
+<p>(signed) int    有符号整型</p>
+<hr>
+<p>换行符 \n    回车符 \r    水平制表符(Tab键) \t</p>
+<hr>
+<p>变量：先定义，后使用</p>
+<p>使用变量之前必须先声明它的类型和名称</p>
+<p>例如：int和float的声明变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int num;</span><br><span class="line">float a;</span><br></pre></td></tr></table></figure>
+
+<p>常量：const  &lt;数值类型&gt; &lt;常量名&gt;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const float pi&#x3D;3.1415926;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>基本运算符：+、-、*、/、%。(-作为负号时为一元运算符，作为减号时为二元运算符)</p>
+<p>前置后置：i++是后置；–i是前置。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int i&#x3D;5,j&#x3D;5,m,n;</span><br><span class="line">m&#x3D;i++;	&#x2F;&#x2F;后置++；相当于m&#x3D;1；i&#x3D;i+1；结果：i&#x3D;6；m&#x3D;5</span><br><span class="line">n&#x3D;++j;	&#x2F;&#x2F;前置++；相当于j&#x3D;j+1；n&#x3D;j；结果：j&#x3D;6，n&#x3D;6</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/23/%E5%BF%AB%E9%80%9F%E4%B8%8B%E8%BD%BD%E7%BD%91%E7%9B%98%E7%A5%9E%E5%99%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -712,20 +825,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
