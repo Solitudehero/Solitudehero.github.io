@@ -29,7 +29,7 @@
 <meta property="og:description" content="MySQL划题复习整理">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-07T14:26:57.000Z">
-<meta property="article:modified_time" content="2020-09-09T05:37:03.551Z">
+<meta property="article:modified_time" content="2020-09-12T01:54:12.096Z">
 <meta property="article:author" content="浮名半生">
 <meta property="article:tag" content="复习">
 <meta name="twitter:card" content="summary">
@@ -223,7 +223,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-09 13:37:03" itemprop="dateModified" datetime="2020-09-09T13:37:03+08:00">2020-09-09</time>
+                <time title="修改时间：2020-09-12 09:54:12" itemprop="dateModified" datetime="2020-09-12T09:54:12+08:00">2020-09-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -388,7 +388,7 @@
 <h2 id="撤销表格-撤销数据库中已经存在的表"><a href="#撤销表格-撤销数据库中已经存在的表" class="headerlink" title="撤销表格(撤销数据库中已经存在的表)"></a>撤销表格(撤销数据库中已经存在的表)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">delete from 表名 [where 条件];		&#x2F;&#x2F;仅删除表数据，可以回滚</span><br><span class="line">drop table table_name;			&#x2F;&#x2F;连表数据和表结构一起删除，不可回滚</span><br><span class="line">truncate table 表名;				&#x2F;&#x2F;仅删除表数据，不可回滚</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="创建自动加ID"><a href="#创建自动加ID" class="headerlink" title="创建自动加ID"></a>创建自动加ID</h2><p>执行<code>atuo_increment</code>任务，默认开始值为1，每条新纪录递增1。</p>
+<h2 id="创建自动加ID"><a href="#创建自动加ID" class="headerlink" title="创建自动加ID"></a>创建自动加ID</h2><p>执行<code>auto_increment</code>任务，默认开始值为1，每条新纪录递增1。</p>
 <p>例如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create table test (</span><br><span class="line"></span><br><span class="line">            aid int not null auto_increment,</span><br><span class="line"></span><br><span class="line">            site_id int, cout int, date date,</span><br><span class="line"></span><br><span class="line">            primary key (aid) );</span><br></pre></td></tr></table></figure>
 
