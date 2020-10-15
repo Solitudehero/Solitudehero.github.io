@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>VC++复习——C++语言面向对象编程基础</title>
+    <url>/2020/08/29/VC-%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94C-%E8%AF%AD%E8%A8%80%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="VC-复习"><a href="#VC-复习" class="headerlink" title="VC++复习"></a>VC++复习</h1><a id="more"></a>
+
+<p>​    VC++是面向对象的可视化集成编程系统。</p>
+<hr>
+<h2 id="C-语言面向对象编程基础"><a href="#C-语言面向对象编程基础" class="headerlink" title="C++语言面向对象编程基础"></a>C++语言面向对象编程基础</h2><h3 id="1-一个简单的C-语言程序"><a href="#1-一个简单的C-语言程序" class="headerlink" title="1.一个简单的C++语言程序"></a>1.一个简单的C++语言程序</h3><p><strong>main是主函数名</strong>，函数体用一对大括号括住，函数是C++语言程序里最小的功能单位。</p>
+<p>C++语言程序里**必须有且只能有一个函数main( )**，它是程序执行的入口。</p>
+<p>C++语言所有语句最后都应当有一个分号。</p>
+<hr>
+<h3 id="2-C-语言程序基本要素"><a href="#2-C-语言程序基本要素" class="headerlink" title="2.C++语言程序基本要素"></a>2.C++语言程序基本要素</h3><p>C++语言的字符集：</p>
+<p>(1)英文字母：A ~ Z,a ~ z。</p>
+<p>(2)数字字符：0~9。</p>
+<p>(3)特殊字符：空格、！、#、%、^、&amp;、*、_、+、=、-、~、&lt;、&gt;、/、\、‘、”、；、.、，、()、[]、{}。</p>
+<p>关键字全部由小写字母组成。</p>
+<hr>
+<p>标识符是软件开发者自己声明的单词，用于命名一些实体，如函数名、变量名、类名、对象名等。构成规则：</p>
+<p>(1)以大写字母、小写字母或下画线开头。</p>
+<p>(2)可由大写字母、小写字母、下画线或数字组成。</p>
+<p>(3)字母区分大小写，大写字母和小写字母表示不同的标识符。</p>
+<p>(4)不能用C++语言的关键字。</p>
+<p>尽量<strong>不用下画线开头，</strong>避免与系统定义的关键字冲突。</p>
+<hr>
+<p>分隔符不进行实际操作，只是用于构造程序。</p>
+<p>数据类型指明<strong>变量或表达式的状态和行为，</strong>决定了<strong>数的取值范围和允许执行的运算符集。</strong>可分为<strong>基本类型</strong>和<strong>引用类型</strong>两大类。</p>
+<p>基本类型是指<strong>不能再分解</strong>的数据类型，其数据在函数的调用中是以<strong>传值方式</strong>工作的。</p>
+<p>unsigned (int)    无符号整型</p>
+<p>(signed) int    有符号整型</p>
+<hr>
+<p>换行符 \n    回车符 \r    水平制表符(Tab键) \t</p>
+<hr>
+<p>变量：先定义，后使用</p>
+<p>使用变量之前必须先声明它的类型和名称</p>
+<p>例如：int和float的声明变量</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int num;</span><br><span class="line">float a;</span><br></pre></td></tr></table></figure>
+
+<p>常量：const  &lt;数值类型&gt; &lt;常量名&gt;</p>
+<p><code>const float pi=3.1415926</code></p>
+<hr>
+<p><strong>基本运算符</strong>：+、-、*、/、%。(-作为负号时为一元运算符，作为减号时为二元运算符)</p>
+<p>前置后置：i++是后置；–i是前置。例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int i&#x3D;5,j&#x3D;5,m,n;</span><br><span class="line">m&#x3D;i++;	&#x2F;&#x2F;后置++；相当于m&#x3D;1；i&#x3D;i+1；结果：i&#x3D;6；m&#x3D;5</span><br><span class="line">n&#x3D;++j;	&#x2F;&#x2F;前置++；相当于j&#x3D;j+1；n&#x3D;j；结果：j&#x3D;6，n&#x3D;6</span><br></pre></td></tr></table></figure>
+
+<p><strong>赋值运算符</strong>：=、+=、-=、*=、/=、%=、&lt;&lt;=、&gt;&gt;=、&amp;=、^=、|=。    结合性从右向左。例如：</p>
+<p><code>a=3+(c=4)</code>        这个表达式的值为7，a=7，c=4。</p>
+<p><strong>逗号运算符</strong>：(例如)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">c&#x3D;b&#x3D;(a&#x3D;3,4*3);		&#x2F;&#x2F;结果为：a&#x3D;3，b&#x3D;12，c&#x3D;12，表达式值为12</span><br><span class="line">c&#x3D;b&#x3D;a&#x3D;3,4*3;		&#x2F;&#x2F;结果为：a&#x3D;3，b&#x3D;3，c&#x3D;3，表达式值为12</span><br><span class="line">c&#x3D;(b&#x3D;a&#x3D;3,4*3);		&#x2F;&#x2F;结果为：a&#x3D;3，b&#x3D;3，c&#x3D;12，表达式值为12</span><br></pre></td></tr></table></figure>
+
+<p><strong>关系运算符</strong>：&lt;、&lt;=、&gt;、&gt;=、==、!=。前四个优先级相同，后两个优先级相同。前四个优先级比后两个优先级高。</p>
+<p><strong>逻辑运算符</strong>：!(非)、&amp;&amp;(与)、||(或)。优先级依此降低。(&amp;与|同时运算)</p>
+<p><strong>条件运算符</strong>：C++语言唯一的**<em>三元运算符**</em>。例如：</p>
+<p><code>(a&lt;b)?a:b</code>    a:b表示如果a&lt;b，那么结果为a；如果a&gt;b，那么结果为b。</p>
+<p><strong>sizeof运算符</strong>：计算某个对象在内存中占用的字节数。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sizeof(int);				&#x2F;&#x2F;值为4</span><br><span class="line">double x; sizeof(x);		&#x2F;&#x2F;值为8</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>表达式中的类型转换分为：<strong>隐含转换</strong>和<strong>强制转换</strong>。</p>
+<p>隐含转换是安全的，因为没有精度损失。</p>
+<p>隐含转换原则：将低类型数据转换为高类型数据。</p>
+<p>从低到高的顺序：char、short、int、unsigned int、long、unsigned long、float、double。类型越高，范围越大，精度也越高。</p>
+<p>赋值运算要求赋值运算符左边的值和右边的值类型相同，不同的话，会进行自动转换，将一律将右边的值类型转换为左边的值类型。例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int i; float f; double d;</span><br><span class="line">d&#x3D;i*f;		&#x2F;&#x2F;计算时现将i转换为f一样的浮点型的值，乘法结果再转换为双精度浮点型的值。</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-类与对象"><a href="#3-类与对象" class="headerlink" title="3.类与对象"></a>3.类与对象</h2><p>面向对象程序设计理论角度：类是对某一类对象的抽象，而对象是对类的具体实例。</p>
+<p>程序设计的角度：类是一种复杂的自定义数据类型，对象是属于这种类型的变量。</p>
+<hr>
+<p><strong>抽象</strong>：对象进行概括，抽出一类对象的共性并加以描述的过程。  有两方面：<strong>数据抽象</strong>和<strong>行为抽象</strong>。</p>
+<p><strong>数据抽象</strong>：属性和状态。        <strong>行为抽象</strong>：共同行为或共同功能。</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">时钟(clock)</span><br><span class="line">数据抽象:</span><br><span class="line">int Hour; int Minute; int Second;</span><br><span class="line">行为抽象:</span><br><span class="line">ShowTime(); SetTime();</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>VC++</category>
+      </categories>
+      <tags>
+        <tag>复习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL划题复习</title>
+    <url>/2020/09/07/MySQL%E5%88%92%E9%A2%98%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="MySQL划题复习整理"><a href="#MySQL划题复习整理" class="headerlink" title="MySQL划题复习整理"></a>MySQL划题复习整理</h1><a id="more"></a>
+
+<h2 id="什么是外部模式？概念模式？内部模式？它们之间有何联系？这种分级构造的优点是什么？-P46"><a href="#什么是外部模式？概念模式？内部模式？它们之间有何联系？这种分级构造的优点是什么？-P46" class="headerlink" title="什么是外部模式？概念模式？内部模式？它们之间有何联系？这种分级构造的优点是什么？(P46)"></a>什么是外部模式？概念模式？内部模式？它们之间有何联系？这种分级构造的优点是什么？(P46)</h2><ul>
+<li><p>外部模式又称子模式，介于模式与应用之间，是用户与数据库之间的接口，是数据库用户（包括应用程序员和最终用户）能够看见和使用的局部数据的逻辑结构和特征的描述。</p>
+</li>
+<li><p>概念模式简称模式，是由数据库设计者综合所有用户数据，按照统一的观点构造的对数据库全局逻辑结构的描述。</p>
+</li>
+<li><p>内部模式也称存储模式，是对数据库中数据物理结构和存储方式的描述，是数据在数据库内部的表示方式。</p>
+</li>
+<li><p>一个数据库结构从逻辑上可以划分为三个层次：外部模式（External&#8194;Schema），概念模式（Conceptual&#8194;Schema）和内部模式（Internal&#8194;Schema），称为数据库系统的三级模式结构。</p>
+</li>
+<li><p>数据库系统的三级模式是对数据进行三个级别的抽象。它把数据的具体组织留给DBMS去做，用户只要抽象地处理数据，而不必关心数据在机器中的具体表示方式和存储方式。数据库的三级结构是依靠映像来联系和互相转换的。正是这两层映像保证了数据库系统中的数据具有较高的数据独立性。</p>
+</li>
+</ul>
+<h2 id="在数据库技术中，为提高数据库的逻辑独立性和物理独立性，数据库的结构被划分成用户级、-和储存级三个层次。-P48"><a href="#在数据库技术中，为提高数据库的逻辑独立性和物理独立性，数据库的结构被划分成用户级、-和储存级三个层次。-P48" class="headerlink" title="在数据库技术中，为提高数据库的逻辑独立性和物理独立性，数据库的结构被划分成用户级、( )和储存级三个层次。(P48)"></a>在数据库技术中，为提高数据库的逻辑独立性和物理独立性，数据库的结构被划分成用户级、( )和储存级三个层次。(P48)</h2><h2 id="A-管理员级-B-外部级-C-概念级-D-内部级"><a href="#A-管理员级-B-外部级-C-概念级-D-内部级" class="headerlink" title="A. 管理员级  B. 外部级  C. 概念级  D. 内部级"></a>A. 管理员级  B. 外部级  C. 概念级  D. 内部级</h2><p>答案：C</p>
+<h2 id="在数据库的三级模式结构中，描述数据库中全体数据的逻辑结构和特征的是（）。"><a href="#在数据库的三级模式结构中，描述数据库中全体数据的逻辑结构和特征的是（）。" class="headerlink" title="在数据库的三级模式结构中，描述数据库中全体数据的逻辑结构和特征的是（）。"></a>在数据库的三级模式结构中，描述数据库中全体数据的逻辑结构和特征的是（）。</h2><h2 id="A-外模式-B-内模式-C-存储模式-D-模式"><a href="#A-外模式-B-内模式-C-存储模式-D-模式" class="headerlink" title="A. 外模式  B. 内模式  C. 存储模式  D. 模式"></a>A. 外模式  B. 内模式  C. 存储模式  D. 模式</h2><p>答案：D</p>
+<hr>
+<h2 id="广义笛卡尔积运算"><a href="#广义笛卡尔积运算" class="headerlink" title="广义笛卡尔积运算"></a>广义笛卡尔积运算</h2><p>R∪S：将关系相同的数据合并，并记录下来，并且记录下来的数据都是完全不同的。</p>
+<p>R∩S：得到的是关系相同的记录。</p>
+<p>R-S：在关系R中去掉和关系S中相同的记录。</p>
+<p>RxS：关系R的每条记录后面都跟上关系S的全部记录。</p>
+<h3 id="关系和关系模式的关系"><a href="#关系和关系模式的关系" class="headerlink" title="关系和关系模式的关系"></a>关系和关系模式的关系</h3><h3 id="关系："><a href="#关系：" class="headerlink" title="关系："></a>关系：</h3><p><code>D1 × D2 × ··· × Dn 的子集叫做在域D1，D2，···，Dn 上的关系，表示为 R(D1，D2，···，Dn )，其中R就是关系名，n就是目或度。 一个关系对应一张二维表，二维表就是关系名。</code></p>
+<p>例如：</p>
+<hr>
+<p>​                    姓名                                            性别                                            小说名</p>
+<hr>
+<p>​                    唐僧                                            男                                                西游记</p>
+<p>​                    宋江                                            男                                                水浒传</p>
+<p>​                    林黛玉                                        女                                                红楼梦</p>
+<hr>
+<h3 id="关系模式："><a href="#关系模式：" class="headerlink" title="关系模式："></a>关系模式：</h3><p><code>在二维表中的行定义，即对关系的描述称为关系模式。</code></p>
+<h3 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h3><p>1.关系是关系模式在某一时刻的状态或内容。 </p>
+<p>2.关系模式是静态的；关系是动态的。</p>
+<p>3.关系模式是二维表的表头属性等，即一个二维表的主要架构。由于二维表的属性名一般不会修改，所以呈现出静态。</p>
+<p>4.关系是一张二维表的具体数据，除去表头外各数据间的联系。由于二维表中是数据会时常修改，所以呈现出动态。</p>
+<hr>
+<h2 id="数据库特点"><a href="#数据库特点" class="headerlink" title="数据库特点"></a>数据库特点</h2><ul>
+<li><p>数据结构化</p>
+</li>
+<li><p>实现数据共享</p>
+</li>
+<li><p>数据独立性高</p>
+</li>
+<li><p>数据统一管理与控制</p>
+</li>
+<li><p>减少数据的冗余度</p>
+</li>
+<li><p>数据一致性和可维护性</p>
+</li>
+<li><p>故障恢复</p>
+</li>
+</ul>
+<hr>
+<h2 id="数据库不一致的原因"><a href="#数据库不一致的原因" class="headerlink" title="数据库不一致的原因"></a>数据库不一致的原因</h2><ul>
+<li><p>由于数据冗余造成的</p>
+</li>
+<li><p>由于并发控制不当造成的</p>
+</li>
+<li><p>由于各种故障、错误造成的。</p>
+</li>
+</ul>
+<hr>
+<h2 id="关系代数运算特点"><a href="#关系代数运算特点" class="headerlink" title="关系代数运算特点"></a>关系代数运算特点</h2><p>运算对象和结果都是关系</p>
+<hr>
+<h2 id="SQL语言特点"><a href="#SQL语言特点" class="headerlink" title="SQL语言特点"></a>SQL语言特点</h2><ul>
+<li><p>1.高度非过程化</p>
+</li>
+<li><p>2.功能完备并且一体化</p>
+</li>
+<li><p>3.统一的语法结构</p>
+</li>
+<li><p>4.语言简洁，易学易用（P79）</p>
+</li>
+<li><p>5.能为编程提供多种API(老师出题时的答案)</p>
+<p>6.面向集合的操作方式</p>
+<p>7.对于数据统计方便直观（网上补充）</p>
+</li>
+</ul>
+<hr>
+<h2 id="表中插入数据"><a href="#表中插入数据" class="headerlink" title="表中插入数据"></a>表中插入数据</h2><h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">insert into table_name (column1, column2, column3, ...)</span><br><span class="line">values (value1, value2, value3, ...);</span><br></pre></td></tr></table></figure>
+
+<h3 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">insert into table_name</span><br><span class="line">values (value1, value2, value3, ...);</span><br></pre></td></tr></table></figure>
+
+<p>方法一没有指定要插入数据的名称，只提供要插入的值，即可添加一行新的数据。</p>
+<p>方法二要为表中的所有列添加值，不需要在SQL查询中指定列名称。但是，请确保值的顺序与表中的列顺序相同。</p>
+<hr>
+<h2 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">drop user XXX;		&#x2F;&#x2F;删除已存在的用户</span><br><span class="line">delete from user where user&#x3D;&#39;XXX&#39; and host&#x3D;&#39;localhost&#39;; &#x2F;&#x2F;删除用户</span><br><span class="line">flush privileges; &#x2F;&#x2F;刷新权限；否则下次使用create语句创建用户时会报错</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="关系规范化操作异常原因"><a href="#关系规范化操作异常原因" class="headerlink" title="关系规范化操作异常原因"></a>关系规范化操作异常原因</h2><ul>
+<li><p>数据冗余大</p>
+</li>
+<li><p>插入异常</p>
+</li>
+<li><p>删除异常</p>
+</li>
+<li><p>更新异常</p>
+</li>
+</ul>
+<hr>
+<h2 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h2><p>范式实际上表示关系模式满足的某种约束级别。当关系模式满足某级别范式要求的约束条件时，就称这个关系模式属于这个级别的范式，记作R∈xNF。</p>
+<p>联系： 5NF⊂4NF⊂BCNF⊂3NF⊂2NF⊂1NF</p>
+<hr>
+<p>第一范式：设R是一个关系模式，如果R中的每一个属性A的属性名和属性值都是不可再分的，则称R属于第一范式，记作R∈1NF。</p>
+<p>第二范式：若R∈1NF，且每一个非主属性都完全函数依赖于码，则R∈2NF。</p>
+<p>第三范式：关系模式R(U,F)中若不存在这样的码X，属性组Y及非主属性组Z(Z⫋Y)，使得X→Y,Y(→/)X,Y→Z成立，则称R(U,F)∈3NF</p>
+<p>BCNF：关系模式R(U,F)∈1NF，若每一个决定因素都含有码，则R∈BCNF。</p>
+<p>多依赖值和4NF：</p>
+<p>多依赖值：设有R(U)，X、Y是U的子集，Z=U-X-Y。多值依赖X→→Y成立，当且仅当R的任一具体关系r，给定一对(X、Y)值，就有一组Y值与之对应，且这种对应关系与Z值无关。</p>
+<p>性质：</p>
+<p>(1)若X→→Y，必有X→→U-X-Y。</p>
+<p>(2)若X→Y，则必有X→→Y，即X→Y，是X→→Y的特例。</p>
+<p>4NF：关系模式R(U)∈1NF，若对R的每个非平凡多值依赖X→→Y(Y⫋X)，X都包含码，则称R(U)满足第四范式，记为R∈4NF。</p>
+<hr>
+<p>关系规范化的主要目的：</p>
+<p>(1)消除异常现象。</p>
+<p>(2)方便用户使用，简化检索操作。关系中的每一数据项应是一个简单的数或符号串，而不是一组数或一个重复组。</p>
+<p>(3)增强数据独立性，即当引入新数据项时，减少对原有数据结构的修改。</p>
+<p>(4)使关系模式更加灵活，更容易使用非过程化的高级查询语言。</p>
+<p>(5)更容易进行各种查询统计工作。</p>
+<hr>
+<h2 id="创建表启用全文搜索（子语句）"><a href="#创建表启用全文搜索（子语句）" class="headerlink" title="创建表启用全文搜索（子语句）"></a>创建表启用全文搜索（子语句）</h2><p>1.建立索引</p>
+<p><strong>create [unique] [cluster] index &lt;索引名&gt; on &lt;表名&gt;(&lt;列名&gt;[&lt;次序&gt;] [,&lt;列名&gt;[&lt;次序&gt;]]…)</strong></p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">create unique index stu_idx_sno on 学生(学号);   &#x2F;&#x2F;为学生建立索引</span><br><span class="line">create unique index cou_idx_cno on 课程(课程号);  &#x2F;&#x2F;为课程建立索引</span><br><span class="line">create unique index sc_idx_sno_cno on 学习(学号 ASC,课程表 DESC); &#x2F;&#x2F;为学习表建立索引</span><br></pre></td></tr></table></figure>
+
+<p>2.删除索引</p>
+<p><strong>drop index &lt;索引名&gt;;</strong></p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">drop index stu_idx_sno;     &#x2F;&#x2F;删除学生表上的学号上建立的索引</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="撤销表格-撤销数据库中已经存在的表"><a href="#撤销表格-撤销数据库中已经存在的表" class="headerlink" title="撤销表格(撤销数据库中已经存在的表)"></a>撤销表格(撤销数据库中已经存在的表)</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">delete from 表名 [where 条件];		&#x2F;&#x2F;仅删除表数据，可以回滚</span><br><span class="line">drop table table_name;			&#x2F;&#x2F;连表数据和表结构一起删除，不可回滚</span><br><span class="line">truncate table 表名;				&#x2F;&#x2F;仅删除表数据，不可回滚</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="创建自动加ID"><a href="#创建自动加ID" class="headerlink" title="创建自动加ID"></a>创建自动加ID</h2><p>执行<code>auto_increment</code>任务，默认开始值为1，每条新纪录递增1。</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">create table test (</span><br><span class="line"></span><br><span class="line">            aid int not null auto_increment,</span><br><span class="line"></span><br><span class="line">            site_id int, cout int, date date,</span><br><span class="line"></span><br><span class="line">            primary key (aid) );</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="unique作用"><a href="#unique作用" class="headerlink" title="unique作用"></a>unique作用</h2><ul>
+<li><p>unique惟一索引的作用是：保证各行在该索引上的值都不得重复</p>
+<p>unique起到取值唯一的作用</p>
+</li>
+</ul>
+<h2 id="一个关系模式能否没有关键字？为什么？"><a href="#一个关系模式能否没有关键字？为什么？" class="headerlink" title="一个关系模式能否没有关键字？为什么？"></a>一个关系模式能否没有关键字？为什么？</h2><ul>
+<li>不可以没有关键字，因为关键字是元组的唯一标志，如果没有关键字则无法唯一标识一个元组。</li>
+</ul>
+<h2 id="什么是数据库设计？试述数据库设计的步骤。"><a href="#什么是数据库设计？试述数据库设计的步骤。" class="headerlink" title="什么是数据库设计？试述数据库设计的步骤。"></a>什么是数据库设计？试述数据库设计的步骤。</h2><p>数据库设计：</p>
+<p>数据库设计是指对于一个给定的应用环境，根据用户的需求。在某一具体的数据库管理系统上，构造一个性能良好的数据模式。建立数据库及其应用系统，使之能够有效地存储数据，满足各种用户的信息需求和处理需求。</p>
+<p>步骤：</p>
+<ul>
+<li>需求分析阶段</li>
+<li>概念结构设计阶段</li>
+<li>逻辑结构设计阶段</li>
+<li>数据库物理设计阶段</li>
+<li>数据库实施阶段</li>
+<li>数据库运行和维护阶段</li>
+</ul>
+<hr>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><h3 id="事务概念"><a href="#事务概念" class="headerlink" title="事务概念"></a>事务概念</h3><p>将一组数据库操作打包起来形成一个逻辑独立的工作单元。这个工作单元不可分割，其中包含的数据库操作要么全部都发生，要么全部都不发生。</p>
+<p>例如：在关系数据库(关系数据库是建立在关系数据库模型基础上的数据库，借助于集合代数等概念和方法来处理数据库中的数据。)中，一个事务可以是一条SQL语句结构化查询语言简称SQL，结构化查询语言是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理关系数据库系统；sql 语句就是对数据库进行操作的一种语言。)，一组SQL语句或整个程序。</p>
+<h3 id="事务特性"><a href="#事务特性" class="headerlink" title="事务特性"></a>事务特性</h3><ul>
+<li><p>原子性</p>
+</li>
+<li><p>一致性</p>
+</li>
+<li><p>隔离性</p>
+</li>
+<li><p>持久性</p>
+</li>
+</ul>
+<hr>
+<h2 id="数据库系统的故障"><a href="#数据库系统的故障" class="headerlink" title="数据库系统的故障"></a>数据库系统的故障</h2><ul>
+<li><p>事务内部故障            //影响事务的正常执行</p>
+</li>
+<li><p>系统故障                   //影响事务的正常执行</p>
+</li>
+<li><p>介质故障                   //影响事务的正常执行，破坏数据库的数据</p>
+</li>
+<li><p>计算机病毒               //破坏数据库的数据</p>
+</li>
+</ul>
+<h2 id="例7-1（P229）"><a href="#例7-1（P229）" class="headerlink" title="例7-1（P229）"></a>例7-1（P229）</h2><p>假定需要在学生数据库(StudentDB)中创建一张学生表，要求包括学生的标识信息(id,自增)，学号(code,varchar(10),主键)，姓名(name,varchar(20)，非空)，性别(sex,varchar(2))，出生日期(birth,date)，所在学院(school,varchar(20),非空)，所在班级(class,varchar(10),非空)，户籍所在地(localtion,varchar(16),非空)，入学成绩(score,float,非空,默认值为0)。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">create table student(id int not null auto_increment primary key,</span><br><span class="line">				code varchar(10) not null,</span><br><span class="line">				name varchar(20) not null,</span><br><span class="line">				sex varchar(2),</span><br><span class="line">				birth date,</span><br><span class="line">				school varchar(20) not null,</span><br><span class="line">				class varchar(10) not null,</span><br><span class="line">				location varchar(16) not null,</span><br><span class="line">				score float not null default 0.0,</span><br><span class="line">				unique index codeidx (code asc)</span><br><span class="line">				);</span><br></pre></td></tr></table></figure>
+
+<p>查看索引是否被使用：</p>
+<p>*<em>explain select * from 表名 where 索引名 ;*</em></p>
+<p>创建空间索引：</p>
+<p><strong>spatial index</strong> 索引名（属性名）;</p>
+<p>在已经存在的表上创建索引：</p>
+<p><strong>create [unique|fulltext| sratial ] index 索引名 on 表名 (属性名[(长度)] [asc|desc]) ;</strong></p>
+<p>在已经存在的表上，用alter table 语句来创建索引：</p>
+<p><strong>alter table 表名 add [unique |fulltext| spatial] index 索引名（属性名[(长度)] [asc|desc]）</strong></p>
+<p>删除索引：</p>
+<p><strong>drop index 索引名 on 表名</strong></p>
+<p>关于E-R图，多看看P21的例题，目前不知道咋总结，注意关系之间的图形。</p>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>复习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git安装</title>
+    <url>/2020/08/21/git%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Git简易安装流程"><a href="#Git简易安装流程" class="headerlink" title="Git简易安装流程"></a>Git简易安装流程</h2><a id="more"></a>
+
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821131900.png"></p>
+<p>下载完成之后，傻瓜式安装，因为我已经安装好了，所以这部分没有配安装过程图片。大致分为如下步骤：</p>
+<p>1.Next 安装</p>
+<p>2.选择安装目录，并点击Next(如果觉得影响电脑运行速度，可以不安装在C盘)</p>
+<p>3.选择组件 </p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821132738.png"></p>
+<p>(Addtional icons是桌面图标，视个人喜好情况选择)</p>
+<p>4.开始菜单的目录名设置 (如果对这些没什么要求的话，直接点Next就行)</p>
+<p>5.选择命令行的环境</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821133025.png"></p>
+<p>(一般选这个，这个是Git自带命令行工具，第二个是Windows命令行工具，第三个是两者都有)</p>
+<p>6.以下几步直接默认即可</p>
+<p>7.检查是否安装成功 鼠标右击，出现Git GUI Here和Git Bash Here则安装成功</p>
+<h2 id="Git的初始化"><a href="#Git的初始化" class="headerlink" title="Git的初始化"></a>Git的初始化</h2><p>首先通过下面命令查看git版本</p>
+<p> #git –version</p>
+<p>​    在开始使用Git之前，我们首先要用git config命令设置一下git的配置变量，主要有以下几步：</p>
+<p>   （1）配置姓名，这个将在提交的时候用到</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#git config --global user.name “pang”</span><br><span class="line">#git config --global user.email pang@126.com</span><br></pre></td></tr></table></figure>
+
+<p>然后检查以下是否配置成功</p>
+<p>​    （2）设置一些别名，以便使用更为简洁的子命令</p>
+<p> #git config –global alias.ci commit</p>
+<p>​    （3）开启颜色显示</p>
+<p> #git config –global color.ui true</p>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git安装</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>gitee仓库</title>
+    <url>/2020/08/21/gitee%E4%BB%93%E5%BA%93/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="关于gitee仓库的建立"><a href="#关于gitee仓库的建立" class="headerlink" title="关于gitee仓库的建立"></a>关于gitee仓库的建立</h2><a id="more"></a>
+
+<p>注册好gitee账号登录后</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821141508.png"></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821141825.png"></p>
+<p>然后点击创建</p>
+]]></content>
+      <categories>
+        <category>gitee</category>
+      </categories>
+      <tags>
+        <tag>Hexo+Gitee+Node.js搭建博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>修改电脑的DNS</title>
+    <url>/2020/08/22/%E4%BF%AE%E6%94%B9%E7%94%B5%E8%84%91%E7%9A%84DNS/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="关于电脑DNS的修改"><a href="#关于电脑DNS的修改" class="headerlink" title="关于电脑DNS的修改"></a>关于电脑DNS的修改</h1><a id="more"></a>
+
+<p>  之前在搭建博客的时候，发现了电脑没有办法打开GitHub之类的网站，以及没有办法打开Next的使用文档</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822090320.png"></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822090628.png"></p>
+<p>  所以我只能转战gitee，但是我发现每次部署完之后，打开发现没有css和js</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822090912.png"></p>
+<p>于是，我去问了一些人，终于找到了一个这样的方法——修改电脑的DNS</p>
+<hr>
+<h2 id="正文开始"><a href="#正文开始" class="headerlink" title="正文开始"></a>正文开始</h2><h3 id="1-打开控制面板"><a href="#1-打开控制面板" class="headerlink" title="1.打开控制面板"></a>1.打开控制面板</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091212.png"></p>
+<h3 id="2-打开网络和共享中心"><a href="#2-打开网络和共享中心" class="headerlink" title="2.打开网络和共享中心"></a>2.打开网络和共享中心</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091358.png" alt="image-20200822091357982"></p>
+<h3 id="3-打开更改适配器设置"><a href="#3-打开更改适配器设置" class="headerlink" title="3.打开更改适配器设置"></a>3.打开更改适配器设置</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091430.png"></p>
+<h3 id="4-打开WLAN属性"><a href="#4-打开WLAN属性" class="headerlink" title="4.打开WLAN属性"></a>4.打开WLAN属性</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091528.png"></p>
+<h3 id="5-双击IPv4-取消勾选IPv6"><a href="#5-双击IPv4-取消勾选IPv6" class="headerlink" title="5.双击IPv4 取消勾选IPv6"></a>5.双击IPv4 取消勾选IPv6</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091703.png"></p>
+<h3 id="6-使用下面的DNS服务器地址"><a href="#6-使用下面的DNS服务器地址" class="headerlink" title="6.使用下面的DNS服务器地址"></a>6.使用下面的DNS服务器地址</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091823.png" alt="image-20200822091823427"></p>
+<p>首选DNS服务器： <code>114.114.114.114</code></p>
+<p>备用DNS服务器：<code>8.8.8.8</code></p>
+<p>这个地址是我从网上看到的</p>
+<hr>
+<p>  然后，我们就可以发现NexT文档和GitHub的网址都能使用了。</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822092041.png"></p>
+]]></content>
+      <categories>
+        <category>DNS</category>
+      </categories>
+      <tags>
+        <tag>修改DNS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>快速下载网盘神器</title>
+    <url>/2020/08/23/%E5%BF%AB%E9%80%9F%E4%B8%8B%E8%BD%BD%E7%BD%91%E7%9B%98%E7%A5%9E%E5%99%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="亿寻"><a href="#亿寻" class="headerlink" title="亿寻"></a>亿寻</h1><a id="more"></a>
+
+<p>平时需要在网盘下载东西时，发现下载的东西很慢有木有，有时候一个连接不稳定还得重新下载，属实让人难受。</p>
+<p>所以，这里推一款软件——亿寻。附上网盘地址：</p>
+<p>链接：<a href="https://pan.baidu.com/s/19wDLbDDiEnnOPgkI821c1g">https://pan.baidu.com/s/19wDLbDDiEnnOPgkI821c1g</a><br>提取码：3q6h</p>
+<p>下载后，解压发现电脑提示有病毒的话，关掉安全管家就行了，如果安全管家太强大，比如我的安全管家就会把亿寻的exe程序删除，以至于我只有文件，没有启动程序，那么，就保留压缩的文件，到需要的时候，就仅仅解压exe文件即可</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200823212322.png"></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200823212749.png" alt="image-20200823212748976"></p>
+]]></content>
+      <tags>
+        <tag>--网盘神器 --网盘文件助手</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>搭建hexo博客——GitHub篇</title>
+    <url>/2020/08/22/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94GitHub%E7%AF%87/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Hexo-GIT-Node-js搭建博客"><a href="#Hexo-GIT-Node-js搭建博客" class="headerlink" title="Hexo+ GIT+Node.js搭建博客"></a><a href="https://solitudehero.github.io/2020/08/20/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94Gitee%E7%AF%87/#more">Hexo+ GIT+Node.js搭建博客</a></h1><a id="more"></a>
+
+<p>软件准备工作和之前的  搭建hexo博客——Gitee篇  一样，点击标题即可转接。</p>
+<h2 id="正文开始-以下命令都是在git中执行"><a href="#正文开始-以下命令都是在git中执行" class="headerlink" title="正文开始(以下命令都是在git中执行)"></a>正文开始(以下命令都是在git中执行)</h2><p>在本地建立一个文件夹，这个文件夹就是搭建hexo博客的开始。我的文件夹名字叫(博客)，便于理解。</p>
+<p>在博客内打开Git，就是Git Bash Here，输入：</p>
+<p><code>hexo init</code></p>
+<p>然后开始一段时间的等待……</p>
+<p>加载完成之后，你可以输入</p>
+<p><code>hexo s</code>        查看当前网站(注意：这是在本地4000端口查看的，不是网上能查出来的，是需要部署之后才能查看)</p>
+<hr>
+<p>之前说的不能查看GitHub相关的网站，我也在修改DNS中有提到过解决方法。</p>
+<p><a href="https://solitudehero.github.io/2020/08/22/%E4%BF%AE%E6%94%B9%E7%94%B5%E8%84%91%E7%9A%84DNS/#more">DNS修改</a></p>
+<p>ok，废话不多说，上干货。</p>
+<hr>
+<p>同样的，需要首先去<a href="https://github.com/">GitHub官网</a>那去创建一个仓库</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822195521.png"></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822195721.png"></p>
+<p>一般情况下，完成后，会返回你一个仓库地址值，如果没有返回也不要着急，在这也可以找到</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822195915.png" alt="image-20200822195914713"></p>
+<p>在 Blog 目录下安装一个 hexo 部署插件 </p>
+<p><code>cnpm install --save hexo-deployer-git</code></p>
+<p>找到 Blog 文件中的 _config.yml 文件，使用工具打开，如果不是很熟练，建议使用Visual Studio Code 打开，当然，如果觉得麻烦，也可以笔记本打开，但是容易出现错误。</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821142432.png"></p>
+<p>找到这行代码repo后输入接上刚刚让你复制的仓库地址。</p>
+<p>然后进行保存。</p>
+<p>在博客目录下打开的git里面输入<code>hexo d</code></p>
+<p>然后，你就可以直接打开自己的网址了，不需要再去Github上面部署了。</p>
+<p>等等……什么？你不知道网址？</p>
+<p>在这里</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822200115.png" alt="image-20200822200115078"></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822200156.png" alt="image-20200822200156187"></p>
+<p>如果你第一次勾选了那个README(就是创建仓库的时候)，你们会自动生成，如果没有勾选，按照我的这个设置之后，按save即可获取</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822200231.png" alt="image-20200822200231115"></p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo+Github+Node.js搭建博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>搭建hexo博客——Gitee篇</title>
+    <url>/2020/08/20/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94Gitee%E7%AF%87/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Hexo-Git-Node-js搭建博客"><a href="#Hexo-Git-Node-js搭建博客" class="headerlink" title="Hexo+Git+Node.js搭建博客"></a>Hexo+Git+Node.js搭建博客</h1><a id="more"></a>
+
+<p>  经过了三天过程中的十几次搭建，最终对一些优化放弃了继续的挣扎，next的版本高，一些东西不会操作，导致重新开始，也算是小有心得，写下来当做第一篇博客！</p>
+<h2 id="软件准备"><a href="#软件准备" class="headerlink" title="软件准备"></a>软件准备</h2><p>(1) Git下载：</p>
+<p><a href="https://git-scm.com/">官网</a></p>
+<p><a href="npm.taobao.org/mirrors/git-for-windows">国内</a></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821125321.png"></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821125940.png"></p>
+<p><a href="https://solitudehero.github.io/2020/08/21/git%E5%AE%89%E8%A3%85/#more">Git安装</a></p>
+<p><a href="https://www.xuanfengge.com/using-ssh-key-link-github-photo-tour.html">Git配置</a>(我是看网上的)</p>
+<p>(2)<a href="https://nodejs.org/en/">Node.js安装</a></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821135324.png"></p>
+<p>傻瓜式安装即可！</p>
+<p>(3)安装Hexo</p>
+<p>打开Git Bash Here</p>
+<hr>
+<p>检测node是否安装成功</p>
+<p>node -v    (返回版本号)</p>
+<p>npm -v     (返回版本号)</p>
+<hr>
+<p>安装淘宝镜像源</p>
+<p><code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p>
+<p>检测</p>
+<p>cnpm         (返回 cnpm 的信息)</p>
+<p>cnpm -v     (返回 cnpm 的版本信息)</p>
+<hr>
+<p>安装hexo</p>
+<p><code>cnpm install -g hexo-cli</code></p>
+<p>hexo -v    (返回hexo的版本信息)</p>
+<h2 id="正文开始-以下命令都是在git中执行"><a href="#正文开始-以下命令都是在git中执行" class="headerlink" title="正文开始(以下命令都是在git中执行)"></a>正文开始(以下命令都是在git中执行)</h2><p>在本地建立一个文件夹，这个文件夹就是搭建hexo博客的开始。我的文件夹名字叫(博客)，便于理解。</p>
+<p>在博客内打开Git，就是Git Bash Here，输入：</p>
+<p><code>hexo init</code></p>
+<p>然后开始一段时间的等待……</p>
+<p>加载完成之后，你可以输入</p>
+<p><code>hexo s</code>        查看当前网站(注意：这是在本地4000端口查看的，不是网上能查出来的，是需要部署之后才能查看)</p>
+<hr>
+<p>因为我的电脑不知道什么情况不能查看GitHub相关的网站，所以我用的是Gitee部署的，Gitee是国内版的GitHub，速度相对于GitHub比较快，但是部署时会较GitHub麻烦一点，需要去码云那里更新一次，不然显示不出来更新效果。</p>
+<hr>
+<p>到gitee那里注册一个账号，然后创建一个仓库即可。不会的可以查看链接。</p>
+<p><a href="https://solitudehero.github.io/2020/08/21/gitee%E4%BB%93%E5%BA%93/#more">gitee仓库</a></p>
+<p>复制一下仓库URL(就是仓库地址的网址)</p>
+<hr>
+<p>在 Blog 目录下安装一个 hexo 部署插件 </p>
+<p><code>cnpm install --save hexo-deployer-git</code></p>
+<p>找到 Blog 文件中的 _config.yml 文件，使用工具打开，如果不是很熟练，建议使用Visual Studio Code 打开，当然，如果觉得麻烦，也可以笔记本打开，但是容易出现错误。</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821142432.png"></p>
+<p>找到这行代码repo后输入接上刚刚让你复制的仓库地址。</p>
+<p>然后进行保存。</p>
+<p>在博客目录下打开的git里面输入<code>hexo d</code></p>
+<p>然后再在码云仓库里</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821142717.png"></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821142755.png"></p>
+<p>然后那个网站地址就是你部署的，别人也可以通过搜那个网站进入你的博客了。</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo+Gitee+Node.js搭建博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>毛概复习</title>
+    <url>/2020/08/16/%E6%AF%9B%E6%A6%82%E5%A4%8D%E4%B9%A0%E9%87%8D%E7%82%B9/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="毛概复习重点"><a href="#毛概复习重点" class="headerlink" title="毛概复习重点"></a>毛概复习重点</h1><a id="more"></a>
+
+<h2 id="一：选择题"><a href="#一：选择题" class="headerlink" title="一：选择题"></a>一：选择题</h2><h2 id="单选题："><a href="#单选题：" class="headerlink" title="单选题："></a>单选题：</h2><h2 id="1-近代中国的社会性质和中国革命的历史任务，决定了中国革命的性质是？"><a href="#1-近代中国的社会性质和中国革命的历史任务，决定了中国革命的性质是？" class="headerlink" title="1.近代中国的社会性质和中国革命的历史任务，决定了中国革命的性质是？"></a>1.近代中国的社会性质和中国革命的历史任务，决定了中国革命的性质是？</h2><p>资产阶级民主主义革命</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816213503.jpg" alt="img"></p>
+<h2 id="5-中国特色社会主义理论体系的最新成果是？"><a href="#5-中国特色社会主义理论体系的最新成果是？" class="headerlink" title="5.中国特色社会主义理论体系的最新成果是？"></a>5.中国特色社会主义理论体系的最新成果是？</h2><p>习近平新时代中国特色社会主义思想。<img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816213522.jpg" alt="img"> </p>
+<h2 id="6-新民主主义社会经济成分中，具有完全的社会主义性质的是？"><a href="#6-新民主主义社会经济成分中，具有完全的社会主义性质的是？" class="headerlink" title="6.新民主主义社会经济成分中，具有完全的社会主义性质的是？"></a>6.新民主主义社会经济成分中，具有完全的社会主义性质的是？</h2><p>国营经济</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816213528.jpg" alt="img"></p>
+<h2 id="8-当今时代的主题是？"><a href="#8-当今时代的主题是？" class="headerlink" title="8.当今时代的主题是？"></a>8.当今时代的主题是？</h2><p>和平与发展。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816213531.jpg" alt="img"></p>
+<h2 id="9-我们今天讲一切从实际出发，中国最大的实际就是？"><a href="#9-我们今天讲一切从实际出发，中国最大的实际就是？" class="headerlink" title="9.我们今天讲一切从实际出发，中国最大的实际就是？"></a>9.我们今天讲一切从实际出发，中国最大的实际就是？</h2><p>中国目前正处于并将长期处于社会主义初级阶段。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816213535.jpg" alt="img"></p>
+<h2 id="10-实现祖国和平统一的基础和前提是？"><a href="#10-实现祖国和平统一的基础和前提是？" class="headerlink" title="10.实现祖国和平统一的基础和前提是？"></a>10.实现祖国和平统一的基础和前提是？</h2><p>坚持一个中国原则。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816213446.jpg" alt="img"></p>
+<h2 id="11-党的十八大以来，我国在外交工作方面要构建新型国际关系的核心是？"><a href="#11-党的十八大以来，我国在外交工作方面要构建新型国际关系的核心是？" class="headerlink" title="11.党的十八大以来，我国在外交工作方面要构建新型国际关系的核心是？"></a>11.党的十八大以来，我国在外交工作方面要构建新型国际关系的核心是？</h2><p>合作共赢。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816213447.jpg" alt="img"></p>
+<h2 id="12-什么是“一化三改”"><a href="#12-什么是“一化三改”" class="headerlink" title="12.什么是“一化三改”"></a>12.什么是“一化三改”</h2><p>“一化”指的是逐步实现国家的社会主义工业化;“三改”指的是逐步实现国家对农业、手工业、资本主义工商业的社会主义改造。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816214726.png" alt="image-20200816214726126"></p>
+<h2 id="13-我国“两个一百年”奋斗目标是？"><a href="#13-我国“两个一百年”奋斗目标是？" class="headerlink" title="13.我国“两个一百年”奋斗目标是？"></a>13.我国“两个一百年”奋斗目标是？</h2><p>第一个一百年，是到中国共产党成立100年时全面建成小康社会；</p>
+<p>第二个一百年，是到新中国成立100年时建成富强民主文明和谐美丽的社会主义现代化强国。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816214825.png" alt="image-20200816214825887"></p>
+<h2 id="17-社会主义的本质是什么？中国特色社会主义最本质的特征是？"><a href="#17-社会主义的本质是什么？中国特色社会主义最本质的特征是？" class="headerlink" title="17.社会主义的本质是什么？中国特色社会主义最本质的特征是？"></a>17.社会主义的本质是什么？中国特色社会主义最本质的特征是？</h2><p>本质：解放生产力、发展生产力。消灭剥削、消除两极分化、最终达到共同富裕。</p>
+<p> 特征：中国共产党的领导。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816215751.png" alt="image-20200816215751692"></p>
+<h2 id="19-中国特色社会主义建设的总体布局是什么？"><a href="#19-中国特色社会主义建设的总体布局是什么？" class="headerlink" title="19.中国特色社会主义建设的总体布局是什么？"></a>19.中国特色社会主义建设的总体布局是什么？</h2><p>经济建设、政治建设、文化建设、社会建设、生态文明建设“五位一体”。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816222229.png" alt="image-20200816222229387"></p>
+<h2 id="20-四个全面战略布局是什么？"><a href="#20-四个全面战略布局是什么？" class="headerlink" title="20.四个全面战略布局是什么？"></a>20.四个全面战略布局是什么？</h2><p>全面建成小康社会、全面深化改革、全面依法治国、全面从严治党。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816222312.png" alt="image-20200816222312883"></p>
+<h2 id="21-新民主主义革命理论的核心问题是？"><a href="#21-新民主主义革命理论的核心问题是？" class="headerlink" title="21.新民主主义革命理论的核心问题是？"></a>21.新民主主义革命理论的核心问题是？</h2><p>无产阶级的领导权。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816222423.png" alt="image-20200816222423761"></p>
+<h2 id="22-毛泽东在《论十大关系》中论述的第一大关系是？"><a href="#22-毛泽东在《论十大关系》中论述的第一大关系是？" class="headerlink" title="22.毛泽东在《论十大关系》中论述的第一大关系是？"></a>22.毛泽东在《论十大关系》中论述的第一大关系是？</h2><p>重工业和轻工业、农业的关系。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816222436.png" alt="image-20200816222436618"></p>
+<h2 id="24-邓小平指出：“贫穷不是社会主义，社会主义要消灭贫穷。”这个判断明确了？"><a href="#24-邓小平指出：“贫穷不是社会主义，社会主义要消灭贫穷。”这个判断明确了？" class="headerlink" title="24.邓小平指出：“贫穷不是社会主义，社会主义要消灭贫穷。”这个判断明确了？"></a>24.邓小平指出：“贫穷不是社会主义，社会主义要消灭贫穷。”这个判断明确了？</h2><p>社会主义本质的要求。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816222515.png" alt="image-20200816222515786"></p>
+<h2 id="25-加强党的建设应该放在首位的是？"><a href="#25-加强党的建设应该放在首位的是？" class="headerlink" title="25.加强党的建设应该放在首位的是？"></a>25.加强党的建设应该放在首位的是？</h2><p>思想建设。<img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816222533.png" alt="image-20200816222533107"></p>
+<h2 id="26-我国对外开放的基本立足点是？"><a href="#26-我国对外开放的基本立足点是？" class="headerlink" title="26.我国对外开放的基本立足点是？"></a>26.我国对外开放的基本立足点是？</h2><p>独立自主、自力更生。<img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816222552.png" alt="image-20200816222552404"></p>
+<h2 id="27-当前我国经济已经由高速增长阶段转向怎样的增长阶段？"><a href="#27-当前我国经济已经由高速增长阶段转向怎样的增长阶段？" class="headerlink" title="27.当前我国经济已经由高速增长阶段转向怎样的增长阶段？"></a>27.当前我国经济已经由高速增长阶段转向怎样的增长阶段？</h2><p>高质量发展。<img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816222614.png" alt="image-20200816222614260"></p>
+<h2 id="28-当今时代的主题是？"><a href="#28-当今时代的主题是？" class="headerlink" title="28.当今时代的主题是？"></a>28.当今时代的主题是？</h2><p>和平与发展。</p>
+<h2 id="29-引领发展的第一动力，建设现代化经济体系的战略支撑是？"><a href="#29-引领发展的第一动力，建设现代化经济体系的战略支撑是？" class="headerlink" title="29.引领发展的第一动力，建设现代化经济体系的战略支撑是？"></a>29.引领发展的第一动力，建设现代化经济体系的战略支撑是？</h2><p>创新。<img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816222629.png" alt="image-20200816222629450"></p>
+<h2 id="30-一个国家、一个民族发展中更基本、更深沉、更持久的力量是？"><a href="#30-一个国家、一个民族发展中更基本、更深沉、更持久的力量是？" class="headerlink" title="30.一个国家、一个民族发展中更基本、更深沉、更持久的力量是？"></a>30.一个国家、一个民族发展中更基本、更深沉、更持久的力量是？</h2><p>文化自信。<img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816222644.png" alt="image-20200816222644130"></p>
+<h2 id="34-社会主义核心价值观中，国家层面的价值追求是？"><a href="#34-社会主义核心价值观中，国家层面的价值追求是？" class="headerlink" title="34.社会主义核心价值观中，国家层面的价值追求是？"></a>34.社会主义核心价值观中，国家层面的价值追求是？</h2><p>富强、民主、文明、和谐。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816222736.png" alt="image-20200816222736019"></p>
+<h2 id="38-近代中国革命的首要对象是？"><a href="#38-近代中国革命的首要对象是？" class="headerlink" title="38.近代中国革命的首要对象是？"></a>38.近代中国革命的首要对象是？</h2><p>帝国主义。<img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816222902.png" alt="image-20200816222902570"></p>
+<h2 id="39-标志着党探索中国社会主义建设道路的良好开端是？"><a href="#39-标志着党探索中国社会主义建设道路的良好开端是？" class="headerlink" title="39.标志着党探索中国社会主义建设道路的良好开端是？"></a>39.标志着党探索中国社会主义建设道路的良好开端是？</h2><p>《论十大关系》<img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816222917.png" alt="image-20200816222917052"></p>
+<h2 id="41-生态文明的核心是？"><a href="#41-生态文明的核心是？" class="headerlink" title="41.生态文明的核心是？"></a>41.生态文明的核心是？</h2><p>统筹人与自然的和谐发展建设生态文明要遵循可持续发展的原则</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817155637.png" alt="image-20200817155425340"></p>
+<h2 id="42-中国特色社会主义理论体系的开篇之作是？"><a href="#42-中国特色社会主义理论体系的开篇之作是？" class="headerlink" title="42.中国特色社会主义理论体系的开篇之作是？"></a>42.中国特色社会主义理论体系的开篇之作是？</h2><p>邓小平理论。<img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817160026.png" alt="image-20200817160026311"></p>
+<h2 id="44-科学发展观的科学内涵是什么？第一要义是？"><a href="#44-科学发展观的科学内涵是什么？第一要义是？" class="headerlink" title="44.科学发展观的科学内涵是什么？第一要义是？"></a>44.科学发展观的科学内涵是什么？第一要义是？</h2><p>内涵：科学发展观。 第一要义：发展。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817155838.png" alt="image-20200817155838712"></p>
+<h2 id="55-社会主义核心价值观中，社会层面的价值追求是指？"><a href="#55-社会主义核心价值观中，社会层面的价值追求是指？" class="headerlink" title="55.社会主义核心价值观中，社会层面的价值追求是指？"></a><strong>55.社会主义核心价值观中，社会层面的价值追求是指？</strong></h2><p>自由、平等、公正、法制</p>
+<h2 id="46-人民军队完全区别于一切旧军队的政治特质和根本优势是？"><a href="#46-人民军队完全区别于一切旧军队的政治特质和根本优势是？" class="headerlink" title="46.人民军队完全区别于一切旧军队的政治特质和根本优势是？"></a>46.人民军队完全区别于一切旧军队的政治特质和根本优势是？</h2><p>党对军队绝对领导的根本原则和制度，发端于南昌起义，奠基于三湾改编，定型于古田会议，是人民军队完全区别于一切旧军队的政治特质和根本优势。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817155707.png" alt="image-20200817155707767"></p>
+<h2 id="49-全面建成小康社会的决胜期是？"><a href="#49-全面建成小康社会的决胜期是？" class="headerlink" title="49.全面建成小康社会的决胜期是？"></a>49.全面建成小康社会的决胜期是？</h2><p>2020年<img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817155654.png" alt="image-20200817155654441"></p>
+<h2 id="50-社会主义基本制度在中国初步确立的标志是？"><a href="#50-社会主义基本制度在中国初步确立的标志是？" class="headerlink" title="50.社会主义基本制度在中国初步确立的标志是？"></a>50.社会主义基本制度在中国初步确立的标志是？</h2><p>1956年完成对农业、手工业和资本主义商业的社会主义改造</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817155902.png" alt="image-20200817155902103"></p>
+<h2 id="51-邓小平理论回答的首要的基本的理论问题是？"><a href="#51-邓小平理论回答的首要的基本的理论问题是？" class="headerlink" title="51.邓小平理论回答的首要的基本的理论问题是？"></a>51.邓小平理论回答的首要的基本的理论问题是？</h2><p>什么是社会主义，怎样建设社会主义？</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817161120.png" alt="image-20200817161120886"></p>
+<h2 id="52-党的十八大提出，我国将在哪一年实现全面建成小康社会的奋斗目标？"><a href="#52-党的十八大提出，我国将在哪一年实现全面建成小康社会的奋斗目标？" class="headerlink" title="52.党的十八大提出，我国将在哪一年实现全面建成小康社会的奋斗目标？"></a>52.党的十八大提出，我国将在哪一年实现全面建成小康社会的奋斗目标？</h2><p>2020年 </p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817161145.png" alt="image-20200817161145351"></p>
+<h2 id="53-2018版的新教材充分反映马克思主义中国化各个理论成果的主要内容，突出了什么样的理论逻辑和历史逻辑？"><a href="#53-2018版的新教材充分反映马克思主义中国化各个理论成果的主要内容，突出了什么样的理论逻辑和历史逻辑？" class="headerlink" title="53.2018版的新教材充分反映马克思主义中国化各个理论成果的主要内容，突出了什么样的理论逻辑和历史逻辑？"></a><strong>53.2018版的新教材充分反映马克思主义中国化各个理论成果的主要内容，突出了什么样的理论逻辑和历史逻辑？</strong></h2><p> <img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817161830.png" alt="image-20200817161829979"></p>
+<h2 id="57-中国新时期的强军目标是建设一支什么样的人民军队？"><a href="#57-中国新时期的强军目标是建设一支什么样的人民军队？" class="headerlink" title="57.中国新时期的强军目标是建设一支什么样的人民军队？"></a><strong>57.中国新时期的强军目标是建设一支什么样的人民军队？</strong></h2><p>听党指挥、能打胜仗、作风优良的人民军队</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817161558.png" alt="image-20200817161558166"></p>
+<h2 id="多选题"><a href="#多选题" class="headerlink" title="多选题"></a>多选题</h2><h2 id="2-马克思主义中国化形成的两大理论成果是？"><a href="#2-马克思主义中国化形成的两大理论成果是？" class="headerlink" title="2.马克思主义中国化形成的两大理论成果是？"></a>2.马克思主义中国化形成的两大理论成果是？</h2><p>毛泽东思想和中国特色社会主义理论体系。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816213507.jpg" alt="img"></p>
+<h2 id="7-新民主主义革命的三大法宝是？新民主主义革命的动力包括？"><a href="#7-新民主主义革命的三大法宝是？新民主主义革命的动力包括？" class="headerlink" title="7.新民主主义革命的三大法宝是？新民主主义革命的动力包括？"></a>7.新民主主义革命的三大法宝是？新民主主义革命的动力包括？</h2><h3 id="90-多选题"><a href="#90-多选题" class="headerlink" title="90%多选题"></a>90%多选题</h3><p>统一战线，武装斗争，党的建设</p>
+<p>工人阶级、农民阶级、城市小资产阶级和民族资产阶级。</p>
+<h2 id="14-什么是四个自信？"><a href="#14-什么是四个自信？" class="headerlink" title="14.什么是四个自信？"></a>14.什么是四个自信？</h2><p>道路自信、理论自信、制度自信、文化自信</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816215550.png" alt="image-20200816215550846"></p>
+<h2 id="15-什么是和平赎买？"><a href="#15-什么是和平赎买？" class="headerlink" title="15.什么是和平赎买？"></a>15.什么是和平赎买？</h2><p>对资产阶级的生产资料通过和平方式并采取有偿办法实行国有化，在一定年限内让资本家从企业经营所得中获得一部分利润的政策。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816215700.png" alt="image-20200816215700425"></p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816215715.png" alt="image-20200816215715509"></p>
+<h2 id="16-什么是一国两制"><a href="#16-什么是一国两制" class="headerlink" title="16.什么是一国两制?"></a>16.什么是一国两制?</h2><p>指在一个中国的前提下，国家的主体坚持社会主义制度，香港、澳门、台湾保持原有的资本主义制度长期不变。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816215731.png" alt="image-20200816215731485"></p>
+<h2 id="31-什么是四项基本原则？"><a href="#31-什么是四项基本原则？" class="headerlink" title="31.什么是四项基本原则？"></a>31.什么是四项基本原则？</h2><p>即坚持社会主义道路，坚持无产阶级专政（人民民主专政），坚持共产党的领导，坚持马列主义、毛泽东思想。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817162401.png" alt="image-20200817162401870"></p>
+<h2 id="32-过渡时期的“一体两翼”是指？"><a href="#32-过渡时期的“一体两翼”是指？" class="headerlink" title="32.过渡时期的“一体两翼”是指？"></a>32.过渡时期的“一体两翼”是指？</h2><p>“一化”即逐步实现国家社会主义工业化,就是要进行社会主义改造,这是主体;</p>
+<p>“三改”即逐步实现国家对农业、手工业和资本主义工商业的社会主义改造,这是“两翼”</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816222703.png" alt="image-20200816222703538"></p>
+<h2 id="33-习近平总书记指出，实现中国梦，必须走什么路？弘扬和凝聚？"><a href="#33-习近平总书记指出，实现中国梦，必须走什么路？弘扬和凝聚？" class="headerlink" title="33.习近平总书记指出，实现中国梦，必须走什么路？弘扬和凝聚？"></a>33.习近平总书记指出，实现中国梦，必须走什么路？弘扬和凝聚？</h2><p>走中国道路，弘扬中国精神，凝聚中国力量。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816222724.png" alt="image-20200816222724130"></p>
+<h2 id="35-党的十九大提出，要以“一带一路”建设为重点，坚持引进来和走出去并重，遵循的原则是？"><a href="#35-党的十九大提出，要以“一带一路”建设为重点，坚持引进来和走出去并重，遵循的原则是？" class="headerlink" title="35.党的十九大提出，要以“一带一路”建设为重点，坚持引进来和走出去并重，遵循的原则是？"></a>35.党的十九大提出，要以“一带一路”建设为重点，坚持引进来和走出去并重，遵循的原则是？</h2><p>共商共建共享。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816222751.png" alt="image-20200816222751329"></p>
+<h2 id="37-巩固和发展爱国统一战线，中国共产党同各民主党派进行合作的方针是？"><a href="#37-巩固和发展爱国统一战线，中国共产党同各民主党派进行合作的方针是？" class="headerlink" title="37.巩固和发展爱国统一战线，中国共产党同各民主党派进行合作的方针是？"></a>37.巩固和发展爱国统一战线，中国共产党同各民主党派进行合作的方针是？</h2><p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816222834.png" alt="image-20200816222834323"></p>
+<p>长期共存、互相监督、肝胆相照、荣辱与共。</p>
+<h2 id="40-在各个领域和方面都要突出总揽全局、协调各方的领导核心地位的是？"><a href="#40-在各个领域和方面都要突出总揽全局、协调各方的领导核心地位的是？" class="headerlink" title="40.在各个领域和方面都要突出总揽全局、协调各方的领导核心地位的是？"></a>40.在各个领域和方面都要突出总揽全局、协调各方的领导核心地位的是？</h2><p>党的领导<img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816222957.png" alt="image-20200816222957452"></p>
+<h2 id="47-我国社会主义初级阶段的主要矛盾是生产力和生产关系的矛盾？"><a href="#47-我国社会主义初级阶段的主要矛盾是生产力和生产关系的矛盾？" class="headerlink" title="47.我国社会主义初级阶段的主要矛盾是生产力和生产关系的矛盾？"></a>47.我国社会主义初级阶段的主要矛盾是生产力和生产关系的矛盾？</h2><p>不是。是人民日益增长的物质文化需要同落后的社会生产之间的矛盾</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817155728.png" alt="image-20200817155728227"></p>
+<h2 id="48-从1949年建国到今天，我国不同时期的主要矛盾及根本任务是什么？"><a href="#48-从1949年建国到今天，我国不同时期的主要矛盾及根本任务是什么？" class="headerlink" title="48.从1949年建国到今天，我国不同时期的主要矛盾及根本任务是什么？"></a>48.从1949年建国到今天，我国不同时期的主要矛盾及根本任务是什么？</h2><p>社会主义初级阶段：主要矛盾是人民日益增长的物质文化需要同落后的社会生产之间的矛盾。根本任务：集中力量发展生产力。<br>中国新时代阶段：人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾。 根本任务：调整经济结构。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817155801.png" alt="image-20200817155801424"></p>
+<h2 id="58-走中国特色社会主义政治发展道路，必须坚持哪三者有机统一？"><a href="#58-走中国特色社会主义政治发展道路，必须坚持哪三者有机统一？" class="headerlink" title="58.走中国特色社会主义政治发展道路，必须坚持哪三者有机统一？"></a><strong>58.走中国特色社会主义政治发展道路，必须坚持哪三者有机统一？</strong></h2><p>党的领导、人民当家作主、依法治国</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817161718.png" alt="image-20200817161718061"></p>
+<h2 id="59-构建人类命运共同体思想的核心是建设什么样的世界？"><a href="#59-构建人类命运共同体思想的核心是建设什么样的世界？" class="headerlink" title="59.构建人类命运共同体思想的核心是建设什么样的世界？"></a>59.构建人类命运共同体思想的核心是建设什么样的世界？</h2><p>持久和平、普遍安全、共同繁荣、开放包容、清洁美丽</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817161651.png" alt="image-20200817161651142"></p>
+<h1 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h1><h2 id="简答大题：3-毛泽东思想形成和发展的社会历史条件是什么？"><a href="#简答大题：3-毛泽东思想形成和发展的社会历史条件是什么？" class="headerlink" title="简答大题：3.毛泽东思想形成和发展的社会历史条件是什么？"></a>简答大题：3.毛泽东思想形成和发展的社会历史条件是什么？</h2><p>第一，20世纪前中期世界和中国政局的变动，是毛泽东思想产生和形成的时代背景。</p>
+<p>第二，近现代中国社会和革命运动的发展，是毛泽东思想产生和形成的客观需要。</p>
+<p>第三，新的社会生产力的增长和工人运动的发展，是毛泽东思想产生和形成的物质基础。</p>
+<p>第四，新文化运动的兴起和马克思列宁主义的传入与传播，是毛泽东思想产生和形成的思想理论条件。</p>
+<p>第五，中国共产党领导的人民革命，是毛泽东思想产生和形成的实践基础</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816213514.jpg" alt="img"></p>
+<h2 id="大题：4-毛泽东思想的主要内容包括-毛泽东思想活的灵魂是？"><a href="#大题：4-毛泽东思想的主要内容包括-毛泽东思想活的灵魂是？" class="headerlink" title="大题：4.毛泽东思想的主要内容包括?毛泽东思想活的灵魂是？"></a>大题：4.毛泽东思想的主要内容包括?毛泽东思想活的灵魂是？</h2><p><strong>主要内容</strong>：</p>
+<p>（1） 新民主主义革命理论。是反映新民主主义革命客观规律的完备的理论形态。</p>
+<p>（2） 社会主义革命和社会主义建设理论。毛泽东在新民主主义革命胜利和社会主义制度建立后，分别提出了诸多正确的思想主张，对中国特色社会主义建设道理的探索具有重要的指导意义。</p>
+<p>（3） 革命军队建设和军事战略的理论。系统地解决了如何把以农民为主要成分的革命军队建设成一支无产阶级性质的、具有严格纪律的、同人民群众保持亲密联系的新型人民军队的问题。</p>
+<p>（4） 政策和策略的理论。毛泽东精辟地论证了革命斗争中政策和策略问题的极端重要性，指出政策和策略是党的生命，必须根据政治形势、阶级关系和实际情况及其变化制定党的政策，把原则性和灵活性结合起来。</p>
+<p>（5） 思想政治工作和文化工作的理论。毛泽东根据“一定的文化是一定社会的政治和经济的反映，又给予伟大影响和作用于一定社会的政治和经济，而经济是基础，政治则是经济的集中的表现”这个基本观点，提出了许多具有长远意义的重要思想。</p>
+<p>（6） 党的建设理论。党的三大优良作风是：理论与实践相结合的作风，和人民群众紧密地联系在一起的作风，自我批评的作风。两个务必是：务必继续保持谦虚、谨慎、不骄、不躁的作风，务必继续保持艰苦奋斗的作风。</p>
+<p><strong>活的灵魂：</strong></p>
+<p>（1） 实事求是。就是一切从实际出发，理论联系实际，坚持在实践中检验真理和发展真理。这是毛泽东思想的<strong>精髓。</strong></p>
+<p>（2） 群众路线。就是一切为了群众，一切依靠群众，从群众中来，到群众中去，把党的正确主张变为群众的自觉行动。这是中国共产党的<strong>根本路线</strong>。</p>
+<p>（3） 独立自主。就是坚持独立思考，走自己的路，坚定不移地维护民族独立，捍卫国家主权，把立足点放在依靠自己的力量的基础上，同时积极争取外援，开展国际经济文化交流，学习外国一切对我们有益的先进事物。这是中国共产党进行革命与建设的<strong>基本立足点</strong>。</p>
+<p>90%大题</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816213519.jpg" alt="img"></p>
+<h2 id="18-三个代表”重要思想的核心观点是什么？"><a href="#18-三个代表”重要思想的核心观点是什么？" class="headerlink" title="18.三个代表”重要思想的核心观点是什么？"></a>18.三个代表”重要思想的核心观点是什么？</h2><p>中国共产党必须始终代表中国先进生产力的发展要求</p>
+<p>中国共产党必须始终代表中国先进文化的前进方向</p>
+<p>中国共产党必须始终代表中国最广大人民的根本利益</p>
+<p>（1）始终代表中国先进生产力的发展要求。</p>
+<p>A. 社会主义的根本任务是发展社会生产力，马克思主义执政党必须高度重视解放和发展生产力。始终代表中国先进生产力的发展要求，大力促进先进生产力的发展，是我们党站在时代前列，保持先进性的根本体现和根本要求。</p>
+<p>B.广大工人、农民和知识分子始终是推动我国先进生产力发展和社会全面进步的根本力量。</p>
+<p>C.人是生产力中最活跃的因素。</p>
+<p>D.科学技术是第一生产力，是先进生产力的集中体现和主要标志。科技进步和创新式发展生产力的决定因素。</p>
+<p>E.科学的本质是创新，只有大力推进知识创新、科技创新、才能实现技术的跨越式发展。</p>
+<p>（2）始终代表中国先进文化的前进方向。</p>
+<p>A.发展社会主义先进文化，就是建设社会主义精神文明。</p>
+<p>B.发展社会主义先进文化，就是发展面向现代化、面向世界、面向未来的、民族的科学的大众的社会主义文化。</p>
+<p>C.发展社会主义先进文化，必须弘扬民族精神。</p>
+<p>D,发展社会主义先进文化，必须加强社会主义思想道德建设，这是发展先进文化的重要内容和中心环节。</p>
+<p>E.发展社会主义先进文化，必须做好思想政治工作。思想政治工作是经济工作和其他一切工作的生命线。</p>
+<p>（3）始终代表中国最广大人民的根本利益。</p>
+<p>人民是我们国家的主人，是决定我国前途和命运的根本力量，是历史的真正创造者。我们全部工作的出发点和落脚点，就是不断实现好维护好发展好最广大人民的根本利益。</p>
+<p>A. 我们党来自于人民，植根于人民。服务于人民。党的全部任务和责任，就是为实现人民群众的根本利益而奋斗。</p>
+<p>B. 我们党始终坚持人民的利益高于一切。党的一切工作，必须以最广大人民的根本利益为最高标准。</p>
+<p>10%选择题： <img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816220810.png" alt="image-20200816220810901">90%大题</p>
+<h2 id="36-如何建设“一带一路”？"><a href="#36-如何建设“一带一路”？" class="headerlink" title="36.如何建设“一带一路”？"></a>36.如何建设“一带一路”？</h2><p>政策沟通：沿线各国可以就经济发展战略和对策进行充分交流对接，共同制定推进区域合作的规划和措施。</p>
+<p>资金融通：扩大沿线国家双边本币互换、结算的范围和规模；共同推进亚洲基础设施投资银行、金砖国家开发银行筹建，有关各方就建立上海合作组织融资机构开展磋商。</p>
+<p>设施联通：交通方面，优先打通缺失路段，畅通瓶颈路段，提升道路通达水平；能源方面，推进跨境电力与输电通道建设，积极开展区域电网升级改造合作。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816222816.png" alt="image-20200816222816475"></p>
+<h2 id="23-十九大的主题是？"><a href="#23-十九大的主题是？" class="headerlink" title="23.十九大的主题是？"></a>23.十九大的主题是？</h2><p>不忘初心，牢记使命，高举中国特色社会主义伟大旗帜，决胜全面建成小康社会，夺取新时代中国特色社会主义伟大胜利，为实现中华民族伟大复兴的中国梦不懈奋斗。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200816222459.png" alt="image-20200816222459474"></p>
+<h2 id="43-新民主主义社会是一个独立的社会形态吗？"><a href="#43-新民主主义社会是一个独立的社会形态吗？" class="headerlink" title="43.新民主主义社会是一个独立的社会形态吗？"></a>43.新民主主义社会是一个独立的社会形态吗？</h2><p>不是<img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817155930.png" alt="image-20200817155930305"></p>
+<h2 id="45-如何理解习近平强军思想的主要内容？"><a href="#45-如何理解习近平强军思想的主要内容？" class="headerlink" title="45.如何理解习近平强军思想的主要内容？"></a>45.如何理解习近平强军思想的主要内容？</h2><p>习近平的强军思想作为一个科学的理论体系，它实际上是深刻回答了在我们国家由大向强、逐步走向世界舞台中央这样一个时代进程中，我们人民军队听谁指挥、怎样筑牢军魂、为什么要强军、怎么强军、打什么仗、怎样打胜仗这样一些基本问题重大问题，它丰富和发展了我们党建军、治军的一些指导思想、方针原则，也就是它引领着我们人民军队走上了强军的新征程。</p>
+<p>一是强国必须强军,巩固国防和强大人民军队是新时代坚持和发展中国特色社会主义,实现“两个一百年”奋斗目标、实现中华民族伟大复兴的战略支撑,必须努力建设与我国国际地位相称、与国家安全和发展利益相适应的巩固国防和强大军队。二是党在新时代的强军目标是建设一支听党指挥、能打胜仗、作风优良的人民军队,必须同国家现代化进程相一致,全面建设世界一流军队。三是党对军队的绝对领导是人民军队建军之本、强军之魂,必须全面贯彻党领导军队的一系列根本原则和制度,确保部队绝对忠诚、绝对纯洁、绝对可靠。四是军队是要准备打仗的,必须聚焦能打仗、打胜仗,创新发展军事战略指导,构建中国特色现代作战体系,全面提高新时代备战打仗能力,有效塑造态势、管控危机、遏制战争、打赢战争。五是作风优良是我军鲜明特色和政治优势,必须加强作风建设、纪律建设,坚定不移正风肃纪、反腐惩恶,大力弘扬我党我军光荣传统和优良作风,永葆人民军队性质、宗旨、本色。六是推进强军事业必须坚持政治建军、改革强军、科技兴军、依法治军,更加注重聚焦实战、更加注重创新驱动、更加注重体系建设、更加注重集约高效、更加注重军民融合,全面提高革命化现代化正规化水平。七是改革是强军的必由之路,必须推进军队组织形态现代化,构建中国特色现代军事力量体系,完善中国特色社会主义军事制度。八是创新是引领发展的第一动力,必须坚持向科技创新要战斗力,统筹推进军事理论、技术、组织、管理、文化等各方面创新,建设创新型人民军队。九是现代化军队必须构建中国特色军事法治体系,推进治军方式根本性变革,提高国防和军队建设法治化水平。十是军民融合发展是兴国之举、强军之策,必须坚持发展和安全兼顾、富国和强军统一,形成全要素、多领域、高效益军民融合深度发展格局,构建一体化的国家战略体系和能力。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817155628.png" alt="image-20200817155442914"></p>
+<h2 id="54-在1992年南方谈话中，邓小平明确地提出了“三个有利于”标准，它的具体内容是？"><a href="#54-在1992年南方谈话中，邓小平明确地提出了“三个有利于”标准，它的具体内容是？" class="headerlink" title="54.在1992年南方谈话中，邓小平明确地提出了“三个有利于”标准，它的具体内容是？"></a><strong>54.在1992年南方谈话中，邓小平明确地提出了“三个有利于”标准，它的具体内容是？</strong></h2><p>是否有利于发展社会主义社会的生产力、是否有利于增强社会主义国家的综合国力、是否有利于提高人民的生活水平。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817161208.png" alt="image-20200817161208256"></p>
+<h2 id="56-当前中国讲文化自信，其含义是？"><a href="#56-当前中国讲文化自信，其含义是？" class="headerlink" title="56.当前中国讲文化自信，其含义是？"></a><strong>56.当前中国讲文化自信，其含义是？</strong></h2><p>一是对马克思主义文化的自信，二是对中国优秀传统文化的自信。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817161453.png" alt="image-20200817161453522"></p>
+<h2 id="60-新民主主义基本纲领的主要内容是什么？"><a href="#60-新民主主义基本纲领的主要内容是什么？" class="headerlink" title="60.新民主主义基本纲领的主要内容是什么？"></a><strong>60.新民主主义基本纲领的主要内容是什么？</strong></h2><p>包括新民主主义的政治纲领、新民主主义的经济纲领和新民主主义的文化纲领。新民主主义的政治纲领：推翻帝国主义和封建主义的统治，建立一个无产阶级领导的、以工农联盟为基础的、各革命阶级联合专政的新民主主义的共和国。新民主主义的经济纲领：没收封建地主阶级的土地归农民所有，没收官僚资产阶级的垄断资本归新民主主义的国家所有，保护民族工商业。新民主主义的文化纲领：无产阶级领导的人民大众的反帝反封建的文化，即民族的科学的大众的文化。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817161617.png" alt="image-20200817161617254"></p>
+<h2 id="61-中国确立社会主义基本制度的重大意义是什么？"><a href="#61-中国确立社会主义基本制度的重大意义是什么？" class="headerlink" title="61.中国确立社会主义基本制度的重大意义是什么？"></a><strong>61.中国确立社会主义基本制度的重大意义是什么？</strong></h2><p>社会主义基本制度的确立是中国历史上最深刻最伟大的社会变革，为当代中国一切发展进步奠定了制度基础，也为中国特色社会主义制度的创新和发展提供了重要前提。</p>
+<p>（1） 社会主义基本制度的确立，极大地提高了工人阶级和广大劳动人民的积极性、创造性，极大地促进了我国社会生产力的发展。</p>
+<p>（2） 社会主义基本制度的确立，使广大劳动人民真正成为国家的主人。极大地巩固和扩大了工人阶级领导的、以工农联盟为基础的人民民主专政国家政权的阶级基础和经济基础。</p>
+<p>（3） 社会主义基本制度的确立，使中国进入了社会主义社会，是世界社会主义发展史上又一个历史性的伟大胜利。它进一步改变了世界政治经济格局，增强了社会主义力量，对维护世界和平产生了积极影响。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817160836.png" alt="image-20200817160836481"></p>
+<h2 id="62-如何认识邓小平理论形成的社会历史条件？"><a href="#62-如何认识邓小平理论形成的社会历史条件？" class="headerlink" title="62.如何认识邓小平理论形成的社会历史条件？"></a><strong>62.如何认识邓小平理论形成的社会历史条件？</strong></h2><p>（1）和平与发展成为时代主题是邓小平理论形成的时代背景。20世纪70年代，西方资本主义遭遇严重的经济危机，战后美苏两极对抗的冷战格局出现重大变化，长期被冷战阴云笼罩的世界各国人民对和平的渴望更加强烈，求和平谋发展逐渐成为世界各国人民的普遍愿望。邓小平敏锐地把握了国际形势的重大变化，对时代主题的转换做出了科学判断。</p>
+<p>（2）社会主义建设的经验教训是邓小平理论形成的历史根据。新中国成立后，我们顺利地恢复了国民经济，走出了一条具有鲜明中国特色的社会主义改造道路，但也犯了不少错误。十一届三中全会以后，以邓小平为主要代表的中国共产党人，领导全党和全国人民，果断地纠正了这些错误，深刻地分析了它出现的原因，同时又坚决地维护和继承了过去在理论上和实践上所取得的一切积极成果。</p>
+<p>（3）改革开放和现代化建设的实践是邓小平理论形成的现实依据。我国改革开放和社会主义现代化建设的崭新实践，是人民群众生机勃勃的伟大创造，是理论发展的源泉。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817160852.png" alt="image-20200817160852840"></p>
+<h2 id="63-如何认识中国特色社会主义进入新时代？"><a href="#63-如何认识中国特色社会主义进入新时代？" class="headerlink" title="63.如何认识中国特色社会主义进入新时代？"></a><strong>63.如何认识中国特色社会主义进入新时代？</strong></h2><p>（1）从中华民族复兴的进程来看，意味着历经磨难的中华民族实现了从站起来，富起来到强起来的伟大飞跃，迎来了中华民族伟大复兴的前景。</p>
+<p>（2）从科学社会主义发展进程来看，意味着科学社会主义在21世纪的中国焕发了强大的生命活力，在世界上高高举起了中国特色社会主义的伟大旗帜。</p>
+<p>（3）从人类文明进程来看，意味着中国特色社会主义道路、制度、理论、文化不断发展，拓宽了发展中国家进入社会主义新时代途径。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817160918.png" alt="image-20200817160917864"></p>
+<h2 id="64-如何把握新时代中国特色社会主义发展的战略安排？"><a href="#64-如何把握新时代中国特色社会主义发展的战略安排？" class="headerlink" title="64.如何把握新时代中国特色社会主义发展的战略安排？"></a><strong>64.如何把握新时代中国特色社会主义发展的战略安排？</strong></h2><p><strong>新时代中国特色社会主义发展的战略安排，顺应了我国社会生产力的发展趋势和要求；把握了我国社会主要矛盾的变化；提升了我国参与国际竞争的能力和信心。</strong></p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817160942.png" alt="image-20200817160942575"></p>
+<h2 id="65-如何正确理解坚持党的领导、人民当家作主和依法治国的有机统一？"><a href="#65-如何正确理解坚持党的领导、人民当家作主和依法治国的有机统一？" class="headerlink" title="65.如何正确理解坚持党的领导、人民当家作主和依法治国的有机统一？"></a><strong>65.如何正确理解坚持党的领导、人民当家作主和依法治国的有机统一？</strong></h2><p>1.中国共产党的领导是人民当家作主和依法治国的根本保证。在我国这样一个发展中大国,离开了共产党的领导,就不可能把全国人民的力量和意志凝聚起来,发展社会主义民主也就无从谈起。</p>
+<p>2.人民当家作主是社会主义民主政治的本质要求,是社会主义政治文明建设的根本出发点和归宿。社会主义民主政治的本质是人民当家作主。</p>
+<p>3.依法治国是党领导人民治理国家的基本方略。依法治国与人民民主、党的领导是紧密联系、相辅相成。依法治国不仅从制度上、法律上保证人民当家作主，而且也从制度上、法律上保证党的执政地位。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817160956.png" alt="image-20200817160956070"></p>
+<h2 id="66-决胜全面建成小康社会提出来哪些新要求？"><a href="#66-决胜全面建成小康社会提出来哪些新要求？" class="headerlink" title="66.决胜全面建成小康社会提出来哪些新要求？"></a>66.决胜全面建成小康社会提出来哪些新要求？</h2><p>经济保持中高速增长、创新驱动成效显著、发展协调性明显增强、人民生活水平和质量普遍提高、国民素质和社会文明程度显著提高、生态环境质量总体改善、各方面制度更加成熟更加定型。</p>
+<p><img src="https://gitee.com/studentliuchang/biogImg/raw/master/img/20200817161053.png" alt="image-20200817161053415"></p>
+<h2 id="67。当前，我国生态文明建设面临哪些严峻形势？请你结合自身实际，论述当代大学生应当如何树立生态文明理念？"><a href="#67。当前，我国生态文明建设面临哪些严峻形势？请你结合自身实际，论述当代大学生应当如何树立生态文明理念？" class="headerlink" title="67。当前，我国生态文明建设面临哪些严峻形势？请你结合自身实际，论述当代大学生应当如何树立生态文明理念？"></a>67。当前，我国生态文明建设面临哪些严峻形势？请你结合自身实际，论述当代大学生应当如何树立生态文明理念？</h2><p><strong>严峻形势：资源约束趋紧、环境污染严重、生态系统退化等</strong></p>
+<p><strong>一是要全面促进资源节约。要节约集约利用资源，推动资源利用方式根本转变，加强全过程节约管理，大幅降低能源、水、土地消耗强度，提高利用效率和效益。</strong></p>
+<p><strong>二是要树立尊重自然、顺应自然、保护自然的生态文明理念，这是推进生态文明建设的重要思想基础，体现了新的价值取向和生态伦理。</strong></p>
+<p><strong>三是要加大自然生态系统和环境保护力度，以解决损害群众健康最突出的环境问题为重点，强化污染防治力度，实施重大生态修复工程，增强生态产品生产能力。</strong></p>
+<p><strong>四是要着力推进绿色发展、循环发展、低碳发展。</strong></p>
+<p><strong>五是要应转变生活方式和消费方式，改变一些传统的不合理的生活方式，改变奢侈消费、劣质消费等习惯。</strong></p>
+<h2 id="68-党的十八大以来，我们党明确提出了总体国家安全观。结合当前形势和个人理解，请问你认为应该如何全面贯彻落实总体国家安全观？"><a href="#68-党的十八大以来，我们党明确提出了总体国家安全观。结合当前形势和个人理解，请问你认为应该如何全面贯彻落实总体国家安全观？" class="headerlink" title="68.党的十八大以来，我们党明确提出了总体国家安全观。结合当前形势和个人理解，请问你认为应该如何全面贯彻落实总体国家安全观？"></a>68.党的十八大以来，我们党明确提出了总体国家安全观。结合当前形势和个人理解，请问你认为应该如何全面贯彻落实总体国家安全观？</h2><p>1.全面贯彻落实总体国家安全观，必须坚持统筹发展和安全两件大事，既要善于运用发展成果夯实国家安全的实力基础，又要善于塑造有利于经济社会发展的安全环境;必须坚持人民安全、政治安全、国家利益至上的有机统一。习近平总书记指出，人民安全是国家安全的宗旨，政治安全是国家安全的根本，国家利益至上是国家安全的准则。</p>
+<p>2.全面贯彻落实总体国家安全观，就要坚持立足于防，又有效处置风险。凡事预则立，不预则废。“立足于防”是富有中国特色的国家安全智慧，要有效处置风险，就必须具有维护国家安全的能力和效率。</p>
+<p>3.全面贯彻落实总体国家安全观，还必须坚持维护和塑造国家安全。塑造是更高层次更具前瞻性的维护，要发挥负责任大国作用，同世界各国一起，推动构建人类命运共同体。</p>
+<p>4.全面贯彻落实总体国家安全观，更需要坚持科学统筹，始终把国家安全置于中国特色社会主义事业全局中来把握，充分调动各方面积极性，形成维护国家安全合力。</p>
+<h2 id="69-作为一名新时代大学生，你如何理解“不忘初心、牢记使命”主题教育的重大意义？你自己又将如何做好不忘求学初心、勇担家国责任？。"><a href="#69-作为一名新时代大学生，你如何理解“不忘初心、牢记使命”主题教育的重大意义？你自己又将如何做好不忘求学初心、勇担家国责任？。" class="headerlink" title="69.作为一名新时代大学生，你如何理解“不忘初心、牢记使命”主题教育的重大意义？你自己又将如何做好不忘求学初心、勇担家国责任？。"></a>69.作为一名新时代大学生，你如何理解“不忘初心、牢记使命”主题教育的重大意义？你自己又将如何做好不忘求学初心、勇担家国责任？。</h2><p><strong>意义</strong></p>
+<p><strong>1、</strong>用习近平新时代中国特色社会主义思想武装全党的迫切需要</p>
+<p><strong>2</strong>、推进新时代党的建设的迫切需要</p>
+<p><strong>3</strong>、是保持党同人民群众血肉联系的迫切需要</p>
+<p><strong>4</strong>、是实现党的十九大确定的目标任务的迫切需要</p>
+<p><strong>第二问：</strong></p>
+<p>1、我们应该坚持用习近平新时代中国特色社会主义思想武装头脑、指导行动。</p>
+<p>2、我们是新时代的建设者和生力军，要树立强烈的新时代主人翁意识和责任感，</p>
+<p>3、理应紧跟党走在最前列，在应对各种重大和矛盾中发挥积极作用，勇敢担负起捍卫、开拓新时代的重任。</p>
+<h2 id="70-谈谈你对社会主义核心价值观内容的理解，并结合实际谈谈作为当代大学生"><a href="#70-谈谈你对社会主义核心价值观内容的理解，并结合实际谈谈作为当代大学生" class="headerlink" title="70.谈谈你对社会主义核心价值观内容的理解，并结合实际谈谈作为当代大学生"></a>70.谈谈你对社会主义核心价值观内容的理解，并结合实际谈谈作为当代大学生</h2><p>一是坚持马克思主义的指导思想。我们要用马克思主义中国化的最新理论成果武装自己。</p>
+<p>二是我们要树立中国特色社会主义共同理想,坚定中国特色社会主义理想信念。</p>
+<p>三是我们要学习和弘扬以爱国主义为核心的民族精神和以改革创新为核心的时代精神。</p>
+<p>四是要以“八荣八耻”为主要内容的社会主义荣辱观作为我们道德实践的评判标准,引导我们明是非,知荣辱,辨善恶,分美丑。                                                                                                                        </p>
+<p> <strong>—-转载自<a href="https://studentliuchang.gitee.io/">Student-Chang</a></strong></p>
+]]></content>
+      <tags>
+        <tag>毛概复习</tag>
+      </tags>
+  </entry>
+</search>
