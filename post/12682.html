@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#426ab3","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+ <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/b6dbddb6.js","daovoice")
+ daovoice('init', {
+  app_id: "f44e7a06"
+});
+daovoice('update');
+ </script>
+
+
+  <meta name="description" content="VC++复习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VC++复习——C++语言面向对象编程基础">
+<meta property="og:url" content="http://yoursite.com/post/12682.html">
+<meta property="og:site_name" content="万物有灵">
+<meta property="og:description" content="VC++复习">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-29T10:13:41.000Z">
+<meta property="article:modified_time" content="2020-09-09T05:35:10.360Z">
+<meta property="article:author" content="浮名半生">
+<meta property="article:tag" content="复习">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/post/12682.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>VC++复习——C++语言面向对象编程基础 | 万物有灵</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">万物有灵</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://book.qidian.com/info/1015280970" class="github-corner" title="累了点这里休息一下！" aria-label="累了点这里休息一下！" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/12682.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://gitee.com/studynil/boke/raw/master/ing/20201011143719.jpg">
+      <meta itemprop="name" content="浮名半生">
+      <meta itemprop="description" content="敢于挑战的叫人生，<br>放弃抵抗的是命运！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="万物有灵">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          VC++复习——C++语言面向对象编程基础
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-29 18:13:41" itemprop="dateCreated datePublished" datetime="2020-08-29T18:13:41+08:00">2020-08-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-09 13:35:10" itemprop="dateModified" datetime="2020-09-09T13:35:10+08:00">2020-09-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/VC/" itemprop="url" rel="index"><span itemprop="name">VC++</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="VC-复习"><a href="#VC-复习" class="headerlink" title="VC++复习"></a>VC++复习</h1><a id="more"></a>
+
+<p>​    VC++是面向对象的可视化集成编程系统。</p>
+<hr>
+<h2 id="C-语言面向对象编程基础"><a href="#C-语言面向对象编程基础" class="headerlink" title="C++语言面向对象编程基础"></a>C++语言面向对象编程基础</h2><h3 id="1-一个简单的C-语言程序"><a href="#1-一个简单的C-语言程序" class="headerlink" title="1.一个简单的C++语言程序"></a>1.一个简单的C++语言程序</h3><p><strong>main是主函数名</strong>，函数体用一对大括号括住，函数是C++语言程序里最小的功能单位。</p>
+<p>C++语言程序里**必须有且只能有一个函数main( )**，它是程序执行的入口。</p>
+<p>C++语言所有语句最后都应当有一个分号。</p>
+<hr>
+<h3 id="2-C-语言程序基本要素"><a href="#2-C-语言程序基本要素" class="headerlink" title="2.C++语言程序基本要素"></a>2.C++语言程序基本要素</h3><p>C++语言的字符集：</p>
+<p>(1)英文字母：A ~ Z,a ~ z。</p>
+<p>(2)数字字符：0~9。</p>
+<p>(3)特殊字符：空格、！、#、%、^、&amp;、*、_、+、=、-、~、&lt;、&gt;、/、\、‘、”、；、.、，、()、[]、{}。</p>
+<p>关键字全部由小写字母组成。</p>
+<hr>
+<p>标识符是软件开发者自己声明的单词，用于命名一些实体，如函数名、变量名、类名、对象名等。构成规则：</p>
+<p>(1)以大写字母、小写字母或下画线开头。</p>
+<p>(2)可由大写字母、小写字母、下画线或数字组成。</p>
+<p>(3)字母区分大小写，大写字母和小写字母表示不同的标识符。</p>
+<p>(4)不能用C++语言的关键字。</p>
+<p>尽量<strong>不用下画线开头，</strong>避免与系统定义的关键字冲突。</p>
+<hr>
+<p>分隔符不进行实际操作，只是用于构造程序。</p>
+<p>数据类型指明<strong>变量或表达式的状态和行为，</strong>决定了<strong>数的取值范围和允许执行的运算符集。</strong>可分为<strong>基本类型</strong>和<strong>引用类型</strong>两大类。</p>
+<p>基本类型是指<strong>不能再分解</strong>的数据类型，其数据在函数的调用中是以<strong>传值方式</strong>工作的。</p>
+<p>unsigned (int)    无符号整型</p>
+<p>(signed) int    有符号整型</p>
+<hr>
+<p>换行符 \n    回车符 \r    水平制表符(Tab键) \t</p>
+<hr>
+<p>变量：先定义，后使用</p>
+<p>使用变量之前必须先声明它的类型和名称</p>
+<p>例如：int和float的声明变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int num;</span><br><span class="line">float a;</span><br></pre></td></tr></table></figure>
+
+<p>常量：const  &lt;数值类型&gt; &lt;常量名&gt;</p>
+<p><code>const float pi=3.1415926</code></p>
+<hr>
+<p><strong>基本运算符</strong>：+、-、*、/、%。(-作为负号时为一元运算符，作为减号时为二元运算符)</p>
+<p>前置后置：i++是后置；–i是前置。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int i&#x3D;5,j&#x3D;5,m,n;</span><br><span class="line">m&#x3D;i++;	&#x2F;&#x2F;后置++；相当于m&#x3D;1；i&#x3D;i+1；结果：i&#x3D;6；m&#x3D;5</span><br><span class="line">n&#x3D;++j;	&#x2F;&#x2F;前置++；相当于j&#x3D;j+1；n&#x3D;j；结果：j&#x3D;6，n&#x3D;6</span><br></pre></td></tr></table></figure>
+
+<p><strong>赋值运算符</strong>：=、+=、-=、*=、/=、%=、&lt;&lt;=、&gt;&gt;=、&amp;=、^=、|=。    结合性从右向左。例如：</p>
+<p><code>a=3+(c=4)</code>        这个表达式的值为7，a=7，c=4。</p>
+<p><strong>逗号运算符</strong>：(例如)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">c&#x3D;b&#x3D;(a&#x3D;3,4*3);		&#x2F;&#x2F;结果为：a&#x3D;3，b&#x3D;12，c&#x3D;12，表达式值为12</span><br><span class="line">c&#x3D;b&#x3D;a&#x3D;3,4*3;		&#x2F;&#x2F;结果为：a&#x3D;3，b&#x3D;3，c&#x3D;3，表达式值为12</span><br><span class="line">c&#x3D;(b&#x3D;a&#x3D;3,4*3);		&#x2F;&#x2F;结果为：a&#x3D;3，b&#x3D;3，c&#x3D;12，表达式值为12</span><br></pre></td></tr></table></figure>
+
+<p><strong>关系运算符</strong>：&lt;、&lt;=、&gt;、&gt;=、==、!=。前四个优先级相同，后两个优先级相同。前四个优先级比后两个优先级高。</p>
+<p><strong>逻辑运算符</strong>：!(非)、&amp;&amp;(与)、||(或)。优先级依此降低。(&amp;与|同时运算)</p>
+<p><strong>条件运算符</strong>：C++语言唯一的**<em>三元运算符**</em>。例如：</p>
+<p><code>(a&lt;b)?a:b</code>    a:b表示如果a&lt;b，那么结果为a；如果a&gt;b，那么结果为b。</p>
+<p><strong>sizeof运算符</strong>：计算某个对象在内存中占用的字节数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sizeof(int);				&#x2F;&#x2F;值为4</span><br><span class="line">double x; sizeof(x);		&#x2F;&#x2F;值为8</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>表达式中的类型转换分为：<strong>隐含转换</strong>和<strong>强制转换</strong>。</p>
+<p>隐含转换是安全的，因为没有精度损失。</p>
+<p>隐含转换原则：将低类型数据转换为高类型数据。</p>
+<p>从低到高的顺序：char、short、int、unsigned int、long、unsigned long、float、double。类型越高，范围越大，精度也越高。</p>
+<p>赋值运算要求赋值运算符左边的值和右边的值类型相同，不同的话，会进行自动转换，将一律将右边的值类型转换为左边的值类型。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int i; float f; double d;</span><br><span class="line">d&#x3D;i*f;		&#x2F;&#x2F;计算时现将i转换为f一样的浮点型的值，乘法结果再转换为双精度浮点型的值。</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-类与对象"><a href="#3-类与对象" class="headerlink" title="3.类与对象"></a>3.类与对象</h2><p>面向对象程序设计理论角度：类是对某一类对象的抽象，而对象是对类的具体实例。</p>
+<p>程序设计的角度：类是一种复杂的自定义数据类型，对象是属于这种类型的变量。</p>
+<hr>
+<p><strong>抽象</strong>：对象进行概括，抽出一类对象的共性并加以描述的过程。  有两方面：<strong>数据抽象</strong>和<strong>行为抽象</strong>。</p>
+<p><strong>数据抽象</strong>：属性和状态。        <strong>行为抽象</strong>：共同行为或共同功能。</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">时钟(clock)</span><br><span class="line">数据抽象:</span><br><span class="line">int Hour; int Minute; int Second;</span><br><span class="line">行为抽象:</span><br><span class="line">ShowTime(); SetTime();</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://gitee.com/studynil/boke/raw/master/ing/20200821005855.png" alt="浮名半生 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%A4%8D%E4%B9%A0/" rel="tag"># 复习</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/62944.html" rel="prev" title="快速下载网盘神器">
+      <i class="fa fa-chevron-left"></i> 快速下载网盘神器
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/4366.html" rel="next" title="MySQL划题复习">
+      MySQL划题复习 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#VC-%E5%A4%8D%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">VC++复习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-%E8%AF%AD%E8%A8%80%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80"><span class="nav-number">1.1.</span> <span class="nav-text">C++语言面向对象编程基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84C-%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.一个简单的C++语言程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-C-%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E5%9F%BA%E6%9C%AC%E8%A6%81%E7%B4%A0"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.C++语言程序基本要素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.2.</span> <span class="nav-text">3.类与对象</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="浮名半生"
+      src="https://gitee.com/studynil/boke/raw/master/ing/20201011143719.jpg">
+  <p class="site-author-name" itemprop="name">浮名半生</p>
+  <div class="site-description" itemprop="description">敢于挑战的叫人生，<br>放弃抵抗的是命运！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Solitudehero" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Solitudehero" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://gitee.com/studynil/boke/raw/master/ing/20200820223208.png" title="QQ → https:&#x2F;&#x2F;gitee.com&#x2F;studynil&#x2F;boke&#x2F;raw&#x2F;master&#x2F;ing&#x2F;20200820223208.png" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://gitee.com/studynil/boke/raw/master/ing/20200820223258.png" title="微信 → https:&#x2F;&#x2F;gitee.com&#x2F;studynil&#x2F;boke&#x2F;raw&#x2F;master&#x2F;ing&#x2F;20200820223258.png" rel="noopener" target="_blank"><i class="fab fa-weixin fa-fw"></i>微信</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.csdn.net/qq_939317133" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_939317133" rel="noopener" target="_blank">CSDN</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://gitee.com/" title="https:&#x2F;&#x2F;gitee.com&#x2F;" rel="noopener" target="_blank">码云</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://zsquw5.coding-pages.com/" title="http:&#x2F;&#x2F;zsquw5.coding-pages.com&#x2F;" rel="noopener" target="_blank">conding</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">浮名半生</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,8 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Java学习</title>
+    <url>/post/8df0ec14.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Java学习"><a href="#Java学习" class="headerlink" title="Java学习"></a>Java学习</h1><h2 id="数学工具类Math"><a href="#数学工具类Math" class="headerlink" title="数学工具类Math"></a>数学工具类Math</h2><p>public static double abs(double num)；绝对值</p>
+<p>public static double ceil(double num)；向上取整</p>
+<p>public static double floor(double num)；向下取整</p>
+<p>public static double round(double num)；四舍五入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">System.out.println(Math.abs(3.14));&#x2F;&#x2F;输出3.14</span><br><span class="line">System.out.println(Math.ceil(3.14));&#x2F;&#x2F;输出4.0</span><br><span class="line">System.out.println(Math.floor(3.14));&#x2F;&#x2F;输出3.0</span><br><span class="line">System.out.println(Math.round(3.14));&#x2F;&#x2F;输出3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="final关键字"><a href="#final关键字" class="headerlink" title="final关键字"></a>final关键字</h2><p>1.final修饰的类无法继承。</p>
+<p>2.final修饰的方法无法覆盖。</p>
+<p>3.final修饰的变量只能赋值一次。</p>
+<p>4.final修饰的引用一旦指向某个对象， 则不能再重新指向其他对象，但该引用指向的对象内部的数据是可以修改的。</p>
+<p>5.final修饰的实例变量必须手动初始化，不能采用系统默认值。</p>
+<p>6.final修饰的实例变量一般和static联合使用，成为常量。</p>
+<h2 id="抽象类和接口"><a href="#抽象类和接口" class="headerlink" title="抽象类和接口"></a>抽象类和接口</h2><p>1.抽象类定义：在class前添加abstract关键字就行。</p>
+<p>2.抽象类是无法实例化的，无法创建对象的，所以抽象类是用来被子类继承的。</p>
+<p>3.final和abstract不能联合使用，这两个关键字是对立的。</p>
+<p>4.抽象类的子类可以使抽象类，也可以是非抽象类。</p>
+<p>5.抽象类虽然无法实例化，但是抽象类有构造方法，这个构造方法是供子类使用的。</p>
+<p>6.抽象类中不一定有抽象方法，抽象方法必须出现在抽象类中。</p>
+<p>7.抽象方法怎么定义？</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public abstract void doSome();</span><br></pre></td></tr></table></figure>
+
+<p>8.一个非抽象类，继承抽象类，必须将抽象类中的抽象方法覆盖（实现）。</p>
+<ul>
+<li><p>面试题（判断题）：Java语言中凡是没有方法体的方法都是抽象方法。</p>
+<p>不对，错误的。</p>
+<p>Object类种就有很多都没有方法体，都是以“；“结尾的，但是他们都不是抽象方法，例如：</p>
+<p>public native int hashCode();</p>
+<p>这个方法底层调用了C++写的动态链接库程序。</p>
+<p>前面修饰符列表中没有：abstract。有一个native。表示调用JVM本地程序。</p>
+</li>
+<li><h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2></li>
+</ul>
+<p>1.接口是一种引用数据类型。编译之后也是一个class字节码文件。</p>
+<p>2.借口是完全抽象。</p>
+<p>3.接口怎么定义：[修饰符列表] interface 接口名{}</p>
+<p>4.接口支持多继承。</p>
+<p>5.接口中只包含常量+抽象方法。</p>
+<p>6.接口中的所有元素都是public修饰的。（都是公开的。）</p>
+<p>7.接口中的抽象方法定义时：public abstract修饰符可以省略。常量也是。</p>
+<p>8.接口中的方法都是抽象方法，所以接口中的方法不能有方法体。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;定义接口</span><br><span class="line">interface A&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;接口支持继承</span><br><span class="line">interface B extends A&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;支持多继承</span><br><span class="line">interface C extends A,B&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;我的数学方法</span><br><span class="line">interface MyMath&#123;</span><br><span class="line">	&#x2F;&#x2F;常量</span><br><span class="line">	public static final double PI &#x3D; 3.1415926;</span><br><span class="line">	&#x2F;&#x2F;也可以省略</span><br><span class="line">	double PI &#x3D; 3.1415926;&#x2F;&#x2F;PI是常量，不可变</span><br><span class="line">	</span><br><span class="line">	&#x2F;&#x2F;抽象方法</span><br><span class="line">	public abstract int sum(int a , int b);</span><br><span class="line">	&#x2F;&#x2F;也可以省略</span><br><span class="line">	&#x2F;&#x2F;int sum(int a , int b);</span><br><span class="line">	</span><br><span class="line">	&#x2F;&#x2F;接口中的方法可以有方法体嘛？</span><br><span class="line">	&#x2F;&#x2F;错误：接口抽象方法不能带有主体</span><br><span class="line">	&#x2F;*</span><br><span class="line">	void doSome()&#123;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">	*&#x2F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接口的基础语法：</p>
+<p>​    1.类和类之间叫做继承（关键字：extends），类和接口之间叫做实现（关键字：implements）。</p>
+<p>​    2.当一个<strong>非抽象</strong>的类实现接口的话，必须将接口中所有抽象方法全部实现（覆盖、重写）。</p>
+<p>java类名：interfaceTest</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class interfaceTest &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">    	&#x2F;&#x2F;多态</span><br><span class="line">        &#x2F;&#x2F;父类型的引用指向子类型的对象</span><br><span class="line">        MyMath mm &#x3D; new m();</span><br><span class="line">        &#x2F;&#x2F;面向接口编程</span><br><span class="line">        int sum &#x3D; mm.sum(10, 80);</span><br><span class="line">        int sub &#x3D; mm.sub(20, 5);</span><br><span class="line">        System.out.println(sum);</span><br><span class="line">        System.out.println(sub);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">interface MyMath&#123;</span><br><span class="line">    double PI &#x3D; 3.1415926;</span><br><span class="line">    int sum(int a , int b);&#x2F;&#x2F;默认public访问权限</span><br><span class="line">    int sub(int a , int b);</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;非抽象类实现接口</span><br><span class="line">class m implements MyMath&#123;</span><br><span class="line">    &#x2F;&#x2F;public不能省略，访问权限不能低于接口的访问权限</span><br><span class="line">    &#x2F;&#x2F;实现接口的方法</span><br><span class="line">    public int sum(int a , int b)&#123;</span><br><span class="line">        return a+b;</span><br><span class="line">    &#125;</span><br><span class="line">    public int sub(int a , int b)&#123;</span><br><span class="line">        return a-b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一个类可以同时实现多个接口：</p>
+<p>这个机制弥补了Java中类和类之间的单继承（为了简单而出现）带来的缺陷。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class interfaceTest &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        &#x2F;&#x2F;父类型的引用指向子类型的对象</span><br><span class="line">        A a &#x3D; new C();</span><br><span class="line">        int sum &#x3D; a.sum(10, 20);</span><br><span class="line">        &#x2F;&#x2F;a.sub(20,10);  编译报错，A接口中没有sub（）方法</span><br><span class="line">        &#x2F;*</span><br><span class="line">        *接口和接口之间在进行强制类型转换的时候，没有继承关系，也可以强制转换</span><br><span class="line">        但注意：运行时可能出现ClassCastException异常</span><br><span class="line">        *编译没问题，运行有问题</span><br><span class="line">        B b &#x3D; (B) a;</span><br><span class="line">        a.sub(20,10);</span><br><span class="line">        **&#x2F;</span><br><span class="line">        &#x2F;&#x2F;向下转型记得转型前先 if+instanceof 进行判断</span><br><span class="line">        if(a instanceof B) &#123;</span><br><span class="line">            B b &#x3D; (B) a;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(sum);</span><br><span class="line">        &#x2F;&#x2F;也可以直接向下转型</span><br><span class="line">        C c &#x3D; (C) a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">interface A&#123;</span><br><span class="line">    public int sum(int a , int b);</span><br><span class="line">&#125;</span><br><span class="line">interface B&#123;</span><br><span class="line">    public int sub(int a , int b);</span><br><span class="line">&#125;</span><br><span class="line">class C implements A&#123;</span><br><span class="line">    public int sum(int a, int b) &#123;</span><br><span class="line">        return a+b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>-Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL划题复习</title>
-    <url>/2020/09/07/MySQL%E5%88%92%E9%A2%98%E5%A4%8D%E4%B9%A0/</url>
+    <url>/post/4366.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="MySQL划题复习整理"><a href="#MySQL划题复习整理" class="headerlink" title="MySQL划题复习整理"></a>MySQL划题复习整理</h1><a id="more"></a>
 
 <h2 id="什么是外部模式？概念模式？内部模式？它们之间有何联系？这种分级构造的优点是什么？-P46"><a href="#什么是外部模式？概念模式？内部模式？它们之间有何联系？这种分级构造的优点是什么？-P46" class="headerlink" title="什么是外部模式？概念模式？内部模式？它们之间有何联系？这种分级构造的优点是什么？(P46)"></a>什么是外部模式？概念模式？内部模式？它们之间有何联系？这种分级构造的优点是什么？(P46)</h2><ul>
@@ -210,7 +268,7 @@
   </entry>
   <entry>
     <title>VC++复习——C++语言面向对象编程基础</title>
-    <url>/2020/08/29/VC-%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94C-%E8%AF%AD%E8%A8%80%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</url>
+    <url>/post/12682.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="VC-复习"><a href="#VC-复习" class="headerlink" title="VC++复习"></a>VC++复习</h1><a id="more"></a>
 
 <p>​    VC++是面向对象的可视化集成编程系统。</p>
@@ -287,56 +345,8 @@
       </tags>
   </entry>
   <entry>
-    <title>修改电脑的DNS</title>
-    <url>/2020/08/22/%E4%BF%AE%E6%94%B9%E7%94%B5%E8%84%91%E7%9A%84DNS/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="关于电脑DNS的修改"><a href="#关于电脑DNS的修改" class="headerlink" title="关于电脑DNS的修改"></a>关于电脑DNS的修改</h1><a id="more"></a>
-
-<p>  之前在搭建博客的时候，发现了电脑没有办法打开GitHub之类的网站，以及没有办法打开Next的使用文档</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822090320.png"></p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822090628.png"></p>
-<p>  所以我只能转战gitee，但是我发现每次部署完之后，打开发现没有css和js</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822090912.png"></p>
-<p>于是，我去问了一些人，终于找到了一个这样的方法——修改电脑的DNS</p>
-<hr>
-<h2 id="正文开始"><a href="#正文开始" class="headerlink" title="正文开始"></a>正文开始</h2><h3 id="1-打开控制面板"><a href="#1-打开控制面板" class="headerlink" title="1.打开控制面板"></a>1.打开控制面板</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091212.png"></p>
-<h3 id="2-打开网络和共享中心"><a href="#2-打开网络和共享中心" class="headerlink" title="2.打开网络和共享中心"></a>2.打开网络和共享中心</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091358.png" alt="image-20200822091357982"></p>
-<h3 id="3-打开更改适配器设置"><a href="#3-打开更改适配器设置" class="headerlink" title="3.打开更改适配器设置"></a>3.打开更改适配器设置</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091430.png"></p>
-<h3 id="4-打开WLAN属性"><a href="#4-打开WLAN属性" class="headerlink" title="4.打开WLAN属性"></a>4.打开WLAN属性</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091528.png"></p>
-<h3 id="5-双击IPv4-取消勾选IPv6"><a href="#5-双击IPv4-取消勾选IPv6" class="headerlink" title="5.双击IPv4 取消勾选IPv6"></a>5.双击IPv4 取消勾选IPv6</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091703.png"></p>
-<h3 id="6-使用下面的DNS服务器地址"><a href="#6-使用下面的DNS服务器地址" class="headerlink" title="6.使用下面的DNS服务器地址"></a>6.使用下面的DNS服务器地址</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091823.png" alt="image-20200822091823427"></p>
-<p>首选DNS服务器： <code>114.114.114.114</code></p>
-<p>备用DNS服务器：<code>8.8.8.8</code></p>
-<p>这个地址是我从网上看到的</p>
-<hr>
-<p>  然后，我们就可以发现NexT文档和GitHub的网址都能使用了。</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822092041.png"></p>
-]]></content>
-      <categories>
-        <category>DNS</category>
-      </categories>
-      <tags>
-        <tag>修改DNS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>快速下载网盘神器</title>
-    <url>/2020/08/23/%E5%BF%AB%E9%80%9F%E4%B8%8B%E8%BD%BD%E7%BD%91%E7%9B%98%E7%A5%9E%E5%99%A8/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="亿寻"><a href="#亿寻" class="headerlink" title="亿寻"></a>亿寻</h1><a id="more"></a>
-
-<p>平时需要在网盘下载东西时，发现下载的东西很慢有木有，有时候一个连接不稳定还得重新下载，属实让人难受。</p>
-<p>所以，这里推一款软件——亿寻。附上网盘地址：</p>
-<p>链接：<a href="https://pan.baidu.com/s/19wDLbDDiEnnOPgkI821c1g">https://pan.baidu.com/s/19wDLbDDiEnnOPgkI821c1g</a><br>提取码：3q6h</p>
-<p>下载后，解压发现电脑提示有病毒的话，关掉安全管家就行了，如果安全管家太强大，比如我的安全管家就会把亿寻的exe程序删除，以至于我只有文件，没有启动程序，那么，就保留压缩的文件，到需要的时候，就仅仅解压exe文件即可</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200823212322.png"></p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200823212749.png" alt="image-20200823212748976"></p>
-]]></content>
-      <tags>
-        <tag>--网盘神器 --网盘文件助手</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>gitee仓库</title>
-    <url>/2020/08/21/gitee%E4%BB%93%E5%BA%93/</url>
+    <url>/post/4e62faf5.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="关于gitee仓库的建立"><a href="#关于gitee仓库的建立" class="headerlink" title="关于gitee仓库的建立"></a>关于gitee仓库的建立</h2><a id="more"></a>
 
 <p>注册好gitee账号登录后</p>
@@ -352,9 +362,46 @@
       </tags>
   </entry>
   <entry>
+    <title>Git安装</title>
+    <url>/post/2dbf7e22.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Git简易安装流程"><a href="#Git简易安装流程" class="headerlink" title="Git简易安装流程"></a>Git简易安装流程</h2><a id="more"></a>
+
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821131900.png"></p>
+<p>下载完成之后，傻瓜式安装，因为我已经安装好了，所以这部分没有配安装过程图片。大致分为如下步骤：</p>
+<p>1.Next 安装</p>
+<p>2.选择安装目录，并点击Next(如果觉得影响电脑运行速度，可以不安装在C盘)</p>
+<p>3.选择组件 </p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821132738.png"></p>
+<p>(Addtional icons是桌面图标，视个人喜好情况选择)</p>
+<p>4.开始菜单的目录名设置 (如果对这些没什么要求的话，直接点Next就行)</p>
+<p>5.选择命令行的环境</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821133025.png"></p>
+<p>(一般选这个，这个是Git自带命令行工具，第二个是Windows命令行工具，第三个是两者都有)</p>
+<p>6.以下几步直接默认即可</p>
+<p>7.检查是否安装成功 鼠标右击，出现Git GUI Here和Git Bash Here则安装成功</p>
+<h2 id="Git的初始化"><a href="#Git的初始化" class="headerlink" title="Git的初始化"></a>Git的初始化</h2><p>首先通过下面命令查看git版本</p>
+<p> #git –version</p>
+<p>​    在开始使用Git之前，我们首先要用git config命令设置一下git的配置变量，主要有以下几步：</p>
+<p>   （1）配置姓名，这个将在提交的时候用到</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#git config --global user.name “pang”</span><br><span class="line">#git config --global user.email pang@126.com</span><br></pre></td></tr></table></figure>
+
+<p>然后检查以下是否配置成功</p>
+<p>​    （2）设置一些别名，以便使用更为简洁的子命令</p>
+<p> #git config –global alias.ci commit</p>
+<p>​    （3）开启颜色显示</p>
+<p> #git config –global color.ui true</p>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git安装</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>搭建hexo博客——GitHub篇</title>
-    <url>/2020/08/22/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94GitHub%E7%AF%87/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Hexo-GIT-Node-js搭建博客"><a href="#Hexo-GIT-Node-js搭建博客" class="headerlink" title="Hexo+ GIT+Node.js搭建博客"></a><a href="https://solitudehero.github.io/2020/08/20/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94Gitee%E7%AF%87/#more">Hexo+ GIT+Node.js搭建博客</a></h1><a id="more"></a>
+    <url>/post/fb98ceba.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Hexo-GIT-Node-js搭建博客"><a href="#Hexo-GIT-Node-js搭建博客" class="headerlink" title="Hexo+ GIT+Node.js搭建博客"></a><a href="http://zsquw5.coding-pages.com/2020/08/20/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94Gitee%E7%AF%87/">Hexo+ GIT+Node.js搭建博客</a></h1><a id="more"></a>
 
 <p>软件准备工作和之前的  搭建hexo博客——Gitee篇  一样，点击标题即可转接。</p>
 <h2 id="正文开始-以下命令都是在git中执行"><a href="#正文开始-以下命令都是在git中执行" class="headerlink" title="正文开始(以下命令都是在git中执行)"></a>正文开始(以下命令都是在git中执行)</h2><p>在本地建立一个文件夹，这个文件夹就是搭建hexo博客的开始。我的文件夹名字叫(博客)，便于理解。</p>
@@ -396,8 +443,40 @@
       </tags>
   </entry>
   <entry>
+    <title>修改电脑的DNS</title>
+    <url>/post/c2fc7544.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="关于电脑DNS的修改"><a href="#关于电脑DNS的修改" class="headerlink" title="关于电脑DNS的修改"></a>关于电脑DNS的修改</h1><a id="more"></a>
+
+<p>  之前在搭建博客的时候，发现了电脑没有办法打开GitHub之类的网站，以及没有办法打开Next的使用文档</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822090320.png"></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822090628.png"></p>
+<p>  所以我只能转战gitee，但是我发现每次部署完之后，打开发现没有css和js</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822090912.png"></p>
+<p>于是，我去问了一些人，终于找到了一个这样的方法——修改电脑的DNS</p>
+<hr>
+<h2 id="正文开始"><a href="#正文开始" class="headerlink" title="正文开始"></a>正文开始</h2><h3 id="1-打开控制面板"><a href="#1-打开控制面板" class="headerlink" title="1.打开控制面板"></a>1.打开控制面板</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091212.png"></p>
+<h3 id="2-打开网络和共享中心"><a href="#2-打开网络和共享中心" class="headerlink" title="2.打开网络和共享中心"></a>2.打开网络和共享中心</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091358.png" alt="image-20200822091357982"></p>
+<h3 id="3-打开更改适配器设置"><a href="#3-打开更改适配器设置" class="headerlink" title="3.打开更改适配器设置"></a>3.打开更改适配器设置</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091430.png"></p>
+<h3 id="4-打开WLAN属性"><a href="#4-打开WLAN属性" class="headerlink" title="4.打开WLAN属性"></a>4.打开WLAN属性</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091528.png"></p>
+<h3 id="5-双击IPv4-取消勾选IPv6"><a href="#5-双击IPv4-取消勾选IPv6" class="headerlink" title="5.双击IPv4 取消勾选IPv6"></a>5.双击IPv4 取消勾选IPv6</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091703.png"></p>
+<h3 id="6-使用下面的DNS服务器地址"><a href="#6-使用下面的DNS服务器地址" class="headerlink" title="6.使用下面的DNS服务器地址"></a>6.使用下面的DNS服务器地址</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091823.png" alt="image-20200822091823427"></p>
+<p>首选DNS服务器： <code>114.114.114.114</code></p>
+<p>备用DNS服务器：<code>8.8.8.8</code></p>
+<p>这个地址是我从网上看到的</p>
+<hr>
+<p>  然后，我们就可以发现NexT文档和GitHub的网址都能使用了。</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822092041.png"></p>
+]]></content>
+      <categories>
+        <category>DNS</category>
+      </categories>
+      <tags>
+        <tag>修改DNS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>搭建hexo博客——Gitee篇</title>
-    <url>/2020/08/20/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94Gitee%E7%AF%87/</url>
+    <url>/post/c04ba748.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Hexo-Git-Node-js搭建博客"><a href="#Hexo-Git-Node-js搭建博客" class="headerlink" title="Hexo+Git+Node.js搭建博客"></a>Hexo+Git+Node.js搭建博客</h1><a id="more"></a>
 
 <p>  经过了三天过程中的十几次搭建，最终对一些优化放弃了继续的挣扎，next的版本高，一些东西不会操作，导致重新开始，也算是小有心得，写下来当做第一篇博客！</p>
@@ -460,45 +539,269 @@
       </tags>
   </entry>
   <entry>
-    <title>Git安装</title>
-    <url>/2020/08/21/git%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Git简易安装流程"><a href="#Git简易安装流程" class="headerlink" title="Git简易安装流程"></a>Git简易安装流程</h2><a id="more"></a>
+    <title>快速下载网盘神器</title>
+    <url>/post/62944.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="亿寻"><a href="#亿寻" class="headerlink" title="亿寻"></a>亿寻</h1><a id="more"></a>
 
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821131900.png"></p>
-<p>下载完成之后，傻瓜式安装，因为我已经安装好了，所以这部分没有配安装过程图片。大致分为如下步骤：</p>
-<p>1.Next 安装</p>
-<p>2.选择安装目录，并点击Next(如果觉得影响电脑运行速度，可以不安装在C盘)</p>
-<p>3.选择组件 </p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821132738.png"></p>
-<p>(Addtional icons是桌面图标，视个人喜好情况选择)</p>
-<p>4.开始菜单的目录名设置 (如果对这些没什么要求的话，直接点Next就行)</p>
-<p>5.选择命令行的环境</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821133025.png"></p>
-<p>(一般选这个，这个是Git自带命令行工具，第二个是Windows命令行工具，第三个是两者都有)</p>
-<p>6.以下几步直接默认即可</p>
-<p>7.检查是否安装成功 鼠标右击，出现Git GUI Here和Git Bash Here则安装成功</p>
-<h2 id="Git的初始化"><a href="#Git的初始化" class="headerlink" title="Git的初始化"></a>Git的初始化</h2><p>首先通过下面命令查看git版本</p>
-<p> #git –version</p>
-<p>​    在开始使用Git之前，我们首先要用git config命令设置一下git的配置变量，主要有以下几步：</p>
-<p>   （1）配置姓名，这个将在提交的时候用到</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#git config --global user.name “pang”</span><br><span class="line">#git config --global user.email pang@126.com</span><br></pre></td></tr></table></figure>
-
-<p>然后检查以下是否配置成功</p>
-<p>​    （2）设置一些别名，以便使用更为简洁的子命令</p>
-<p> #git config –global alias.ci commit</p>
-<p>​    （3）开启颜色显示</p>
-<p> #git config –global color.ui true</p>
+<p>平时需要在网盘下载东西时，发现下载的东西很慢有木有，有时候一个连接不稳定还得重新下载，属实让人难受。</p>
+<p>所以，这里推一款软件——亿寻。附上网盘地址：</p>
+<p>链接：<a href="https://pan.baidu.com/s/19wDLbDDiEnnOPgkI821c1g">https://pan.baidu.com/s/19wDLbDDiEnnOPgkI821c1g</a><br>提取码：3q6h</p>
+<p>下载后，解压发现电脑提示有病毒的话，关掉安全管家就行了，如果安全管家太强大，比如我的安全管家就会把亿寻的exe程序删除，以至于我只有文件，没有启动程序，那么，就保留压缩的文件，到需要的时候，就仅仅解压exe文件即可</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200823212322.png"></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200823212749.png" alt="image-20200823212748976"></p>
+]]></content>
+      <tags>
+        <tag>--网盘神器 --网盘文件助手</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>英语六级笔记整理</title>
+    <url>/post/undefined.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="英语六级笔记整理"><a href="#英语六级笔记整理" class="headerlink" title="英语六级笔记整理"></a>英语六级笔记整理</h3><p>bilibili看后总结   <a href="https://www.bilibili.com/video/BV1Ca4y177Zm/?spm_id_from=333.788.videocard.0">这里是原视频地址</a>（四级的也可以看这个视频）</p>
+<h2 id="时间规划以及顺序方面"><a href="#时间规划以及顺序方面" class="headerlink" title="时间规划以及顺序方面"></a>时间规划以及顺序方面</h2><p>1.写作 （30分钟，建议&lt;25分钟）</p>
+<p>2.听力   （30分钟）</p>
+<p>3.仔细阅读</p>
+<p>4.长篇阅读</p>
+<p>5.翻译  （30分钟，建议&lt;25分钟）</p>
+<p>6.选词填空</p>
+<h2 id="内容方面"><a href="#内容方面" class="headerlink" title="内容方面"></a>内容方面</h2><h3 id="1-写作"><a href="#1-写作" class="headerlink" title="1.写作"></a>1.写作</h3><p>分类：论说文，谚语警句，图画图表，书信。</p>
+<p>1.常见土单词排行榜：</p>
+<ol>
+<li>think:</li>
+</ol>
+<p>a.have been convinced that</p>
+<p>b.be of the opinion that</p>
+<p>c.cling to the perspective that</p>
+<ol start="2">
+<li>many:</li>
+</ol>
+<p>a.a sea of</p>
+<p>b.multitudes of</p>
+<p>c.immense</p>
+<p>d.amounts of</p>
+<ol start="3">
+<li>people we us  要求单词准确</li>
+</ol>
+<p>a.private individuals</p>
+<p>b.younters and teenagers</p>
+<p>c.all children and adults</p>
+<p>d.experts and professors</p>
+<p>e.parents kids offspring</p>
+<p>f.youngters on campus</p>
+<ol start="4">
+<li>very</li>
+</ol>
+<p>a.exceedingly</p>
+<p>b.distinctly</p>
+<p>c.more than</p>
+<ol start="5">
+<li>important</li>
+</ol>
+<p>a.significant</p>
+<p>b.crucial</p>
+<p>c.play a crucial role in sth.</p>
+<h2 id="2-写作中可用的万能句型"><a href="#2-写作中可用的万能句型" class="headerlink" title="2.写作中可用的万能句型"></a>2.写作中可用的万能句型</h2><p>1） 主语从句：（记住三个左右就差不多了）</p>
+<p>a.It proves self-evident that </p>
+<p>b.It have been found that</p>
+<p>c.It becomes my point that</p>
+<p>d.It seems universally acknowledged that</p>
+<ol start="2">
+<li>定语从句 (which 引导的非限制性定语从句可以修饰前面的整句话(此时which翻译成：“这”))</li>
+</ol>
+<p>他是一个色狼，是显而易见的(a、b、c随便选一个)</p>
+<p>He is a lady killer,</p>
+<p>a.which is really beyond dispute</p>
+<p>b.which has been widely accepted</p>
+<p>c.which has provoked the public’s widespread concern</p>
+<p>3)万能状语</p>
+<p>1.as every one can see it</p>
+<p>2.with the rapid advance of science and technology</p>
+<p>3.in our contemporary society</p>
+<p>4.in the general routine of everyday living</p>
+<p>4)万能插入语（选一个）（推荐：某一段的段首句主谓之间）</p>
+<ul>
+<li><p>to be frank；needless to say</p>
+</li>
+<li><p>in my judgment</p>
+</li>
+<li><p>from my perspective</p>
+</li>
+<li><p>to tell the trut</p>
+</li>
+<li><p>as a matter of fact</p>
+</li>
+</ul>
+<p>5)强调句型</p>
+<ul>
+<li>It is … that…</li>
+</ul>
+<h2 id="3-文章"><a href="#3-文章" class="headerlink" title="3.文章"></a>3.文章</h2><p>一、引出主题+个人观点</p>
+<p>二、原因分析或举例</p>
+<p>三、总结</p>
+<h2 id="4-翻译"><a href="#4-翻译" class="headerlink" title="4.翻译"></a>4.翻译</h2><p>要求：基本表达原文意思，文字通顺连贯，无重大语言错误</p>
+<p>不会的单词：</p>
+<p>1.上位词</p>
+<p>2.同义词</p>
+<p>3.用会用的单词解释</p>
+<p>4.大词瞎写，小词装没看见</p>
+<h3 id="英汉差异对比"><a href="#英汉差异对比" class="headerlink" title="英汉差异对比"></a>英汉差异对比</h3><h4 id="1-汉语意合，英语形合"><a href="#1-汉语意合，英语形合" class="headerlink" title="1.汉语意合，英语形合"></a>1.汉语意合，英语形合</h4><p>and：at the same time</p>
+<p>but：on the contrary</p>
+<p>so：as a result</p>
+<p>then：in addition（moreovre）</p>
+<h4 id="2-英语被动，汉语主动"><a href="#2-英语被动，汉语主动" class="headerlink" title="2.英语被动，汉语主动"></a>2.英语被动，汉语主动</h4><h4 id="3-英语长句，汉语短句"><a href="#3-英语长句，汉语短句" class="headerlink" title="3.英语长句，汉语短句"></a>3.英语长句，汉语短句</h4><p>1.非谓语动词</p>
+<p>2.从句</p>
+<p>3.逻辑关系词</p>
+<h3 id="翻译步骤"><a href="#翻译步骤" class="headerlink" title="翻译步骤"></a>翻译步骤</h3><p>1.以意群为单位读句子，确定句子时态</p>
+<p>2.确定句子主干，非主干部分用定语和状语翻译</p>
+<p>3.上下句逻辑关系，加逻辑关系词</p>
+<h2 id="仔细阅读"><a href="#仔细阅读" class="headerlink" title="仔细阅读"></a>仔细阅读</h2><p>1.时间：8-10分钟一篇</p>
+<p>2.原则：</p>
+<p>​    1)读首段和各段首句，把握文章中心（两分钟读完）</p>
+<p>​    2)顺序原则</p>
+<p>3.题型分析</p>
+<p>​    主旨题</p>
 ]]></content>
       <categories>
-        <category>Git</category>
+        <category>英语六级</category>
       </categories>
       <tags>
-        <tag>Git安装</tag>
+        <tag>英语</tag>
+        <tag>六级</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JDBC</title>
+    <url>/post/8fe47ff4.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="JDBC学习"><a href="#JDBC学习" class="headerlink" title="JDBC学习"></a>JDBC学习</h3><h2 id="JDBC快速入门"><a href="#JDBC快速入门" class="headerlink" title="JDBC快速入门"></a>JDBC快速入门</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package cn.itcase.jdbc;</span><br><span class="line"></span><br><span class="line">import java.sql.Connection;</span><br><span class="line">import java.sql.DriverManager;</span><br><span class="line">import java.sql.Statement;</span><br><span class="line"></span><br><span class="line">public class jdbc &#123;</span><br><span class="line">    public static void main(String[] args) throws Exception&#123;</span><br><span class="line">        &#x2F;&#x2F;1.导入驱动jar包</span><br><span class="line">        &#x2F;&#x2F;2.注册驱动</span><br><span class="line">        Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;);</span><br><span class="line">        &#x2F;&#x2F;3.获取数据库连接对象</span><br><span class="line">        &#x2F;&#x2F;localhost:3306&#x2F;db3.root,root);</span><br><span class="line">        Connection connection &#x3D; DriverManager.getConnection(&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;stu?useUnicode&#x3D;true&amp;characterEncoding&#x3D;UTF-8&amp;serverTimezone&#x3D;Asia&#x2F;Shanghai&quot;, &quot;root&quot;, &quot;8023&quot;);</span><br><span class="line">        &#x2F;&#x2F;4.定义sql语言</span><br><span class="line">        String sql &#x3D;&quot;update class set score &#x3D; 100 where id&#x3D; 23&quot;;</span><br><span class="line">        &#x2F;&#x2F;5.获取执行sql的对象 Statement</span><br><span class="line">        Statement statement&#x3D;connection.createStatement();</span><br><span class="line">        &#x2F;&#x2F;6.执行sql</span><br><span class="line">        int i &#x3D; statement.executeUpdate(sql);</span><br><span class="line">        &#x2F;&#x2F;7.处理结果</span><br><span class="line">        System.out.println(i);</span><br><span class="line">        &#x2F;&#x2F;8.释放资源</span><br><span class="line">        statement.close();</span><br><span class="line">        connection.close();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="详解各个对象"><a href="#详解各个对象" class="headerlink" title="详解各个对象"></a>详解各个对象</h2><p>1.DriverManager：驱动管理对象</p>
+<ul>
+<li>功能</li>
+</ul>
+<p>1.注册驱动：告诉程序该使用哪一个数据驱动jar</p>
+<p> static void registerDriver(Driver driver):注册给定的驱动程序 DriverManager。</p>
+<p>写代码使用：<code>Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;);</code></p>
+<p><strong>注意：mysql5之后的驱动jar包可以省略注册驱动的步骤</strong></p>
+<p>2.获取数据库连接：</p>
+<ul>
+<li><p>方法：<code>Connection connection = DriverManager.getConnection(String url,String user,String password)</code></p>
+<p>url：语法：jdbc:mysql://ip地址(域名):端口号/数据库名称</p>
+<p>​         细节：如果是连接本地mysql服务器，并且服务器默认端口是3306，则URL可以写成：jdbc:mysql:///数据库名称</p>
+</li>
+</ul>
+<p>2.Connection：数据库连接对象</p>
+<ul>
+<li><p>功能</p>
+<p>1.获取执行sql对象</p>
+<p>​    Statement createStatement()</p>
+<p>​    PreparedStatement preparedStatement(String sql)</p>
+<p>2.管理事务：</p>
+<p>​    *开启事务：setAutoCommit(boolean autoCommit)：调用该方法设置参数为false，即为开启事务</p>
+<p>​    *提交事务：commit()</p>
+<p>​    *回滚事务：rollback()</p>
+</li>
+</ul>
+<p>3.Statement：执行sql的对象</p>
+<p>​    1.执行sql</p>
+<p>​        1.boolean execute(String sql)：可以执行任意的sql  了解</p>
+<p>​        2.int executeUpdate(String sql)：执行DML（insert、update、delete）语句、DDL（create、alter、drop）语句</p>
+<p><strong>返回值：影响行数，可以通过这个影响的行数判断DML语句是否执行成功，返回值&gt;0的则执行成功，反之，失败</strong></p>
+<p>​        3.ResultSet executeQuery(String sql)：执行DQL(select)语句</p>
+<p>​    2.练习：</p>
+<p>​        1.stu表 添加一条记录</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package cn.itcase.jdbc;</span><br><span class="line"></span><br><span class="line">import java.sql.Connection;</span><br><span class="line">import java.sql.DriverManager;</span><br><span class="line">import java.sql.SQLException;</span><br><span class="line">import java.sql.Statement;</span><br><span class="line"></span><br><span class="line">public class jbdc练习 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Connection connection &#x3D; null;</span><br><span class="line">        Statement stmt &#x3D; null;</span><br><span class="line">        try &#123;</span><br><span class="line">            &#x2F;&#x2F;1.注册驱动</span><br><span class="line">            Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;);</span><br><span class="line">            &#x2F;&#x2F;2.定义sql</span><br><span class="line">            String sql &#x3D;&quot;insert into student values(11,&#39;小四&#39;,&#39;男&#39;,&#39;16&#39;,&#39;河南郑州&#39;)&quot;;</span><br><span class="line">            &#x2F;&#x2F;3.获取Connection对象</span><br><span class="line">            try &#123;</span><br><span class="line">                 connection &#x3D; DriverManager.getConnection(&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;stu?useUnicode&#x3D;true&amp;characterEncoding&#x3D;UTF-8&amp;serverTimezone&#x3D;Asia&#x2F;Shanghai&quot;,&quot;root&quot;,&quot;8023&quot;);</span><br><span class="line">            &#x2F;&#x2F;4.获取执行sql的对象 Statement</span><br><span class="line">                 stmt &#x3D; connection.createStatement();</span><br><span class="line">            &#x2F;&#x2F;5.执行sql</span><br><span class="line">                int i &#x3D; stmt.executeUpdate(sql);&#x2F;&#x2F;影响行数</span><br><span class="line">            &#x2F;&#x2F;6.处理结果</span><br><span class="line">                System.out.println(i);</span><br><span class="line">                if(i&gt;0)&#123;</span><br><span class="line">                    System.out.println(&quot;添加成功！&quot;);</span><br><span class="line">                &#125;else &#123;</span><br><span class="line">                    System.out.println(&quot;添加失败！&quot;);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125; catch (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;catch (ClassNotFoundException e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;finally &#123;</span><br><span class="line">            &#x2F;&#x2F;stmt.close();</span><br><span class="line">            &#x2F;&#x2F;7.释放资源</span><br><span class="line">            &#x2F;&#x2F;避免空指针异常</span><br><span class="line">            if(stmt!&#x3D;null)&#123;</span><br><span class="line">                try &#123;</span><br><span class="line">                    stmt.close();</span><br><span class="line">                &#125; catch (SQLException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            &#x2F;&#x2F;避免空指针异常</span><br><span class="line">            if(connection!&#x3D;null)&#123;</span><br><span class="line">                try &#123;</span><br><span class="line">                    connection.close();</span><br><span class="line">                &#125; catch (SQLException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p>​        2.stu表 修改记录</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package cn.itcase.jdbc;</span><br><span class="line"></span><br><span class="line">import java.sql.*;</span><br><span class="line"></span><br><span class="line">public class jdbc练习2 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Connection connection&#x3D;null;</span><br><span class="line">        Statement stmt&#x3D;null;</span><br><span class="line">        try &#123;</span><br><span class="line">            &#x2F;&#x2F;1.注册驱动</span><br><span class="line">            Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;);</span><br><span class="line">            &#x2F;&#x2F;2.获取连接对象</span><br><span class="line">            connection&#x3D; DriverManager.getConnection(&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;stu?useUnicode&#x3D;true&amp;characterEncoding&#x3D;UTF-8&amp;serverTimezone&#x3D;Asia&#x2F;Shanghai&quot;,&quot;root&quot;,&quot;8023&quot;);</span><br><span class="line">            &#x2F;&#x2F;3.定义sql</span><br><span class="line">            String sql &#x3D; &quot;update stu set score&#x3D;550 where id&#x3D;12&quot;;</span><br><span class="line">            &#x2F;&#x2F;4.获取执行sql对象</span><br><span class="line">            stmt&#x3D;connection.createStatement();</span><br><span class="line">            &#x2F;&#x2F;5.执行sql</span><br><span class="line">            int i &#x3D; stmt.executeUpdate(sql);</span><br><span class="line">            &#x2F;&#x2F;6.处理结果</span><br><span class="line">            System.out.println(i);</span><br><span class="line">            if (i &gt; 0)&#123;</span><br><span class="line">                System.out.println(&quot;修改成功！&quot;);</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                System.out.println(&quot;修改失败！&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (ClassNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; catch (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        finally &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                if (stmt!&#x3D;null)&#123;</span><br><span class="line">                    stmt.close();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; catch (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            try &#123;</span><br><span class="line">                if (connection!&#x3D;null)&#123;</span><br><span class="line">                    connection.close();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; catch (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>​        3.stu表 删除记录</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package cn.itcase.jdbc;</span><br><span class="line"></span><br><span class="line">import java.sql.Connection;</span><br><span class="line">import java.sql.DriverManager;</span><br><span class="line">import java.sql.SQLException;</span><br><span class="line">import java.sql.Statement;</span><br><span class="line"></span><br><span class="line">public class jdbc练习3 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Connection connection&#x3D;null;</span><br><span class="line">        Statement stmt&#x3D;null;</span><br><span class="line">        try &#123;</span><br><span class="line">            &#x2F;&#x2F;1.注册驱动</span><br><span class="line">            Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;);</span><br><span class="line">            &#x2F;&#x2F;2.获取连接对象</span><br><span class="line">            connection&#x3D; DriverManager.getConnection(&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;stu?useUnicode&#x3D;true&amp;characterEncoding&#x3D;UTF-8&amp;serverTimezone&#x3D;Asia&#x2F;Shanghai&quot;,&quot;root&quot;,&quot;8023&quot;);</span><br><span class="line">            &#x2F;&#x2F;3.定义sql</span><br><span class="line">            String sql &#x3D; &quot;delete from student where id&#x3D;11&quot;;</span><br><span class="line">            &#x2F;&#x2F;4.获取执行sql对象</span><br><span class="line">            stmt&#x3D;connection.createStatement();</span><br><span class="line">            &#x2F;&#x2F;5.执行sql</span><br><span class="line">            int i &#x3D; stmt.executeUpdate(sql);</span><br><span class="line">            &#x2F;&#x2F;6.处理结果</span><br><span class="line">            System.out.println(i);</span><br><span class="line">            if (i &gt; 0)&#123;</span><br><span class="line">                System.out.println(&quot;删除成功！&quot;);</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                System.out.println(&quot;删除失败！&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (ClassNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; catch (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        finally &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                if (stmt!&#x3D;null)&#123;</span><br><span class="line">                    stmt.close();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; catch (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            try &#123;</span><br><span class="line">                if (connection!&#x3D;null)&#123;</span><br><span class="line">                    connection.close();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; catch (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>​        4.添加一个表</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package cn.itcase.jdbc;</span><br><span class="line"></span><br><span class="line">import java.sql.Connection;</span><br><span class="line">import java.sql.DriverManager;</span><br><span class="line">import java.sql.SQLException;</span><br><span class="line">import java.sql.Statement;</span><br><span class="line"></span><br><span class="line">public class jdbc练习4 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Connection connection&#x3D;null;</span><br><span class="line">        Statement stmt&#x3D;null;</span><br><span class="line">        try &#123;</span><br><span class="line">            &#x2F;&#x2F;1.注册驱动</span><br><span class="line">            Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;);</span><br><span class="line">            &#x2F;&#x2F;2.获取连接对象</span><br><span class="line">            connection&#x3D; DriverManager.getConnection(&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;stu?useUnicode&#x3D;true&amp;characterEncoding&#x3D;UTF-8&amp;serverTimezone&#x3D;Asia&#x2F;Shanghai&quot;,&quot;root&quot;,&quot;8023&quot;);</span><br><span class="line">            &#x2F;&#x2F;3.定义sql</span><br><span class="line">            String sql &#x3D; &quot;create table mine (id int , name varchar(20))&quot;;</span><br><span class="line">            &#x2F;&#x2F;4.获取执行sql对象</span><br><span class="line">            stmt&#x3D;connection.createStatement();</span><br><span class="line">            &#x2F;&#x2F;5.执行sql</span><br><span class="line">            int i &#x3D; stmt.executeUpdate(sql);</span><br><span class="line">            &#x2F;&#x2F;6.处理结果</span><br><span class="line">            System.out.println(i);</span><br><span class="line">            if (i &gt; 0)&#123;</span><br><span class="line">                System.out.println(&quot;删除成功！&quot;);</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                System.out.println(&quot;删除失败！&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (ClassNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; catch (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        finally &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                if (stmt!&#x3D;null)&#123;</span><br><span class="line">                    stmt.close();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; catch (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            try &#123;</span><br><span class="line">                if (connection!&#x3D;null)&#123;</span><br><span class="line">                    connection.close();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; catch (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>4.ResultSet：结果集对象，封装查询结果</p>
+<ul>
+<li><p>next()：游标向下移动一行</p>
+</li>
+<li><p>getXxx：获取数据</p>
+<ul>
+<li><p>Xxx：代表数据类型      如：int getInt()，String getString()</p>
+</li>
+<li><p>参数</p>
+<p>1.int：代表列的编号，从1开始  如：getString(1)</p>
+<p>2.Sting:代表列名称。如：getDouble(“score”)</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package cn.itcase.jdbc;</span><br><span class="line"></span><br><span class="line">import com.mysql.cj.protocol.Resultset;</span><br><span class="line"></span><br><span class="line">import javax.xml.transform.Result;</span><br><span class="line">import java.sql.*;</span><br><span class="line"></span><br><span class="line">public class jdbc练习5 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Connection connection&#x3D;null;</span><br><span class="line">        Statement stmt&#x3D;null;</span><br><span class="line">        ResultSet r &#x3D; null ;</span><br><span class="line">        try &#123;</span><br><span class="line">            &#x2F;&#x2F;1.注册驱动</span><br><span class="line">            Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;);</span><br><span class="line">            &#x2F;&#x2F;2.获取连接对象</span><br><span class="line">            connection&#x3D; DriverManager.getConnection(&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;stu?useUnicode&#x3D;true&amp;characterEncoding&#x3D;UTF-8&amp;serverTimezone&#x3D;Asia&#x2F;Shanghai&quot;,&quot;root&quot;,&quot;8023&quot;);</span><br><span class="line">            &#x2F;&#x2F;3.定义sql</span><br><span class="line">            String sql &#x3D; &quot;select * from student&quot;;</span><br><span class="line">            &#x2F;&#x2F;4.获取执行sql对象</span><br><span class="line">            stmt&#x3D;connection.createStatement();</span><br><span class="line">            &#x2F;&#x2F;5.执行sql</span><br><span class="line">            r &#x3D; stmt.executeQuery(sql);</span><br><span class="line">            &#x2F;&#x2F;6.处理结果</span><br><span class="line">            &#x2F;&#x2F;6.1让游标向下移动一行</span><br><span class="line">            r.next();</span><br><span class="line">            &#x2F;&#x2F;6.2获取数据</span><br><span class="line">            int id &#x3D; r.getInt(1);</span><br><span class="line">            String name &#x3D; r.getString(&quot;name&quot;);</span><br><span class="line">            String sex &#x3D; r.getString(&quot;sex&quot;);</span><br><span class="line">            int age &#x3D; r.getInt(4);</span><br><span class="line">            String address &#x3D; r.getString(&quot;address&quot;);</span><br><span class="line"></span><br><span class="line">            System.out.println(id+&quot; &quot;+name+&quot; &quot;+sex+&quot; &quot;+age+&quot; &quot;+address);</span><br><span class="line">        &#125; catch (ClassNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; catch (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        finally &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                if (stmt!&#x3D;null)&#123;</span><br><span class="line">                    stmt.close();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; catch (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            try &#123;</span><br><span class="line">                if (connection!&#x3D;null)&#123;</span><br><span class="line">                    connection.close();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; catch (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            try &#123;</span><br><span class="line">                if (r!&#x3D;null)&#123;</span><br><span class="line">                    r.close();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; catch (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong></p>
+<pre><code> 使用步骤：</code></pre>
+<p>​        1.游标向下移动一行</p>
+<p>​        2.判断是否有数据</p>
+<p>​        3.获取数据</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">while (r.next()) &#123;</span><br><span class="line">              &#x2F;&#x2F;获取数据</span><br><span class="line">              &#x2F;&#x2F;6.1让游标向下移动一行</span><br><span class="line">              &#x2F;&#x2F;6.2获取数据</span><br><span class="line">              int id &#x3D; r.getInt(1);</span><br><span class="line">              String name &#x3D; r.getString(&quot;name&quot;);</span><br><span class="line">              String sex &#x3D; r.getString(&quot;sex&quot;);</span><br><span class="line">              int age &#x3D; r.getInt(4);</span><br><span class="line">              String address &#x3D; r.getString(&quot;address&quot;);</span><br><span class="line"></span><br><span class="line">              System.out.println(id + &quot; &quot; + name + &quot; &quot; + sex + &quot; &quot; + age + &quot; &quot; + address);</span><br><span class="line">          &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>练习</p>
+<ul>
+<li><p>查询student表的数据将其封装为对象，然后装在集合，返回。</p>
+<p>1.定义student类</p>
+<p>2.定义方法public List<student> findAll(){}</p>
+<p>3.实现方法 select * from student;</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>5.PreparedStatement：执行sql的对象</p>
+<ul>
+<li><p>SQL注入问题：在拼接sql时，有一些sql的特殊关键字参与字符串的拼接，会造成安全性问题</p>
+<ul>
+<li>输入用户随便，输入密码：a’ or ‘a’=’a</li>
+<li>sql:select * from user where usename=XXX and password=XXX</li>
+</ul>
+</li>
+<li><p>解决sql问题：使用PreparedStement对象来解决</p>
+</li>
+<li><p>预编译的SQL：参数使用?作为占位符</p>
+</li>
+</ul>
+<h2 id="抽取JDBC工具类-：JDBCUtils"><a href="#抽取JDBC工具类-：JDBCUtils" class="headerlink" title="抽取JDBC工具类 ：JDBCUtils"></a>抽取JDBC工具类 ：JDBCUtils</h2><ul>
+<li><p>目的：简化书写</p>
+</li>
+<li><p>分析：</p>
+<p>1.注册驱动也抽取</p>
+<p>2.抽取一个方法获取连接对象</p>
+<ul>
+<li><p>需求：不想传递参数（麻烦），还得保证工具类的通用性</p>
+</li>
+<li><p>解决：配置文件</p>
+<p>jdbc.properties</p>
+<p>​    url=</p>
+<p>​    user=</p>
+<p>​    password=</p>
+</li>
+</ul>
+<p>3.抽取一个方法释放资源</p>
+<p>JDBCutils</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package cn.itcase.util;</span><br><span class="line"></span><br><span class="line">import java.io.FileReader;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.net.URL;</span><br><span class="line">import java.sql.*;</span><br><span class="line">import java.util.Properties;</span><br><span class="line"></span><br><span class="line">public class JDBCutils &#123;</span><br><span class="line">    private static String url;</span><br><span class="line">    private static String user;</span><br><span class="line">    private static String password;</span><br><span class="line">    private static String driver;</span><br><span class="line"></span><br><span class="line">    static &#123;</span><br><span class="line">        &#x2F;&#x2F;读取资源文件，获取值</span><br><span class="line">        try &#123;</span><br><span class="line">            &#x2F;&#x2F;1.创建Properties集合类</span><br><span class="line">            Properties pr&#x3D;new Properties();</span><br><span class="line">            &#x2F;&#x2F;获取src路径下的文件的方式---&gt;ClassLoader类加载器th);</span><br><span class="line">            &#x2F;&#x2F;2.加载文件</span><br><span class="line">            pr.load(new FileReader(&quot;G:\\JDBC\\jdbc\\src\\jdbc.properties&quot;));</span><br><span class="line">            &#x2F;&#x2F;3.获取数据，赋值</span><br><span class="line">            url &#x3D; pr.getProperty(&quot;url&quot;);</span><br><span class="line">            user &#x3D; pr.getProperty(&quot;user&quot;);</span><br><span class="line">            password &#x3D; pr.getProperty(&quot;password&quot;);</span><br><span class="line">            driver &#x3D; pr.getProperty(&quot;driver&quot;);</span><br><span class="line">            &#x2F;&#x2F;4.注册驱动</span><br><span class="line">            Class.forName(driver);</span><br><span class="line">        &#125; catch (IOException | ClassNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    public static Connection getConnection() throws SQLException&#123;</span><br><span class="line">        return DriverManager.getConnection(url,user,password);</span><br><span class="line">    &#125;</span><br><span class="line">    public static void close(Statement stmt,Connection connection)&#123;</span><br><span class="line">        if(stmt!&#x3D;null)&#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                stmt.close();</span><br><span class="line">            &#125; catch (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(connection!&#x3D;null)&#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                connection.close();</span><br><span class="line">            &#125; catch (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void close(ResultSet r, Statement stmt, Connection connection)&#123;</span><br><span class="line">        if(r!&#x3D;null)&#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                r.close();</span><br><span class="line">            &#125; catch (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(stmt!&#x3D;null)&#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                stmt.close();</span><br><span class="line">            &#125; catch (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(connection!&#x3D;null)&#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                connection.close();</span><br><span class="line">            &#125; catch (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>JDB练习</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package cn.itcase.jdbc;</span><br><span class="line"></span><br><span class="line">import cn.itcase.student.student;</span><br><span class="line">import cn.itcase.util.JDBCutils;</span><br><span class="line"></span><br><span class="line">import java.sql.*;</span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">public class JDBC练习6 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        JDBC练习6 jdbc练习6 &#x3D; new JDBC练习6();</span><br><span class="line">        List&lt;student&gt; list &#x3D; jdbc练习6.findAll();</span><br><span class="line">        System.out.println(list);</span><br><span class="line">    &#125;</span><br><span class="line">    public List&lt;student&gt; findAll() &#123;</span><br><span class="line">        Statement stmt &#x3D;null;</span><br><span class="line">        ResultSet r&#x3D;null;</span><br><span class="line">        Connection connection &#x3D;null;</span><br><span class="line">        List&lt;student&gt; list&#x3D; null;</span><br><span class="line">        try &#123;</span><br><span class="line">            &#x2F;&#x2F;1.注册驱动</span><br><span class="line">            &#x2F;&#x2F;3.定义sql</span><br><span class="line">            connection &#x3D; JDBCutils.getConnection();</span><br><span class="line">            String sql &#x3D; &quot;select * from student&quot;;</span><br><span class="line">            &#x2F;&#x2F;4.获取执行sql的对象</span><br><span class="line">            stmt &#x3D; connection.createStatement();</span><br><span class="line">            &#x2F;&#x2F;5.执行sql</span><br><span class="line">            r &#x3D; stmt.executeQuery(sql);</span><br><span class="line">            &#x2F;&#x2F;6.遍历结果集，封装对象，装载集合</span><br><span class="line">            student student &#x3D; new student();</span><br><span class="line">            list &#x3D; new ArrayList&lt;student&gt;();</span><br><span class="line">            while (r.next()) &#123;</span><br><span class="line">                &#x2F;&#x2F;获取数据</span><br><span class="line">                int id &#x3D; r.getInt(1);</span><br><span class="line">                String name &#x3D; r.getString(2);</span><br><span class="line">                String sex &#x3D; r.getString(3);</span><br><span class="line">                int age &#x3D; r.getInt(4);</span><br><span class="line">                String address &#x3D; r.getString(5);</span><br><span class="line">                &#x2F;&#x2F;创建对象,并赋值</span><br><span class="line">                student.setId(id);</span><br><span class="line">                student.setName(name);</span><br><span class="line">                student.setSex(sex);</span><br><span class="line">                student.setAge(age);</span><br><span class="line">                student.setAddress(address);</span><br><span class="line">                &#x2F;&#x2F;装载集合return list;</span><br><span class="line">                list.add(student);</span><br><span class="line">                return list;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        JDBCutils.close(r,stmt,connection);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Student</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package cn.itcase.student;</span><br><span class="line"></span><br><span class="line">public class student &#123;</span><br><span class="line">    private int id;</span><br><span class="line">    private String name;</span><br><span class="line">    private String sex;</span><br><span class="line">    private int age;</span><br><span class="line">    private String address;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        return &quot;student&#123;&quot; +</span><br><span class="line">                &quot;id&#x3D;&quot; + id +</span><br><span class="line">                &quot;, name&#x3D;&#39;&quot; + name + &#39;\&#39;&#39; +</span><br><span class="line">                &quot;, sex&#x3D;&#39;&quot; + sex + &#39;\&#39;&#39; +</span><br><span class="line">                &quot;, age&#x3D;&quot; + age +</span><br><span class="line">                &quot;, address&#x3D;&#39;&quot; + address + &#39;\&#39;&#39; +</span><br><span class="line">                &#39;&#125;&#39;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int getId() &#123;</span><br><span class="line">        return id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setId(int id) &#123;</span><br><span class="line">        this.id &#x3D; id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setName(String name) &#123;</span><br><span class="line">        this.name &#x3D; name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getSex() &#123;</span><br><span class="line">        return sex;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setSex(String sex) &#123;</span><br><span class="line">        this.sex &#x3D; sex;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int getAge() &#123;</span><br><span class="line">        return age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setAge(int age) &#123;</span><br><span class="line">        this.age &#x3D; age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getAddress() &#123;</span><br><span class="line">        return address;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setAddress(String address) &#123;</span><br><span class="line">        this.address &#x3D; address;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public student() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public student(int id, String name, String sex, int age, String address) &#123;</span><br><span class="line">        this.id &#x3D; id;</span><br><span class="line">        this.name &#x3D; name;</span><br><span class="line">        this.sex &#x3D; sex;</span><br><span class="line">        this.age &#x3D; age;</span><br><span class="line">        this.address &#x3D; address;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>JDBC</tag>
       </tags>
   </entry>
   <entry>
     <title>毛概复习</title>
-    <url>/2020/08/16/%E6%AF%9B%E6%A6%82%E5%A4%8D%E4%B9%A0%E9%87%8D%E7%82%B9/</url>
+    <url>/post/6522.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="毛概复习重点"><a href="#毛概复习重点" class="headerlink" title="毛概复习重点"></a>毛概复习重点</h1><a id="more"></a>
 
 <h2 id="一：选择题"><a href="#一：选择题" class="headerlink" title="一：选择题"></a>一：选择题</h2><h2 id="单选题："><a href="#单选题：" class="headerlink" title="单选题："></a>单选题：</h2><h2 id="1-近代中国的社会性质和中国革命的历史任务，决定了中国革命的性质是？"><a href="#1-近代中国的社会性质和中国革命的历史任务，决定了中国革命的性质是？" class="headerlink" title="1.近代中国的社会性质和中国革命的历史任务，决定了中国革命的性质是？"></a>1.近代中国的社会性质和中国革命的历史任务，决定了中国革命的性质是？</h2><p>资产阶级民主主义革命</p>

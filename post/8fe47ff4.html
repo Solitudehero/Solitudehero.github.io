@@ -28,30 +28,33 @@ daovoice('update');
  </script>
 
 
-  <meta name="description" content="敢于挑战的叫人生，放弃抵抗的是命运！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="万物有灵">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="JDBC学习JDBC快速入门1234567891011121314151617181920212223242526272829package cn.itcase.jdbc;import java.sql.Connection;import java.sql.DriverManager;import java.sql.Statement;public class jdbc &amp;#123;    pub">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JDBC">
+<meta property="og:url" content="http://yoursite.com/post/8fe47ff4.html">
 <meta property="og:site_name" content="万物有灵">
-<meta property="og:description" content="敢于挑战的叫人生，放弃抵抗的是命运！">
+<meta property="og:description" content="JDBC学习JDBC快速入门1234567891011121314151617181920212223242526272829package cn.itcase.jdbc;import java.sql.Connection;import java.sql.DriverManager;import java.sql.Statement;public class jdbc &amp;#123;    pub">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-10-11T13:27:18.000Z">
+<meta property="article:modified_time" content="2020-10-15T13:25:54.451Z">
 <meta property="article:author" content="浮名半生">
+<meta property="article:tag" content="JDBC">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/post/8fe47ff4.html">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>万物有灵</title>
+  <title>JDBC | 万物有灵</title>
   
 
 
@@ -190,123 +193,10 @@ daovoice('update');
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/8df0ec14.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gitee.com/studynil/boke/raw/master/ing/20201011143719.jpg">
-      <meta itemprop="name" content="浮名半生">
-      <meta itemprop="description" content="敢于挑战的叫人生，<br>放弃抵抗的是命运！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="万物有灵">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/8df0ec14.html" class="post-title-link" itemprop="url">Java学习</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-10-15 22:46:57" itemprop="dateCreated datePublished" datetime="2020-10-15T22:46:57+08:00">2020-10-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-21 00:06:24" itemprop="dateModified" datetime="2020-10-21T00:06:24+08:00">2020-10-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Java学习"><a href="#Java学习" class="headerlink" title="Java学习"></a>Java学习</h1><h2 id="数学工具类Math"><a href="#数学工具类Math" class="headerlink" title="数学工具类Math"></a>数学工具类Math</h2><p>public static double abs(double num)；绝对值</p>
-<p>public static double ceil(double num)；向上取整</p>
-<p>public static double floor(double num)；向下取整</p>
-<p>public static double round(double num)；四舍五入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(Math.abs(3.14));&#x2F;&#x2F;输出3.14</span><br><span class="line">System.out.println(Math.ceil(3.14));&#x2F;&#x2F;输出4.0</span><br><span class="line">System.out.println(Math.floor(3.14));&#x2F;&#x2F;输出3.0</span><br><span class="line">System.out.println(Math.round(3.14));&#x2F;&#x2F;输出3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="final关键字"><a href="#final关键字" class="headerlink" title="final关键字"></a>final关键字</h2><p>1.final修饰的类无法继承。</p>
-<p>2.final修饰的方法无法覆盖。</p>
-<p>3.final修饰的变量只能赋值一次。</p>
-<p>4.final修饰的引用一旦指向某个对象， 则不能再重新指向其他对象，但该引用指向的对象内部的数据是可以修改的。</p>
-<p>5.final修饰的实例变量必须手动初始化，不能采用系统默认值。</p>
-<p>6.final修饰的实例变量一般和static联合使用，成为常量。</p>
-<h2 id="抽象类和接口"><a href="#抽象类和接口" class="headerlink" title="抽象类和接口"></a>抽象类和接口</h2><p>1.抽象类定义：在class前添加abstract关键字就行。</p>
-<p>2.抽象类是无法实例化的，无法创建对象的，所以抽象类是用来被子类继承的。</p>
-<p>3.final和abstract不能联合使用，这两个关键字是对立的。</p>
-<p>4.抽象类的子类可以使抽象类，也可以是非抽象类。</p>
-<p>5.抽象类虽然无法实例化，但是抽象类有构造方法，这个构造方法是供子类使用的。</p>
-<p>6.抽象类中不一定有抽象方法，抽象方法必须出现在抽象类中。</p>
-<p>7.抽象方法怎么定义？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public abstract void doSome();</span><br></pre></td></tr></table></figure>
-
-<p>8.一个非抽象类，继承抽象类，必须将抽象类中的抽象方法覆盖（实现）。</p>
-<ul>
-<li><p>面试题（判断题）：Java语言中凡是没有方法体的方法都是抽象方法。</p>
-<p>不对，错误的。</p>
-<p>Object类种就有很多都没有方法体，都是以“；“结尾的，但是他们都不是抽象方法，例如：</p>
-<p>public native int hashCode();</p>
-<p>这个方法底层调用了C++写的动态链接库程序。</p>
-<p>前面修饰符列表中没有：abstract。有一个native。表示调用JVM本地程序。</p>
-</li>
-<li><h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2></li>
-</ul>
-<p>1.接口是一种引用数据类型。编译之后也是一个class字节码文件。</p>
-<p>2.借口是完全抽象。</p>
-<p>3.接口怎么定义：[修饰符列表] interface 接口名{}</p>
-<p>4.接口支持多继承。</p>
-<p>5.接口中只包含常量+抽象方法。</p>
-<p>6.接口中的所有元素都是public修饰的。（都是公开的。）</p>
-<p>7.接口中的抽象方法定义时：public abstract修饰符可以省略。常量也是。</p>
-<p>8.接口中的方法都是抽象方法，所以接口中的方法不能有方法体。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;定义接口</span><br><span class="line">interface A&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;接口支持继承</span><br><span class="line">interface B extends A&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;支持多继承</span><br><span class="line">interface C extends A,B&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;我的数学方法</span><br><span class="line">interface MyMath&#123;</span><br><span class="line">	&#x2F;&#x2F;常量</span><br><span class="line">	public static final double PI &#x3D; 3.1415926;</span><br><span class="line">	&#x2F;&#x2F;也可以省略</span><br><span class="line">	double PI &#x3D; 3.1415926;&#x2F;&#x2F;PI是常量，不可变</span><br><span class="line">	</span><br><span class="line">	&#x2F;&#x2F;抽象方法</span><br><span class="line">	public abstract int sum(int a , int b);</span><br><span class="line">	&#x2F;&#x2F;也可以省略</span><br><span class="line">	&#x2F;&#x2F;int sum(int a , int b);</span><br><span class="line">	</span><br><span class="line">	&#x2F;&#x2F;接口中的方法可以有方法体嘛？</span><br><span class="line">	&#x2F;&#x2F;错误：接口抽象方法不能带有主体</span><br><span class="line">	&#x2F;*</span><br><span class="line">	void doSome()&#123;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">	*&#x2F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接口的基础语法：</p>
-<p>​    1.类和类之间叫做继承（关键字：extends），类和接口之间叫做实现（关键字：implements）。</p>
-<p>​    2.当一个<strong>非抽象</strong>的类实现接口的话，必须将接口中所有抽象方法全部实现（覆盖、重写）。</p>
-<p>java类名：interfaceTest</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public class interfaceTest &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">    	&#x2F;&#x2F;多态</span><br><span class="line">        &#x2F;&#x2F;父类型的引用指向子类型的对象</span><br><span class="line">        MyMath mm &#x3D; new m();</span><br><span class="line">        &#x2F;&#x2F;面向接口编程</span><br><span class="line">        int sum &#x3D; mm.sum(10, 80);</span><br><span class="line">        int sub &#x3D; mm.sub(20, 5);</span><br><span class="line">        System.out.println(sum);</span><br><span class="line">        System.out.println(sub);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">interface MyMath&#123;</span><br><span class="line">    double PI &#x3D; 3.1415926;</span><br><span class="line">    int sum(int a , int b);&#x2F;&#x2F;默认public访问权限</span><br><span class="line">    int sub(int a , int b);</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;非抽象类实现接口</span><br><span class="line">class m implements MyMath&#123;</span><br><span class="line">    &#x2F;&#x2F;public不能省略，访问权限不能低于接口的访问权限</span><br><span class="line">    &#x2F;&#x2F;实现接口的方法</span><br><span class="line">    public int sum(int a , int b)&#123;</span><br><span class="line">        return a+b;</span><br><span class="line">    &#125;</span><br><span class="line">    public int sub(int a , int b)&#123;</span><br><span class="line">        return a-b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>一个类可以同时实现多个接口：</p>
-<p>这个机制弥补了Java中类和类之间的单继承（为了简单而出现）带来的缺陷。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">public class interfaceTest &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        &#x2F;&#x2F;父类型的引用指向子类型的对象</span><br><span class="line">        A a &#x3D; new C();</span><br><span class="line">        int sum &#x3D; a.sum(10, 20);</span><br><span class="line">        &#x2F;&#x2F;a.sub(20,10);  编译报错，A接口中没有sub（）方法</span><br><span class="line">        &#x2F;*</span><br><span class="line">        *接口和接口之间在进行强制类型转换的时候，没有继承关系，也可以强制转换</span><br><span class="line">        但注意：运行时可能出现ClassCastException异常</span><br><span class="line">        *编译没问题，运行有问题</span><br><span class="line">        B b &#x3D; (B) a;</span><br><span class="line">        a.sub(20,10);</span><br><span class="line">        **&#x2F;</span><br><span class="line">        &#x2F;&#x2F;向下转型记得转型前先 if+instanceof 进行判断</span><br><span class="line">        if(a instanceof B) &#123;</span><br><span class="line">            B b &#x3D; (B) a;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(sum);</span><br><span class="line">        &#x2F;&#x2F;也可以直接向下转型</span><br><span class="line">        C c &#x3D; (C) a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">interface A&#123;</span><br><span class="line">    public int sum(int a , int b);</span><br><span class="line">&#125;</span><br><span class="line">interface B&#123;</span><br><span class="line">    public int sub(int a , int b);</span><br><span class="line">&#125;</span><br><span class="line">class C implements A&#123;</span><br><span class="line">    public int sum(int a, int b) &#123;</span><br><span class="line">        return a+b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -322,10 +212,9 @@ daovoice('update');
       <meta itemprop="name" content="万物有灵">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/8fe47ff4.html" class="post-title-link" itemprop="url">JDBC</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          JDBC
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -345,6 +234,13 @@ daovoice('update');
               </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
 
         </div>
       </header>
@@ -355,7 +251,7 @@ daovoice('update');
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="JDBC学习"><a href="#JDBC学习" class="headerlink" title="JDBC学习"></a>JDBC学习</h3><h2 id="JDBC快速入门"><a href="#JDBC快速入门" class="headerlink" title="JDBC快速入门"></a>JDBC快速入门</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">package cn.itcase.jdbc;</span><br><span class="line"></span><br><span class="line">import java.sql.Connection;</span><br><span class="line">import java.sql.DriverManager;</span><br><span class="line">import java.sql.Statement;</span><br><span class="line"></span><br><span class="line">public class jdbc &#123;</span><br><span class="line">    public static void main(String[] args) throws Exception&#123;</span><br><span class="line">        &#x2F;&#x2F;1.导入驱动jar包</span><br><span class="line">        &#x2F;&#x2F;2.注册驱动</span><br><span class="line">        Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;);</span><br><span class="line">        &#x2F;&#x2F;3.获取数据库连接对象</span><br><span class="line">        &#x2F;&#x2F;localhost:3306&#x2F;db3.root,root);</span><br><span class="line">        Connection connection &#x3D; DriverManager.getConnection(&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;stu?useUnicode&#x3D;true&amp;characterEncoding&#x3D;UTF-8&amp;serverTimezone&#x3D;Asia&#x2F;Shanghai&quot;, &quot;root&quot;, &quot;8023&quot;);</span><br><span class="line">        &#x2F;&#x2F;4.定义sql语言</span><br><span class="line">        String sql &#x3D;&quot;update class set score &#x3D; 100 where id&#x3D; 23&quot;;</span><br><span class="line">        &#x2F;&#x2F;5.获取执行sql的对象 Statement</span><br><span class="line">        Statement statement&#x3D;connection.createStatement();</span><br><span class="line">        &#x2F;&#x2F;6.执行sql</span><br><span class="line">        int i &#x3D; statement.executeUpdate(sql);</span><br><span class="line">        &#x2F;&#x2F;7.处理结果</span><br><span class="line">        System.out.println(i);</span><br><span class="line">        &#x2F;&#x2F;8.释放资源</span><br><span class="line">        statement.close();</span><br><span class="line">        connection.close();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <h3 id="JDBC学习"><a href="#JDBC学习" class="headerlink" title="JDBC学习"></a>JDBC学习</h3><h2 id="JDBC快速入门"><a href="#JDBC快速入门" class="headerlink" title="JDBC快速入门"></a>JDBC快速入门</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">package cn.itcase.jdbc;</span><br><span class="line"></span><br><span class="line">import java.sql.Connection;</span><br><span class="line">import java.sql.DriverManager;</span><br><span class="line">import java.sql.Statement;</span><br><span class="line"></span><br><span class="line">public class jdbc &#123;</span><br><span class="line">    public static void main(String[] args) throws Exception&#123;</span><br><span class="line">        &#x2F;&#x2F;1.导入驱动jar包</span><br><span class="line">        &#x2F;&#x2F;2.注册驱动</span><br><span class="line">        Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;);</span><br><span class="line">        &#x2F;&#x2F;3.获取数据库连接对象</span><br><span class="line">        &#x2F;&#x2F;localhost:3306&#x2F;db3.root,root);</span><br><span class="line">        Connection connection &#x3D; DriverManager.getConnection(&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;stu?useUnicode&#x3D;true&amp;characterEncoding&#x3D;UTF-8&amp;serverTimezone&#x3D;Asia&#x2F;Shanghai&quot;, &quot;root&quot;, &quot;8023&quot;);</span><br><span class="line">        &#x2F;&#x2F;4.定义sql语言</span><br><span class="line">        String sql &#x3D;&quot;update class set score &#x3D; 100 where id&#x3D; 23&quot;;</span><br><span class="line">        &#x2F;&#x2F;5.获取执行sql的对象 Statement</span><br><span class="line">        Statement statement&#x3D;connection.createStatement();</span><br><span class="line">        &#x2F;&#x2F;6.执行sql</span><br><span class="line">        int i &#x3D; statement.executeUpdate(sql);</span><br><span class="line">        &#x2F;&#x2F;7.处理结果</span><br><span class="line">        System.out.println(i);</span><br><span class="line">        &#x2F;&#x2F;8.释放资源</span><br><span class="line">        statement.close();</span><br><span class="line">        connection.close();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h2 id="详解各个对象"><a href="#详解各个对象" class="headerlink" title="详解各个对象"></a>详解各个对象</h2><p>1.DriverManager：驱动管理对象</p>
 <ul>
@@ -478,753 +374,52 @@ daovoice('update');
 
 <p>Student</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">package cn.itcase.student;</span><br><span class="line"></span><br><span class="line">public class student &#123;</span><br><span class="line">    private int id;</span><br><span class="line">    private String name;</span><br><span class="line">    private String sex;</span><br><span class="line">    private int age;</span><br><span class="line">    private String address;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        return &quot;student&#123;&quot; +</span><br><span class="line">                &quot;id&#x3D;&quot; + id +</span><br><span class="line">                &quot;, name&#x3D;&#39;&quot; + name + &#39;\&#39;&#39; +</span><br><span class="line">                &quot;, sex&#x3D;&#39;&quot; + sex + &#39;\&#39;&#39; +</span><br><span class="line">                &quot;, age&#x3D;&quot; + age +</span><br><span class="line">                &quot;, address&#x3D;&#39;&quot; + address + &#39;\&#39;&#39; +</span><br><span class="line">                &#39;&#125;&#39;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int getId() &#123;</span><br><span class="line">        return id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setId(int id) &#123;</span><br><span class="line">        this.id &#x3D; id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setName(String name) &#123;</span><br><span class="line">        this.name &#x3D; name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getSex() &#123;</span><br><span class="line">        return sex;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setSex(String sex) &#123;</span><br><span class="line">        this.sex &#x3D; sex;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int getAge() &#123;</span><br><span class="line">        return age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setAge(int age) &#123;</span><br><span class="line">        this.age &#x3D; age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getAddress() &#123;</span><br><span class="line">        return address;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setAddress(String address) &#123;</span><br><span class="line">        this.address &#x3D; address;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public student() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public student(int id, String name, String sex, int age, String address) &#123;</span><br><span class="line">        this.id &#x3D; id;</span><br><span class="line">        this.name &#x3D; name;</span><br><span class="line">        this.sex &#x3D; sex;</span><br><span class="line">        this.age &#x3D; age;</span><br><span class="line">        this.address &#x3D; address;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
     </div>
 
     
     
     
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://gitee.com/studynil/boke/raw/master/ing/20200821005855.png" alt="浮名半生 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/JDBC/" rel="tag"># JDBC</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/undefined.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gitee.com/studynil/boke/raw/master/ing/20201011143719.jpg">
-      <meta itemprop="name" content="浮名半生">
-      <meta itemprop="description" content="敢于挑战的叫人生，<br>放弃抵抗的是命运！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="万物有灵">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/undefined.html" class="post-title-link" itemprop="url">英语六级笔记整理</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-10-09 23:29:51" itemprop="dateCreated datePublished" datetime="2020-10-09T23:29:51+08:00">2020-10-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-22 16:28:15" itemprop="dateModified" datetime="2020-10-22T16:28:15+08:00">2020-10-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD%E5%85%AD%E7%BA%A7/" itemprop="url" rel="index"><span itemprop="name">英语六级</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="英语六级笔记整理"><a href="#英语六级笔记整理" class="headerlink" title="英语六级笔记整理"></a>英语六级笔记整理</h3><p>bilibili看后总结   <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ca4y177Zm/?spm_id_from=333.788.videocard.0">这里是原视频地址</a>（四级的也可以看这个视频）</p>
-<h2 id="时间规划以及顺序方面"><a href="#时间规划以及顺序方面" class="headerlink" title="时间规划以及顺序方面"></a>时间规划以及顺序方面</h2><p>1.写作 （30分钟，建议&lt;25分钟）</p>
-<p>2.听力   （30分钟）</p>
-<p>3.仔细阅读</p>
-<p>4.长篇阅读</p>
-<p>5.翻译  （30分钟，建议&lt;25分钟）</p>
-<p>6.选词填空</p>
-<h2 id="内容方面"><a href="#内容方面" class="headerlink" title="内容方面"></a>内容方面</h2><h3 id="1-写作"><a href="#1-写作" class="headerlink" title="1.写作"></a>1.写作</h3><p>分类：论说文，谚语警句，图画图表，书信。</p>
-<p>1.常见土单词排行榜：</p>
-<ol>
-<li>think:</li>
-</ol>
-<p>a.have been convinced that</p>
-<p>b.be of the opinion that</p>
-<p>c.cling to the perspective that</p>
-<ol start="2">
-<li>many:</li>
-</ol>
-<p>a.a sea of</p>
-<p>b.multitudes of</p>
-<p>c.immense</p>
-<p>d.amounts of</p>
-<ol start="3">
-<li>people we us  要求单词准确</li>
-</ol>
-<p>a.private individuals</p>
-<p>b.younters and teenagers</p>
-<p>c.all children and adults</p>
-<p>d.experts and professors</p>
-<p>e.parents kids offspring</p>
-<p>f.youngters on campus</p>
-<ol start="4">
-<li>very</li>
-</ol>
-<p>a.exceedingly</p>
-<p>b.distinctly</p>
-<p>c.more than</p>
-<ol start="5">
-<li>important</li>
-</ol>
-<p>a.significant</p>
-<p>b.crucial</p>
-<p>c.play a crucial role in sth.</p>
-<h2 id="2-写作中可用的万能句型"><a href="#2-写作中可用的万能句型" class="headerlink" title="2.写作中可用的万能句型"></a>2.写作中可用的万能句型</h2><p>1） 主语从句：（记住三个左右就差不多了）</p>
-<p>a.It proves self-evident that </p>
-<p>b.It have been found that</p>
-<p>c.It becomes my point that</p>
-<p>d.It seems universally acknowledged that</p>
-<ol start="2">
-<li>定语从句 (which 引导的非限制性定语从句可以修饰前面的整句话(此时which翻译成：“这”))</li>
-</ol>
-<p>他是一个色狼，是显而易见的(a、b、c随便选一个)</p>
-<p>He is a lady killer,</p>
-<p>a.which is really beyond dispute</p>
-<p>b.which has been widely accepted</p>
-<p>c.which has provoked the public’s widespread concern</p>
-<p>3)万能状语</p>
-<p>1.as every one can see it</p>
-<p>2.with the rapid advance of science and technology</p>
-<p>3.in our contemporary society</p>
-<p>4.in the general routine of everyday living</p>
-<p>4)万能插入语（选一个）（推荐：某一段的段首句主谓之间）</p>
-<ul>
-<li><p>to be frank；needless to say</p>
-</li>
-<li><p>in my judgment</p>
-</li>
-<li><p>from my perspective</p>
-</li>
-<li><p>to tell the trut</p>
-</li>
-<li><p>as a matter of fact</p>
-</li>
-</ul>
-<p>5)强调句型</p>
-<ul>
-<li>It is … that…</li>
-</ul>
-<h2 id="3-文章"><a href="#3-文章" class="headerlink" title="3.文章"></a>3.文章</h2><p>一、引出主题+个人观点</p>
-<p>二、原因分析或举例</p>
-<p>三、总结</p>
-<h2 id="4-翻译"><a href="#4-翻译" class="headerlink" title="4.翻译"></a>4.翻译</h2><p>要求：基本表达原文意思，文字通顺连贯，无重大语言错误</p>
-<p>不会的单词：</p>
-<p>1.上位词</p>
-<p>2.同义词</p>
-<p>3.用会用的单词解释</p>
-<p>4.大词瞎写，小词装没看见</p>
-<h3 id="英汉差异对比"><a href="#英汉差异对比" class="headerlink" title="英汉差异对比"></a>英汉差异对比</h3><h4 id="1-汉语意合，英语形合"><a href="#1-汉语意合，英语形合" class="headerlink" title="1.汉语意合，英语形合"></a>1.汉语意合，英语形合</h4><p>and：at the same time</p>
-<p>but：on the contrary</p>
-<p>so：as a result</p>
-<p>then：in addition（moreovre）</p>
-<h4 id="2-英语被动，汉语主动"><a href="#2-英语被动，汉语主动" class="headerlink" title="2.英语被动，汉语主动"></a>2.英语被动，汉语主动</h4><h4 id="3-英语长句，汉语短句"><a href="#3-英语长句，汉语短句" class="headerlink" title="3.英语长句，汉语短句"></a>3.英语长句，汉语短句</h4><p>1.非谓语动词</p>
-<p>2.从句</p>
-<p>3.逻辑关系词</p>
-<h3 id="翻译步骤"><a href="#翻译步骤" class="headerlink" title="翻译步骤"></a>翻译步骤</h3><p>1.以意群为单位读句子，确定句子时态</p>
-<p>2.确定句子主干，非主干部分用定语和状语翻译</p>
-<p>3.上下句逻辑关系，加逻辑关系词</p>
-<h2 id="仔细阅读"><a href="#仔细阅读" class="headerlink" title="仔细阅读"></a>仔细阅读</h2><p>1.时间：8-10分钟一篇</p>
-<p>2.原则：</p>
-<p>​    1)读首段和各段首句，把握文章中心（两分钟读完）</p>
-<p>​    2)顺序原则</p>
-<p>3.题型分析</p>
-<p>​    主旨题</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/4366.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gitee.com/studynil/boke/raw/master/ing/20201011143719.jpg">
-      <meta itemprop="name" content="浮名半生">
-      <meta itemprop="description" content="敢于挑战的叫人生，<br>放弃抵抗的是命运！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="万物有灵">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/4366.html" class="post-title-link" itemprop="url">MySQL划题复习</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-09-07 22:26:57" itemprop="dateCreated datePublished" datetime="2020-09-07T22:26:57+08:00">2020-09-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-12 09:54:12" itemprop="dateModified" datetime="2020-09-12T09:54:12+08:00">2020-09-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="MySQL划题复习整理"><a href="#MySQL划题复习整理" class="headerlink" title="MySQL划题复习整理"></a>MySQL划题复习整理</h1>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/4366.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/12682.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gitee.com/studynil/boke/raw/master/ing/20201011143719.jpg">
-      <meta itemprop="name" content="浮名半生">
-      <meta itemprop="description" content="敢于挑战的叫人生，<br>放弃抵抗的是命运！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="万物有灵">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/12682.html" class="post-title-link" itemprop="url">VC++复习——C++语言面向对象编程基础</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-29 18:13:41" itemprop="dateCreated datePublished" datetime="2020-08-29T18:13:41+08:00">2020-08-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-09 13:35:10" itemprop="dateModified" datetime="2020-09-09T13:35:10+08:00">2020-09-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/VC/" itemprop="url" rel="index"><span itemprop="name">VC++</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="VC-复习"><a href="#VC-复习" class="headerlink" title="VC++复习"></a>VC++复习</h1>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/12682.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/undefined.html" rel="prev" title="英语六级笔记整理">
+      <i class="fa fa-chevron-left"></i> 英语六级笔记整理
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/8df0ec14.html" rel="next" title="Java学习">
+      Java学习 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
   
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/62944.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gitee.com/studynil/boke/raw/master/ing/20201011143719.jpg">
-      <meta itemprop="name" content="浮名半生">
-      <meta itemprop="description" content="敢于挑战的叫人生，<br>放弃抵抗的是命运！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="万物有灵">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/62944.html" class="post-title-link" itemprop="url">快速下载网盘神器</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-23 21:10:01" itemprop="dateCreated datePublished" datetime="2020-08-23T21:10:01+08:00">2020-08-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-08 10:49:56" itemprop="dateModified" datetime="2020-09-08T10:49:56+08:00">2020-09-08</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="亿寻"><a href="#亿寻" class="headerlink" title="亿寻"></a>亿寻</h1>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/62944.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/fb98ceba.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gitee.com/studynil/boke/raw/master/ing/20201011143719.jpg">
-      <meta itemprop="name" content="浮名半生">
-      <meta itemprop="description" content="敢于挑战的叫人生，<br>放弃抵抗的是命运！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="万物有灵">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/fb98ceba.html" class="post-title-link" itemprop="url">搭建hexo博客——GitHub篇</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-22 18:43:29" itemprop="dateCreated datePublished" datetime="2020-08-22T18:43:29+08:00">2020-08-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-17 22:16:32" itemprop="dateModified" datetime="2020-10-17T22:16:32+08:00">2020-10-17</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Hexo-GIT-Node-js搭建博客"><a href="#Hexo-GIT-Node-js搭建博客" class="headerlink" title="Hexo+ GIT+Node.js搭建博客"></a><a target="_blank" rel="noopener" href="http://zsquw5.coding-pages.com/2020/08/20/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94Gitee%E7%AF%87/">Hexo+ GIT+Node.js搭建博客</a></h1>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/fb98ceba.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/c2fc7544.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gitee.com/studynil/boke/raw/master/ing/20201011143719.jpg">
-      <meta itemprop="name" content="浮名半生">
-      <meta itemprop="description" content="敢于挑战的叫人生，<br>放弃抵抗的是命运！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="万物有灵">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/c2fc7544.html" class="post-title-link" itemprop="url">修改电脑的DNS</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-08-22 08:40:07 / 修改时间：23:15:54" itemprop="dateCreated datePublished" datetime="2020-08-22T08:40:07+08:00">2020-08-22</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/DNS/" itemprop="url" rel="index"><span itemprop="name">DNS</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="关于电脑DNS的修改"><a href="#关于电脑DNS的修改" class="headerlink" title="关于电脑DNS的修改"></a>关于电脑DNS的修改</h1>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/c2fc7544.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/4e62faf5.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gitee.com/studynil/boke/raw/master/ing/20201011143719.jpg">
-      <meta itemprop="name" content="浮名半生">
-      <meta itemprop="description" content="敢于挑战的叫人生，<br>放弃抵抗的是命运！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="万物有灵">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/4e62faf5.html" class="post-title-link" itemprop="url">gitee仓库</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-21 14:12:32" itemprop="dateCreated datePublished" datetime="2020-08-21T14:12:32+08:00">2020-08-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-04 12:56:45" itemprop="dateModified" datetime="2020-10-04T12:56:45+08:00">2020-10-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/gitee/" itemprop="url" rel="index"><span itemprop="name">gitee</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="关于gitee仓库的建立"><a href="#关于gitee仓库的建立" class="headerlink" title="关于gitee仓库的建立"></a>关于gitee仓库的建立</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/4e62faf5.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/2dbf7e22.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gitee.com/studynil/boke/raw/master/ing/20201011143719.jpg">
-      <meta itemprop="name" content="浮名半生">
-      <meta itemprop="description" content="敢于挑战的叫人生，<br>放弃抵抗的是命运！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="万物有灵">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/2dbf7e22.html" class="post-title-link" itemprop="url">Git安装</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-21 13:35:12" itemprop="dateCreated datePublished" datetime="2020-08-21T13:35:12+08:00">2020-08-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-23 21:06:13" itemprop="dateModified" datetime="2020-08-23T21:06:13+08:00">2020-08-23</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Git简易安装流程"><a href="#Git简易安装流程" class="headerlink" title="Git简易安装流程"></a>Git简易安装流程</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/2dbf7e22.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
 
 
 
@@ -1276,6 +471,7 @@ daovoice('update');
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JDBC%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">JDBC学习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDBC%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8"><span class="nav-number"></span> <span class="nav-text">JDBC快速入门</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%A6%E8%A7%A3%E5%90%84%E4%B8%AA%E5%AF%B9%E8%B1%A1"><span class="nav-number"></span> <span class="nav-text">详解各个对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%BD%E5%8F%96JDBC%E5%B7%A5%E5%85%B7%E7%B1%BB-%EF%BC%9AJDBCUtils"><span class="nav-number"></span> <span class="nav-text">抽取JDBC工具类 ：JDBCUtils</span></a></div>
       </div>
       <!--/noindex-->
 
