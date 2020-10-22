@@ -61,6 +61,84 @@
       </tags>
   </entry>
   <entry>
+    <title>VC++复习——C++语言面向对象编程基础</title>
+    <url>/post/12682.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="VC-复习"><a href="#VC-复习" class="headerlink" title="VC++复习"></a>VC++复习</h1><a id="more"></a>
+
+<p>​    VC++是面向对象的可视化集成编程系统。</p>
+<hr>
+<h2 id="C-语言面向对象编程基础"><a href="#C-语言面向对象编程基础" class="headerlink" title="C++语言面向对象编程基础"></a>C++语言面向对象编程基础</h2><h3 id="1-一个简单的C-语言程序"><a href="#1-一个简单的C-语言程序" class="headerlink" title="1.一个简单的C++语言程序"></a>1.一个简单的C++语言程序</h3><p><strong>main是主函数名</strong>，函数体用一对大括号括住，函数是C++语言程序里最小的功能单位。</p>
+<p>C++语言程序里**必须有且只能有一个函数main( )**，它是程序执行的入口。</p>
+<p>C++语言所有语句最后都应当有一个分号。</p>
+<hr>
+<h3 id="2-C-语言程序基本要素"><a href="#2-C-语言程序基本要素" class="headerlink" title="2.C++语言程序基本要素"></a>2.C++语言程序基本要素</h3><p>C++语言的字符集：</p>
+<p>(1)英文字母：A ~ Z,a ~ z。</p>
+<p>(2)数字字符：0~9。</p>
+<p>(3)特殊字符：空格、！、#、%、^、&amp;、*、_、+、=、-、~、&lt;、&gt;、/、\、‘、”、；、.、，、()、[]、{}。</p>
+<p>关键字全部由小写字母组成。</p>
+<hr>
+<p>标识符是软件开发者自己声明的单词，用于命名一些实体，如函数名、变量名、类名、对象名等。构成规则：</p>
+<p>(1)以大写字母、小写字母或下画线开头。</p>
+<p>(2)可由大写字母、小写字母、下画线或数字组成。</p>
+<p>(3)字母区分大小写，大写字母和小写字母表示不同的标识符。</p>
+<p>(4)不能用C++语言的关键字。</p>
+<p>尽量<strong>不用下画线开头，</strong>避免与系统定义的关键字冲突。</p>
+<hr>
+<p>分隔符不进行实际操作，只是用于构造程序。</p>
+<p>数据类型指明<strong>变量或表达式的状态和行为，</strong>决定了<strong>数的取值范围和允许执行的运算符集。</strong>可分为<strong>基本类型</strong>和<strong>引用类型</strong>两大类。</p>
+<p>基本类型是指<strong>不能再分解</strong>的数据类型，其数据在函数的调用中是以<strong>传值方式</strong>工作的。</p>
+<p>unsigned (int)    无符号整型</p>
+<p>(signed) int    有符号整型</p>
+<hr>
+<p>换行符 \n    回车符 \r    水平制表符(Tab键) \t</p>
+<hr>
+<p>变量：先定义，后使用</p>
+<p>使用变量之前必须先声明它的类型和名称</p>
+<p>例如：int和float的声明变量</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int num;</span><br><span class="line">float a;</span><br></pre></td></tr></table></figure>
+
+<p>常量：const  &lt;数值类型&gt; &lt;常量名&gt;</p>
+<p><code>const float pi=3.1415926</code></p>
+<hr>
+<p><strong>基本运算符</strong>：+、-、*、/、%。(-作为负号时为一元运算符，作为减号时为二元运算符)</p>
+<p>前置后置：i++是后置；–i是前置。例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int i&#x3D;5,j&#x3D;5,m,n;</span><br><span class="line">m&#x3D;i++;	&#x2F;&#x2F;后置++；相当于m&#x3D;1；i&#x3D;i+1；结果：i&#x3D;6；m&#x3D;5</span><br><span class="line">n&#x3D;++j;	&#x2F;&#x2F;前置++；相当于j&#x3D;j+1；n&#x3D;j；结果：j&#x3D;6，n&#x3D;6</span><br></pre></td></tr></table></figure>
+
+<p><strong>赋值运算符</strong>：=、+=、-=、*=、/=、%=、&lt;&lt;=、&gt;&gt;=、&amp;=、^=、|=。    结合性从右向左。例如：</p>
+<p><code>a=3+(c=4)</code>        这个表达式的值为7，a=7，c=4。</p>
+<p><strong>逗号运算符</strong>：(例如)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">c&#x3D;b&#x3D;(a&#x3D;3,4*3);		&#x2F;&#x2F;结果为：a&#x3D;3，b&#x3D;12，c&#x3D;12，表达式值为12</span><br><span class="line">c&#x3D;b&#x3D;a&#x3D;3,4*3;		&#x2F;&#x2F;结果为：a&#x3D;3，b&#x3D;3，c&#x3D;3，表达式值为12</span><br><span class="line">c&#x3D;(b&#x3D;a&#x3D;3,4*3);		&#x2F;&#x2F;结果为：a&#x3D;3，b&#x3D;3，c&#x3D;12，表达式值为12</span><br></pre></td></tr></table></figure>
+
+<p><strong>关系运算符</strong>：&lt;、&lt;=、&gt;、&gt;=、==、!=。前四个优先级相同，后两个优先级相同。前四个优先级比后两个优先级高。</p>
+<p><strong>逻辑运算符</strong>：!(非)、&amp;&amp;(与)、||(或)。优先级依此降低。(&amp;与|同时运算)</p>
+<p><strong>条件运算符</strong>：C++语言唯一的**<em>三元运算符**</em>。例如：</p>
+<p><code>(a&lt;b)?a:b</code>    a:b表示如果a&lt;b，那么结果为a；如果a&gt;b，那么结果为b。</p>
+<p><strong>sizeof运算符</strong>：计算某个对象在内存中占用的字节数。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sizeof(int);				&#x2F;&#x2F;值为4</span><br><span class="line">double x; sizeof(x);		&#x2F;&#x2F;值为8</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>表达式中的类型转换分为：<strong>隐含转换</strong>和<strong>强制转换</strong>。</p>
+<p>隐含转换是安全的，因为没有精度损失。</p>
+<p>隐含转换原则：将低类型数据转换为高类型数据。</p>
+<p>从低到高的顺序：char、short、int、unsigned int、long、unsigned long、float、double。类型越高，范围越大，精度也越高。</p>
+<p>赋值运算要求赋值运算符左边的值和右边的值类型相同，不同的话，会进行自动转换，将一律将右边的值类型转换为左边的值类型。例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int i; float f; double d;</span><br><span class="line">d&#x3D;i*f;		&#x2F;&#x2F;计算时现将i转换为f一样的浮点型的值，乘法结果再转换为双精度浮点型的值。</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-类与对象"><a href="#3-类与对象" class="headerlink" title="3.类与对象"></a>3.类与对象</h2><p>面向对象程序设计理论角度：类是对某一类对象的抽象，而对象是对类的具体实例。</p>
+<p>程序设计的角度：类是一种复杂的自定义数据类型，对象是属于这种类型的变量。</p>
+<hr>
+<p><strong>抽象</strong>：对象进行概括，抽出一类对象的共性并加以描述的过程。  有两方面：<strong>数据抽象</strong>和<strong>行为抽象</strong>。</p>
+<p><strong>数据抽象</strong>：属性和状态。        <strong>行为抽象</strong>：共同行为或共同功能。</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">时钟(clock)</span><br><span class="line">数据抽象:</span><br><span class="line">int Hour; int Minute; int Second;</span><br><span class="line">行为抽象:</span><br><span class="line">ShowTime(); SetTime();</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>VC++</category>
+      </categories>
+      <tags>
+        <tag>复习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL划题复习</title>
     <url>/post/4366.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="MySQL划题复习整理"><a href="#MySQL划题复习整理" class="headerlink" title="MySQL划题复习整理"></a>MySQL划题复习整理</h1><a id="more"></a>
@@ -269,101 +347,6 @@
       </tags>
   </entry>
   <entry>
-    <title>VC++复习——C++语言面向对象编程基础</title>
-    <url>/post/12682.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="VC-复习"><a href="#VC-复习" class="headerlink" title="VC++复习"></a>VC++复习</h1><a id="more"></a>
-
-<p>​    VC++是面向对象的可视化集成编程系统。</p>
-<hr>
-<h2 id="C-语言面向对象编程基础"><a href="#C-语言面向对象编程基础" class="headerlink" title="C++语言面向对象编程基础"></a>C++语言面向对象编程基础</h2><h3 id="1-一个简单的C-语言程序"><a href="#1-一个简单的C-语言程序" class="headerlink" title="1.一个简单的C++语言程序"></a>1.一个简单的C++语言程序</h3><p><strong>main是主函数名</strong>，函数体用一对大括号括住，函数是C++语言程序里最小的功能单位。</p>
-<p>C++语言程序里**必须有且只能有一个函数main( )**，它是程序执行的入口。</p>
-<p>C++语言所有语句最后都应当有一个分号。</p>
-<hr>
-<h3 id="2-C-语言程序基本要素"><a href="#2-C-语言程序基本要素" class="headerlink" title="2.C++语言程序基本要素"></a>2.C++语言程序基本要素</h3><p>C++语言的字符集：</p>
-<p>(1)英文字母：A ~ Z,a ~ z。</p>
-<p>(2)数字字符：0~9。</p>
-<p>(3)特殊字符：空格、！、#、%、^、&amp;、*、_、+、=、-、~、&lt;、&gt;、/、\、‘、”、；、.、，、()、[]、{}。</p>
-<p>关键字全部由小写字母组成。</p>
-<hr>
-<p>标识符是软件开发者自己声明的单词，用于命名一些实体，如函数名、变量名、类名、对象名等。构成规则：</p>
-<p>(1)以大写字母、小写字母或下画线开头。</p>
-<p>(2)可由大写字母、小写字母、下画线或数字组成。</p>
-<p>(3)字母区分大小写，大写字母和小写字母表示不同的标识符。</p>
-<p>(4)不能用C++语言的关键字。</p>
-<p>尽量<strong>不用下画线开头，</strong>避免与系统定义的关键字冲突。</p>
-<hr>
-<p>分隔符不进行实际操作，只是用于构造程序。</p>
-<p>数据类型指明<strong>变量或表达式的状态和行为，</strong>决定了<strong>数的取值范围和允许执行的运算符集。</strong>可分为<strong>基本类型</strong>和<strong>引用类型</strong>两大类。</p>
-<p>基本类型是指<strong>不能再分解</strong>的数据类型，其数据在函数的调用中是以<strong>传值方式</strong>工作的。</p>
-<p>unsigned (int)    无符号整型</p>
-<p>(signed) int    有符号整型</p>
-<hr>
-<p>换行符 \n    回车符 \r    水平制表符(Tab键) \t</p>
-<hr>
-<p>变量：先定义，后使用</p>
-<p>使用变量之前必须先声明它的类型和名称</p>
-<p>例如：int和float的声明变量</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int num;</span><br><span class="line">float a;</span><br></pre></td></tr></table></figure>
-
-<p>常量：const  &lt;数值类型&gt; &lt;常量名&gt;</p>
-<p><code>const float pi=3.1415926</code></p>
-<hr>
-<p><strong>基本运算符</strong>：+、-、*、/、%。(-作为负号时为一元运算符，作为减号时为二元运算符)</p>
-<p>前置后置：i++是后置；–i是前置。例如：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int i&#x3D;5,j&#x3D;5,m,n;</span><br><span class="line">m&#x3D;i++;	&#x2F;&#x2F;后置++；相当于m&#x3D;1；i&#x3D;i+1；结果：i&#x3D;6；m&#x3D;5</span><br><span class="line">n&#x3D;++j;	&#x2F;&#x2F;前置++；相当于j&#x3D;j+1；n&#x3D;j；结果：j&#x3D;6，n&#x3D;6</span><br></pre></td></tr></table></figure>
-
-<p><strong>赋值运算符</strong>：=、+=、-=、*=、/=、%=、&lt;&lt;=、&gt;&gt;=、&amp;=、^=、|=。    结合性从右向左。例如：</p>
-<p><code>a=3+(c=4)</code>        这个表达式的值为7，a=7，c=4。</p>
-<p><strong>逗号运算符</strong>：(例如)</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">c&#x3D;b&#x3D;(a&#x3D;3,4*3);		&#x2F;&#x2F;结果为：a&#x3D;3，b&#x3D;12，c&#x3D;12，表达式值为12</span><br><span class="line">c&#x3D;b&#x3D;a&#x3D;3,4*3;		&#x2F;&#x2F;结果为：a&#x3D;3，b&#x3D;3，c&#x3D;3，表达式值为12</span><br><span class="line">c&#x3D;(b&#x3D;a&#x3D;3,4*3);		&#x2F;&#x2F;结果为：a&#x3D;3，b&#x3D;3，c&#x3D;12，表达式值为12</span><br></pre></td></tr></table></figure>
-
-<p><strong>关系运算符</strong>：&lt;、&lt;=、&gt;、&gt;=、==、!=。前四个优先级相同，后两个优先级相同。前四个优先级比后两个优先级高。</p>
-<p><strong>逻辑运算符</strong>：!(非)、&amp;&amp;(与)、||(或)。优先级依此降低。(&amp;与|同时运算)</p>
-<p><strong>条件运算符</strong>：C++语言唯一的**<em>三元运算符**</em>。例如：</p>
-<p><code>(a&lt;b)?a:b</code>    a:b表示如果a&lt;b，那么结果为a；如果a&gt;b，那么结果为b。</p>
-<p><strong>sizeof运算符</strong>：计算某个对象在内存中占用的字节数。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sizeof(int);				&#x2F;&#x2F;值为4</span><br><span class="line">double x; sizeof(x);		&#x2F;&#x2F;值为8</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>表达式中的类型转换分为：<strong>隐含转换</strong>和<strong>强制转换</strong>。</p>
-<p>隐含转换是安全的，因为没有精度损失。</p>
-<p>隐含转换原则：将低类型数据转换为高类型数据。</p>
-<p>从低到高的顺序：char、short、int、unsigned int、long、unsigned long、float、double。类型越高，范围越大，精度也越高。</p>
-<p>赋值运算要求赋值运算符左边的值和右边的值类型相同，不同的话，会进行自动转换，将一律将右边的值类型转换为左边的值类型。例如：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int i; float f; double d;</span><br><span class="line">d&#x3D;i*f;		&#x2F;&#x2F;计算时现将i转换为f一样的浮点型的值，乘法结果再转换为双精度浮点型的值。</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-类与对象"><a href="#3-类与对象" class="headerlink" title="3.类与对象"></a>3.类与对象</h2><p>面向对象程序设计理论角度：类是对某一类对象的抽象，而对象是对类的具体实例。</p>
-<p>程序设计的角度：类是一种复杂的自定义数据类型，对象是属于这种类型的变量。</p>
-<hr>
-<p><strong>抽象</strong>：对象进行概括，抽出一类对象的共性并加以描述的过程。  有两方面：<strong>数据抽象</strong>和<strong>行为抽象</strong>。</p>
-<p><strong>数据抽象</strong>：属性和状态。        <strong>行为抽象</strong>：共同行为或共同功能。</p>
-<p>例如：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">时钟(clock)</span><br><span class="line">数据抽象:</span><br><span class="line">int Hour; int Minute; int Second;</span><br><span class="line">行为抽象:</span><br><span class="line">ShowTime(); SetTime();</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>VC++</category>
-      </categories>
-      <tags>
-        <tag>复习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>gitee仓库</title>
-    <url>/post/4e62faf5.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="关于gitee仓库的建立"><a href="#关于gitee仓库的建立" class="headerlink" title="关于gitee仓库的建立"></a>关于gitee仓库的建立</h2><a id="more"></a>
-
-<p>注册好gitee账号登录后</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821141508.png"></p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821141825.png"></p>
-<p>然后点击创建</p>
-]]></content>
-      <categories>
-        <category>gitee</category>
-      </categories>
-      <tags>
-        <tag>Hexo+Gitee+Node.js搭建博客</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Git安装</title>
     <url>/post/2dbf7e22.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Git简易安装流程"><a href="#Git简易安装流程" class="headerlink" title="Git简易安装流程"></a>Git简易安装流程</h2><a id="more"></a>
@@ -398,6 +381,39 @@
       </categories>
       <tags>
         <tag>Git安装</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>gitee仓库</title>
+    <url>/post/4e62faf5.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="关于gitee仓库的建立"><a href="#关于gitee仓库的建立" class="headerlink" title="关于gitee仓库的建立"></a>关于gitee仓库的建立</h2><a id="more"></a>
+
+<p>注册好gitee账号登录后</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821141508.png"></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821141825.png"></p>
+<p>然后点击创建</p>
+]]></content>
+      <categories>
+        <category>gitee</category>
+      </categories>
+      <tags>
+        <tag>Hexo+Gitee+Node.js搭建博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>快速下载网盘神器</title>
+    <url>/post/62944.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="亿寻"><a href="#亿寻" class="headerlink" title="亿寻"></a>亿寻</h1><a id="more"></a>
+
+<p>平时需要在网盘下载东西时，发现下载的东西很慢有木有，有时候一个连接不稳定还得重新下载，属实让人难受。</p>
+<p>所以，这里推一款软件——亿寻。附上网盘地址：</p>
+<p>链接：<a href="https://pan.baidu.com/s/19wDLbDDiEnnOPgkI821c1g">https://pan.baidu.com/s/19wDLbDDiEnnOPgkI821c1g</a><br>提取码：3q6h</p>
+<p>下载后，解压发现电脑提示有病毒的话，关掉安全管家就行了，如果安全管家太强大，比如我的安全管家就会把亿寻的exe程序删除，以至于我只有文件，没有启动程序，那么，就保留压缩的文件，到需要的时候，就仅仅解压exe文件即可</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200823212322.png"></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200823212749.png" alt="image-20200823212748976"></p>
+]]></content>
+      <tags>
+        <tag>--网盘神器 --网盘文件助手</tag>
       </tags>
   </entry>
   <entry>
@@ -474,86 +490,6 @@
       </categories>
       <tags>
         <tag>修改DNS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>搭建hexo博客——Gitee篇</title>
-    <url>/post/c04ba748.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Hexo-Git-Node-js搭建博客"><a href="#Hexo-Git-Node-js搭建博客" class="headerlink" title="Hexo+Git+Node.js搭建博客"></a>Hexo+Git+Node.js搭建博客</h1><a id="more"></a>
-
-<p>  经过了三天过程中的十几次搭建，最终对一些优化放弃了继续的挣扎，next的版本高，一些东西不会操作，导致重新开始，也算是小有心得，写下来当做第一篇博客！</p>
-<h2 id="软件准备"><a href="#软件准备" class="headerlink" title="软件准备"></a>软件准备</h2><p>(1) Git下载：</p>
-<p><a href="https://git-scm.com/">官网</a></p>
-<p><a href="npm.taobao.org/mirrors/git-for-windows">国内</a></p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821125321.png"></p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821125940.png"></p>
-<p><a href="https://solitudehero.github.io/2020/08/21/git%E5%AE%89%E8%A3%85/#more">Git安装</a></p>
-<p><a href="https://www.xuanfengge.com/using-ssh-key-link-github-photo-tour.html">Git配置</a>(我是看网上的)</p>
-<p>(2)<a href="https://nodejs.org/en/">Node.js安装</a></p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821135324.png"></p>
-<p>傻瓜式安装即可！</p>
-<p>(3)安装Hexo</p>
-<p>打开Git Bash Here</p>
-<hr>
-<p>检测node是否安装成功</p>
-<p>node -v    (返回版本号)</p>
-<p>npm -v     (返回版本号)</p>
-<hr>
-<p>安装淘宝镜像源</p>
-<p><code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p>
-<p>检测</p>
-<p>cnpm         (返回 cnpm 的信息)</p>
-<p>cnpm -v     (返回 cnpm 的版本信息)</p>
-<hr>
-<p>安装hexo</p>
-<p><code>cnpm install -g hexo-cli</code></p>
-<p>hexo -v    (返回hexo的版本信息)</p>
-<h2 id="正文开始-以下命令都是在git中执行"><a href="#正文开始-以下命令都是在git中执行" class="headerlink" title="正文开始(以下命令都是在git中执行)"></a>正文开始(以下命令都是在git中执行)</h2><p>在本地建立一个文件夹，这个文件夹就是搭建hexo博客的开始。我的文件夹名字叫(博客)，便于理解。</p>
-<p>在博客内打开Git，就是Git Bash Here，输入：</p>
-<p><code>hexo init</code></p>
-<p>然后开始一段时间的等待……</p>
-<p>加载完成之后，你可以输入</p>
-<p><code>hexo s</code>        查看当前网站(注意：这是在本地4000端口查看的，不是网上能查出来的，是需要部署之后才能查看)</p>
-<hr>
-<p>因为我的电脑不知道什么情况不能查看GitHub相关的网站，所以我用的是Gitee部署的，Gitee是国内版的GitHub，速度相对于GitHub比较快，但是部署时会较GitHub麻烦一点，需要去码云那里更新一次，不然显示不出来更新效果。</p>
-<hr>
-<p>到gitee那里注册一个账号，然后创建一个仓库即可。不会的可以查看链接。</p>
-<p><a href="https://solitudehero.github.io/2020/08/21/gitee%E4%BB%93%E5%BA%93/#more">gitee仓库</a></p>
-<p>复制一下仓库URL(就是仓库地址的网址)</p>
-<hr>
-<p>在 Blog 目录下安装一个 hexo 部署插件 </p>
-<p><code>cnpm install --save hexo-deployer-git</code></p>
-<p>找到 Blog 文件中的 _config.yml 文件，使用工具打开，如果不是很熟练，建议使用Visual Studio Code 打开，当然，如果觉得麻烦，也可以笔记本打开，但是容易出现错误。</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821142432.png"></p>
-<p>找到这行代码repo后输入接上刚刚让你复制的仓库地址。</p>
-<p>然后进行保存。</p>
-<p>在博客目录下打开的git里面输入<code>hexo d</code></p>
-<p>然后再在码云仓库里</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821142717.png"></p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821142755.png"></p>
-<p>然后那个网站地址就是你部署的，别人也可以通过搜那个网站进入你的博客了。</p>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo+Gitee+Node.js搭建博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>快速下载网盘神器</title>
-    <url>/post/62944.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="亿寻"><a href="#亿寻" class="headerlink" title="亿寻"></a>亿寻</h1><a id="more"></a>
-
-<p>平时需要在网盘下载东西时，发现下载的东西很慢有木有，有时候一个连接不稳定还得重新下载，属实让人难受。</p>
-<p>所以，这里推一款软件——亿寻。附上网盘地址：</p>
-<p>链接：<a href="https://pan.baidu.com/s/19wDLbDDiEnnOPgkI821c1g">https://pan.baidu.com/s/19wDLbDDiEnnOPgkI821c1g</a><br>提取码：3q6h</p>
-<p>下载后，解压发现电脑提示有病毒的话，关掉安全管家就行了，如果安全管家太强大，比如我的安全管家就会把亿寻的exe程序删除，以至于我只有文件，没有启动程序，那么，就保留压缩的文件，到需要的时候，就仅仅解压exe文件即可</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200823212322.png"></p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200823212749.png" alt="image-20200823212748976"></p>
-]]></content>
-      <tags>
-        <tag>--网盘神器 --网盘文件助手</tag>
       </tags>
   </entry>
   <entry>
@@ -671,6 +607,70 @@
       <tags>
         <tag>英语</tag>
         <tag>六级</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>搭建hexo博客——Gitee篇</title>
+    <url>/post/c04ba748.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Hexo-Git-Node-js搭建博客"><a href="#Hexo-Git-Node-js搭建博客" class="headerlink" title="Hexo+Git+Node.js搭建博客"></a>Hexo+Git+Node.js搭建博客</h1><a id="more"></a>
+
+<p>  经过了三天过程中的十几次搭建，最终对一些优化放弃了继续的挣扎，next的版本高，一些东西不会操作，导致重新开始，也算是小有心得，写下来当做第一篇博客！</p>
+<h2 id="软件准备"><a href="#软件准备" class="headerlink" title="软件准备"></a>软件准备</h2><p>(1) Git下载：</p>
+<p><a href="https://git-scm.com/">官网</a></p>
+<p><a href="npm.taobao.org/mirrors/git-for-windows">国内</a></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821125321.png"></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821125940.png"></p>
+<p><a href="https://solitudehero.github.io/2020/08/21/git%E5%AE%89%E8%A3%85/#more">Git安装</a></p>
+<p><a href="https://www.xuanfengge.com/using-ssh-key-link-github-photo-tour.html">Git配置</a>(我是看网上的)</p>
+<p>(2)<a href="https://nodejs.org/en/">Node.js安装</a></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821135324.png"></p>
+<p>傻瓜式安装即可！</p>
+<p>(3)安装Hexo</p>
+<p>打开Git Bash Here</p>
+<hr>
+<p>检测node是否安装成功</p>
+<p>node -v    (返回版本号)</p>
+<p>npm -v     (返回版本号)</p>
+<hr>
+<p>安装淘宝镜像源</p>
+<p><code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p>
+<p>检测</p>
+<p>cnpm         (返回 cnpm 的信息)</p>
+<p>cnpm -v     (返回 cnpm 的版本信息)</p>
+<hr>
+<p>安装hexo</p>
+<p><code>cnpm install -g hexo-cli</code></p>
+<p>hexo -v    (返回hexo的版本信息)</p>
+<h2 id="正文开始-以下命令都是在git中执行"><a href="#正文开始-以下命令都是在git中执行" class="headerlink" title="正文开始(以下命令都是在git中执行)"></a>正文开始(以下命令都是在git中执行)</h2><p>在本地建立一个文件夹，这个文件夹就是搭建hexo博客的开始。我的文件夹名字叫(博客)，便于理解。</p>
+<p>在博客内打开Git，就是Git Bash Here，输入：</p>
+<p><code>hexo init</code></p>
+<p>然后开始一段时间的等待……</p>
+<p>加载完成之后，你可以输入</p>
+<p><code>hexo s</code>        查看当前网站(注意：这是在本地4000端口查看的，不是网上能查出来的，是需要部署之后才能查看)</p>
+<hr>
+<p>因为我的电脑不知道什么情况不能查看GitHub相关的网站，所以我用的是Gitee部署的，Gitee是国内版的GitHub，速度相对于GitHub比较快，但是部署时会较GitHub麻烦一点，需要去码云那里更新一次，不然显示不出来更新效果。</p>
+<hr>
+<p>到gitee那里注册一个账号，然后创建一个仓库即可。不会的可以查看链接。</p>
+<p><a href="https://solitudehero.github.io/2020/08/21/gitee%E4%BB%93%E5%BA%93/#more">gitee仓库</a></p>
+<p>复制一下仓库URL(就是仓库地址的网址)</p>
+<hr>
+<p>在 Blog 目录下安装一个 hexo 部署插件 </p>
+<p><code>cnpm install --save hexo-deployer-git</code></p>
+<p>找到 Blog 文件中的 _config.yml 文件，使用工具打开，如果不是很熟练，建议使用Visual Studio Code 打开，当然，如果觉得麻烦，也可以笔记本打开，但是容易出现错误。</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821142432.png"></p>
+<p>找到这行代码repo后输入接上刚刚让你复制的仓库地址。</p>
+<p>然后进行保存。</p>
+<p>在博客目录下打开的git里面输入<code>hexo d</code></p>
+<p>然后再在码云仓库里</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821142717.png"></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821142755.png"></p>
+<p>然后那个网站地址就是你部署的，别人也可以通过搜那个网站进入你的博客了。</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo+Gitee+Node.js搭建博客</tag>
       </tags>
   </entry>
   <entry>
