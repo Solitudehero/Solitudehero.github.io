@@ -1,6 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>VC++复习——C++语言面向对象编程基础</title>
+    <url>/post/12682.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="VC-复习"><a href="#VC-复习" class="headerlink" title="VC++复习"></a>VC++复习</h1><a id="more"></a>
+
+<p>​    VC++是面向对象的可视化集成编程系统。</p>
+<hr>
+<h2 id="C-语言面向对象编程基础"><a href="#C-语言面向对象编程基础" class="headerlink" title="C++语言面向对象编程基础"></a>C++语言面向对象编程基础</h2><h3 id="1-一个简单的C-语言程序"><a href="#1-一个简单的C-语言程序" class="headerlink" title="1.一个简单的C++语言程序"></a>1.一个简单的C++语言程序</h3><p><strong>main是主函数名</strong>，函数体用一对大括号括住，函数是C++语言程序里最小的功能单位。</p>
+<p>C++语言程序里**必须有且只能有一个函数main( )**，它是程序执行的入口。</p>
+<p>C++语言所有语句最后都应当有一个分号。</p>
+<hr>
+<h3 id="2-C-语言程序基本要素"><a href="#2-C-语言程序基本要素" class="headerlink" title="2.C++语言程序基本要素"></a>2.C++语言程序基本要素</h3><p>C++语言的字符集：</p>
+<p>(1)英文字母：A ~ Z,a ~ z。</p>
+<p>(2)数字字符：0~9。</p>
+<p>(3)特殊字符：空格、！、#、%、^、&amp;、*、_、+、=、-、~、&lt;、&gt;、/、\、‘、”、；、.、，、()、[]、{}。</p>
+<p>关键字全部由小写字母组成。</p>
+<hr>
+<p>标识符是软件开发者自己声明的单词，用于命名一些实体，如函数名、变量名、类名、对象名等。构成规则：</p>
+<p>(1)以大写字母、小写字母或下画线开头。</p>
+<p>(2)可由大写字母、小写字母、下画线或数字组成。</p>
+<p>(3)字母区分大小写，大写字母和小写字母表示不同的标识符。</p>
+<p>(4)不能用C++语言的关键字。</p>
+<p>尽量<strong>不用下画线开头，</strong>避免与系统定义的关键字冲突。</p>
+<hr>
+<p>分隔符不进行实际操作，只是用于构造程序。</p>
+<p>数据类型指明<strong>变量或表达式的状态和行为，</strong>决定了<strong>数的取值范围和允许执行的运算符集。</strong>可分为<strong>基本类型</strong>和<strong>引用类型</strong>两大类。</p>
+<p>基本类型是指<strong>不能再分解</strong>的数据类型，其数据在函数的调用中是以<strong>传值方式</strong>工作的。</p>
+<p>unsigned (int)    无符号整型</p>
+<p>(signed) int    有符号整型</p>
+<hr>
+<p>换行符 \n    回车符 \r    水平制表符(Tab键) \t</p>
+<hr>
+<p>变量：先定义，后使用</p>
+<p>使用变量之前必须先声明它的类型和名称</p>
+<p>例如：int和float的声明变量</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int num;</span><br><span class="line">float a;</span><br></pre></td></tr></table></figure>
+
+<p>常量：const  &lt;数值类型&gt; &lt;常量名&gt;</p>
+<p><code>const float pi=3.1415926</code></p>
+<hr>
+<p><strong>基本运算符</strong>：+、-、*、/、%。(-作为负号时为一元运算符，作为减号时为二元运算符)</p>
+<p>前置后置：i++是后置；–i是前置。例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int i&#x3D;5,j&#x3D;5,m,n;</span><br><span class="line">m&#x3D;i++;	&#x2F;&#x2F;后置++；相当于m&#x3D;1；i&#x3D;i+1；结果：i&#x3D;6；m&#x3D;5</span><br><span class="line">n&#x3D;++j;	&#x2F;&#x2F;前置++；相当于j&#x3D;j+1；n&#x3D;j；结果：j&#x3D;6，n&#x3D;6</span><br></pre></td></tr></table></figure>
+
+<p><strong>赋值运算符</strong>：=、+=、-=、*=、/=、%=、&lt;&lt;=、&gt;&gt;=、&amp;=、^=、|=。    结合性从右向左。例如：</p>
+<p><code>a=3+(c=4)</code>        这个表达式的值为7，a=7，c=4。</p>
+<p><strong>逗号运算符</strong>：(例如)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">c&#x3D;b&#x3D;(a&#x3D;3,4*3);		&#x2F;&#x2F;结果为：a&#x3D;3，b&#x3D;12，c&#x3D;12，表达式值为12</span><br><span class="line">c&#x3D;b&#x3D;a&#x3D;3,4*3;		&#x2F;&#x2F;结果为：a&#x3D;3，b&#x3D;3，c&#x3D;3，表达式值为12</span><br><span class="line">c&#x3D;(b&#x3D;a&#x3D;3,4*3);		&#x2F;&#x2F;结果为：a&#x3D;3，b&#x3D;3，c&#x3D;12，表达式值为12</span><br></pre></td></tr></table></figure>
+
+<p><strong>关系运算符</strong>：&lt;、&lt;=、&gt;、&gt;=、==、!=。前四个优先级相同，后两个优先级相同。前四个优先级比后两个优先级高。</p>
+<p><strong>逻辑运算符</strong>：!(非)、&amp;&amp;(与)、||(或)。优先级依此降低。(&amp;与|同时运算)</p>
+<p><strong>条件运算符</strong>：C++语言唯一的**<em>三元运算符**</em>。例如：</p>
+<p><code>(a&lt;b)?a:b</code>    a:b表示如果a&lt;b，那么结果为a；如果a&gt;b，那么结果为b。</p>
+<p><strong>sizeof运算符</strong>：计算某个对象在内存中占用的字节数。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sizeof(int);				&#x2F;&#x2F;值为4</span><br><span class="line">double x; sizeof(x);		&#x2F;&#x2F;值为8</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>表达式中的类型转换分为：<strong>隐含转换</strong>和<strong>强制转换</strong>。</p>
+<p>隐含转换是安全的，因为没有精度损失。</p>
+<p>隐含转换原则：将低类型数据转换为高类型数据。</p>
+<p>从低到高的顺序：char、short、int、unsigned int、long、unsigned long、float、double。类型越高，范围越大，精度也越高。</p>
+<p>赋值运算要求赋值运算符左边的值和右边的值类型相同，不同的话，会进行自动转换，将一律将右边的值类型转换为左边的值类型。例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int i; float f; double d;</span><br><span class="line">d&#x3D;i*f;		&#x2F;&#x2F;计算时现将i转换为f一样的浮点型的值，乘法结果再转换为双精度浮点型的值。</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-类与对象"><a href="#3-类与对象" class="headerlink" title="3.类与对象"></a>3.类与对象</h2><p>面向对象程序设计理论角度：类是对某一类对象的抽象，而对象是对类的具体实例。</p>
+<p>程序设计的角度：类是一种复杂的自定义数据类型，对象是属于这种类型的变量。</p>
+<hr>
+<p><strong>抽象</strong>：对象进行概括，抽出一类对象的共性并加以描述的过程。  有两方面：<strong>数据抽象</strong>和<strong>行为抽象</strong>。</p>
+<p><strong>数据抽象</strong>：属性和状态。        <strong>行为抽象</strong>：共同行为或共同功能。</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">时钟(clock)</span><br><span class="line">数据抽象:</span><br><span class="line">int Hour; int Minute; int Second;</span><br><span class="line">行为抽象:</span><br><span class="line">ShowTime(); SetTime();</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>VC++</category>
+      </categories>
+      <tags>
+        <tag>复习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java学习</title>
+    <url>/post/8df0ec14.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Java学习"><a href="#Java学习" class="headerlink" title="Java学习"></a>Java学习</h1><a id="more"></a>
+
+<h2 id="数学工具类Math"><a href="#数学工具类Math" class="headerlink" title="数学工具类Math"></a>数学工具类Math</h2><p>public static double abs(double num)；绝对值</p>
+<p>public static double ceil(double num)；向上取整</p>
+<p>public static double floor(double num)；向下取整</p>
+<p>public static double round(double num)；四舍五入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">System.out.println(Math.abs(3.14));&#x2F;&#x2F;输出3.14</span><br><span class="line">System.out.println(Math.ceil(3.14));&#x2F;&#x2F;输出4.0</span><br><span class="line">System.out.println(Math.floor(3.14));&#x2F;&#x2F;输出3.0</span><br><span class="line">System.out.println(Math.round(3.14));&#x2F;&#x2F;输出3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="final关键字"><a href="#final关键字" class="headerlink" title="final关键字"></a>final关键字</h2><p>1.final修饰的类无法继承。</p>
+<p>2.final修饰的方法无法覆盖。</p>
+<p>3.final修饰的变量只能赋值一次。</p>
+<p>4.final修饰的引用一旦指向某个对象， 则不能再重新指向其他对象，但该引用指向的对象内部的数据是可以修改的。</p>
+<p>5.final修饰的实例变量必须手动初始化，不能采用系统默认值。</p>
+<p>6.final修饰的实例变量一般和static联合使用，成为常量。</p>
+<h2 id="抽象类和接口"><a href="#抽象类和接口" class="headerlink" title="抽象类和接口"></a>抽象类和接口</h2><p>1.抽象类定义：在class前添加abstract关键字就行。</p>
+<p>2.抽象类是无法实例化的，无法创建对象的，所以抽象类是用来被子类继承的。</p>
+<p>3.final和abstract不能联合使用，这两个关键字是对立的。</p>
+<p>4.抽象类的子类可以使抽象类，也可以是非抽象类。</p>
+<p>5.抽象类虽然无法实例化，但是抽象类有构造方法，这个构造方法是供子类使用的。</p>
+<p>6.抽象类中不一定有抽象方法，抽象方法必须出现在抽象类中。</p>
+<p>7.抽象方法怎么定义？</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public abstract void doSome();</span><br></pre></td></tr></table></figure>
+
+<p>8.一个非抽象类，继承抽象类，必须将抽象类中的抽象方法覆盖（实现）。</p>
+<ul>
+<li><p>面试题（判断题）：Java语言中凡是没有方法体的方法都是抽象方法。</p>
+<p>不对，错误的。</p>
+<p>Object类种就有很多都没有方法体，都是以“；“结尾的，但是他们都不是抽象方法，例如：</p>
+<p>public native int hashCode();</p>
+<p>这个方法底层调用了C++写的动态链接库程序。</p>
+<p>前面修饰符列表中没有：abstract。有一个native。表示调用JVM本地程序。</p>
+</li>
+<li><h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2></li>
+</ul>
+<p>1.接口是一种引用数据类型。编译之后也是一个class字节码文件。</p>
+<p>2.借口是完全抽象。</p>
+<p>3.接口怎么定义：[修饰符列表] interface 接口名{}</p>
+<p>4.接口支持多继承。</p>
+<p>5.接口中只包含常量+抽象方法。</p>
+<p>6.接口中的所有元素都是public修饰的。（都是公开的。）</p>
+<p>7.接口中的抽象方法定义时：public abstract修饰符可以省略。常量也是。</p>
+<p>8.接口中的方法都是抽象方法，所以接口中的方法不能有方法体。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;定义接口</span><br><span class="line">interface A&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;接口支持继承</span><br><span class="line">interface B extends A&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;支持多继承</span><br><span class="line">interface C extends A,B&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;我的数学方法</span><br><span class="line">interface MyMath&#123;</span><br><span class="line">	&#x2F;&#x2F;常量</span><br><span class="line">	public static final double PI &#x3D; 3.1415926;</span><br><span class="line">	&#x2F;&#x2F;也可以省略</span><br><span class="line">	double PI &#x3D; 3.1415926;&#x2F;&#x2F;PI是常量，不可变</span><br><span class="line">	</span><br><span class="line">	&#x2F;&#x2F;抽象方法</span><br><span class="line">	public abstract int sum(int a , int b);</span><br><span class="line">	&#x2F;&#x2F;也可以省略</span><br><span class="line">	&#x2F;&#x2F;int sum(int a , int b);</span><br><span class="line">	</span><br><span class="line">	&#x2F;&#x2F;接口中的方法可以有方法体嘛？</span><br><span class="line">	&#x2F;&#x2F;错误：接口抽象方法不能带有主体</span><br><span class="line">	&#x2F;*</span><br><span class="line">	void doSome()&#123;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">	*&#x2F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接口的基础语法：</p>
+<p>​    1.类和类之间叫做继承（关键字：extends），类和接口之间叫做实现（关键字：implements）。</p>
+<p>​    2.当一个<strong>非抽象</strong>的类实现接口的话，必须将接口中所有抽象方法全部实现（覆盖、重写）。</p>
+<p>java类名：interfaceTest</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class interfaceTest &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">    	&#x2F;&#x2F;多态</span><br><span class="line">        &#x2F;&#x2F;父类型的引用指向子类型的对象</span><br><span class="line">        MyMath mm &#x3D; new m();</span><br><span class="line">        &#x2F;&#x2F;面向接口编程</span><br><span class="line">        int sum &#x3D; mm.sum(10, 80);</span><br><span class="line">        int sub &#x3D; mm.sub(20, 5);</span><br><span class="line">        System.out.println(sum);</span><br><span class="line">        System.out.println(sub);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">interface MyMath&#123;</span><br><span class="line">    double PI &#x3D; 3.1415926;</span><br><span class="line">    int sum(int a , int b);&#x2F;&#x2F;默认public访问权限</span><br><span class="line">    int sub(int a , int b);</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;非抽象类实现接口</span><br><span class="line">class m implements MyMath&#123;</span><br><span class="line">    &#x2F;&#x2F;public不能省略，访问权限不能低于接口的访问权限</span><br><span class="line">    &#x2F;&#x2F;实现接口的方法</span><br><span class="line">    public int sum(int a , int b)&#123;</span><br><span class="line">        return a+b;</span><br><span class="line">    &#125;</span><br><span class="line">    public int sub(int a , int b)&#123;</span><br><span class="line">        return a-b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一个类可以同时实现多个接口：</p>
+<p>这个机制弥补了Java中类和类之间的单继承（为了简单而出现）带来的缺陷。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class interfaceTest &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        &#x2F;&#x2F;父类型的引用指向子类型的对象</span><br><span class="line">        A a &#x3D; new C();</span><br><span class="line">        int sum &#x3D; a.sum(10, 20);</span><br><span class="line">        &#x2F;&#x2F;a.sub(20,10);  编译报错，A接口中没有sub（）方法</span><br><span class="line">        &#x2F;*</span><br><span class="line">        *接口和接口之间在进行强制类型转换的时候，没有继承关系，也可以强制转换</span><br><span class="line">        但注意：运行时可能出现ClassCastException异常</span><br><span class="line">        *编译没问题，运行有问题</span><br><span class="line">        B b &#x3D; (B) a;</span><br><span class="line">        a.sub(20,10);</span><br><span class="line">        **&#x2F;</span><br><span class="line">        &#x2F;&#x2F;向下转型记得转型前先 if+instanceof 进行判断</span><br><span class="line">        if(a instanceof B) &#123;</span><br><span class="line">            B b &#x3D; (B) a;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(sum);</span><br><span class="line">        &#x2F;&#x2F;也可以直接向下转型</span><br><span class="line">        C c &#x3D; (C) a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">interface A&#123;</span><br><span class="line">    public int sum(int a , int b);</span><br><span class="line">&#125;</span><br><span class="line">interface B&#123;</span><br><span class="line">    public int sub(int a , int b);</span><br><span class="line">&#125;</span><br><span class="line">class C implements A&#123;</span><br><span class="line">    public int sum(int a, int b) &#123;</span><br><span class="line">        return a+b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>-Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL划题复习</title>
     <url>/post/4366.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="MySQL划题复习整理"><a href="#MySQL划题复习整理" class="headerlink" title="MySQL划题复习整理"></a>MySQL划题复习整理</h1><a id="more"></a>
@@ -209,190 +347,19 @@
       </tags>
   </entry>
   <entry>
-    <title>VC++复习——C++语言面向对象编程基础</title>
-    <url>/post/12682.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="VC-复习"><a href="#VC-复习" class="headerlink" title="VC++复习"></a>VC++复习</h1><a id="more"></a>
+    <title>快速下载网盘神器</title>
+    <url>/post/62944.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="亿寻"><a href="#亿寻" class="headerlink" title="亿寻"></a>亿寻</h1><a id="more"></a>
 
-<p>​    VC++是面向对象的可视化集成编程系统。</p>
-<hr>
-<h2 id="C-语言面向对象编程基础"><a href="#C-语言面向对象编程基础" class="headerlink" title="C++语言面向对象编程基础"></a>C++语言面向对象编程基础</h2><h3 id="1-一个简单的C-语言程序"><a href="#1-一个简单的C-语言程序" class="headerlink" title="1.一个简单的C++语言程序"></a>1.一个简单的C++语言程序</h3><p><strong>main是主函数名</strong>，函数体用一对大括号括住，函数是C++语言程序里最小的功能单位。</p>
-<p>C++语言程序里**必须有且只能有一个函数main( )**，它是程序执行的入口。</p>
-<p>C++语言所有语句最后都应当有一个分号。</p>
-<hr>
-<h3 id="2-C-语言程序基本要素"><a href="#2-C-语言程序基本要素" class="headerlink" title="2.C++语言程序基本要素"></a>2.C++语言程序基本要素</h3><p>C++语言的字符集：</p>
-<p>(1)英文字母：A ~ Z,a ~ z。</p>
-<p>(2)数字字符：0~9。</p>
-<p>(3)特殊字符：空格、！、#、%、^、&amp;、*、_、+、=、-、~、&lt;、&gt;、/、\、‘、”、；、.、，、()、[]、{}。</p>
-<p>关键字全部由小写字母组成。</p>
-<hr>
-<p>标识符是软件开发者自己声明的单词，用于命名一些实体，如函数名、变量名、类名、对象名等。构成规则：</p>
-<p>(1)以大写字母、小写字母或下画线开头。</p>
-<p>(2)可由大写字母、小写字母、下画线或数字组成。</p>
-<p>(3)字母区分大小写，大写字母和小写字母表示不同的标识符。</p>
-<p>(4)不能用C++语言的关键字。</p>
-<p>尽量<strong>不用下画线开头，</strong>避免与系统定义的关键字冲突。</p>
-<hr>
-<p>分隔符不进行实际操作，只是用于构造程序。</p>
-<p>数据类型指明<strong>变量或表达式的状态和行为，</strong>决定了<strong>数的取值范围和允许执行的运算符集。</strong>可分为<strong>基本类型</strong>和<strong>引用类型</strong>两大类。</p>
-<p>基本类型是指<strong>不能再分解</strong>的数据类型，其数据在函数的调用中是以<strong>传值方式</strong>工作的。</p>
-<p>unsigned (int)    无符号整型</p>
-<p>(signed) int    有符号整型</p>
-<hr>
-<p>换行符 \n    回车符 \r    水平制表符(Tab键) \t</p>
-<hr>
-<p>变量：先定义，后使用</p>
-<p>使用变量之前必须先声明它的类型和名称</p>
-<p>例如：int和float的声明变量</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int num;</span><br><span class="line">float a;</span><br></pre></td></tr></table></figure>
-
-<p>常量：const  &lt;数值类型&gt; &lt;常量名&gt;</p>
-<p><code>const float pi=3.1415926</code></p>
-<hr>
-<p><strong>基本运算符</strong>：+、-、*、/、%。(-作为负号时为一元运算符，作为减号时为二元运算符)</p>
-<p>前置后置：i++是后置；–i是前置。例如：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int i&#x3D;5,j&#x3D;5,m,n;</span><br><span class="line">m&#x3D;i++;	&#x2F;&#x2F;后置++；相当于m&#x3D;1；i&#x3D;i+1；结果：i&#x3D;6；m&#x3D;5</span><br><span class="line">n&#x3D;++j;	&#x2F;&#x2F;前置++；相当于j&#x3D;j+1；n&#x3D;j；结果：j&#x3D;6，n&#x3D;6</span><br></pre></td></tr></table></figure>
-
-<p><strong>赋值运算符</strong>：=、+=、-=、*=、/=、%=、&lt;&lt;=、&gt;&gt;=、&amp;=、^=、|=。    结合性从右向左。例如：</p>
-<p><code>a=3+(c=4)</code>        这个表达式的值为7，a=7，c=4。</p>
-<p><strong>逗号运算符</strong>：(例如)</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">c&#x3D;b&#x3D;(a&#x3D;3,4*3);		&#x2F;&#x2F;结果为：a&#x3D;3，b&#x3D;12，c&#x3D;12，表达式值为12</span><br><span class="line">c&#x3D;b&#x3D;a&#x3D;3,4*3;		&#x2F;&#x2F;结果为：a&#x3D;3，b&#x3D;3，c&#x3D;3，表达式值为12</span><br><span class="line">c&#x3D;(b&#x3D;a&#x3D;3,4*3);		&#x2F;&#x2F;结果为：a&#x3D;3，b&#x3D;3，c&#x3D;12，表达式值为12</span><br></pre></td></tr></table></figure>
-
-<p><strong>关系运算符</strong>：&lt;、&lt;=、&gt;、&gt;=、==、!=。前四个优先级相同，后两个优先级相同。前四个优先级比后两个优先级高。</p>
-<p><strong>逻辑运算符</strong>：!(非)、&amp;&amp;(与)、||(或)。优先级依此降低。(&amp;与|同时运算)</p>
-<p><strong>条件运算符</strong>：C++语言唯一的**<em>三元运算符**</em>。例如：</p>
-<p><code>(a&lt;b)?a:b</code>    a:b表示如果a&lt;b，那么结果为a；如果a&gt;b，那么结果为b。</p>
-<p><strong>sizeof运算符</strong>：计算某个对象在内存中占用的字节数。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sizeof(int);				&#x2F;&#x2F;值为4</span><br><span class="line">double x; sizeof(x);		&#x2F;&#x2F;值为8</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>表达式中的类型转换分为：<strong>隐含转换</strong>和<strong>强制转换</strong>。</p>
-<p>隐含转换是安全的，因为没有精度损失。</p>
-<p>隐含转换原则：将低类型数据转换为高类型数据。</p>
-<p>从低到高的顺序：char、short、int、unsigned int、long、unsigned long、float、double。类型越高，范围越大，精度也越高。</p>
-<p>赋值运算要求赋值运算符左边的值和右边的值类型相同，不同的话，会进行自动转换，将一律将右边的值类型转换为左边的值类型。例如：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int i; float f; double d;</span><br><span class="line">d&#x3D;i*f;		&#x2F;&#x2F;计算时现将i转换为f一样的浮点型的值，乘法结果再转换为双精度浮点型的值。</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-类与对象"><a href="#3-类与对象" class="headerlink" title="3.类与对象"></a>3.类与对象</h2><p>面向对象程序设计理论角度：类是对某一类对象的抽象，而对象是对类的具体实例。</p>
-<p>程序设计的角度：类是一种复杂的自定义数据类型，对象是属于这种类型的变量。</p>
-<hr>
-<p><strong>抽象</strong>：对象进行概括，抽出一类对象的共性并加以描述的过程。  有两方面：<strong>数据抽象</strong>和<strong>行为抽象</strong>。</p>
-<p><strong>数据抽象</strong>：属性和状态。        <strong>行为抽象</strong>：共同行为或共同功能。</p>
-<p>例如：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">时钟(clock)</span><br><span class="line">数据抽象:</span><br><span class="line">int Hour; int Minute; int Second;</span><br><span class="line">行为抽象:</span><br><span class="line">ShowTime(); SetTime();</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>VC++</category>
-      </categories>
-      <tags>
-        <tag>复习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>gitee仓库</title>
-    <url>/post/4e62faf5.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="关于gitee仓库的建立"><a href="#关于gitee仓库的建立" class="headerlink" title="关于gitee仓库的建立"></a>关于gitee仓库的建立</h2><a id="more"></a>
-
-<p>注册好gitee账号登录后</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821141508.png"></p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821141825.png"></p>
-<p>然后点击创建</p>
+<p>平时需要在网盘下载东西时，发现下载的东西很慢有木有，有时候一个连接不稳定还得重新下载，属实让人难受。</p>
+<p>所以，这里推一款软件——亿寻。附上网盘地址：</p>
+<p>链接：<a href="https://pan.baidu.com/s/19wDLbDDiEnnOPgkI821c1g">https://pan.baidu.com/s/19wDLbDDiEnnOPgkI821c1g</a><br>提取码：3q6h</p>
+<p>下载后，解压发现电脑提示有病毒的话，关掉安全管家就行了，如果安全管家太强大，比如我的安全管家就会把亿寻的exe程序删除，以至于我只有文件，没有启动程序，那么，就保留压缩的文件，到需要的时候，就仅仅解压exe文件即可</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200823212322.png"></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200823212749.png" alt="image-20200823212748976"></p>
 ]]></content>
-      <categories>
-        <category>gitee</category>
-      </categories>
       <tags>
-        <tag>Hexo+Gitee+Node.js搭建博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java学习</title>
-    <url>/post/8df0ec14.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Java学习"><a href="#Java学习" class="headerlink" title="Java学习"></a>Java学习</h1><a id="more"></a>
-
-<h2 id="数学工具类Math"><a href="#数学工具类Math" class="headerlink" title="数学工具类Math"></a>数学工具类Math</h2><p>public static double abs(double num)；绝对值</p>
-<p>public static double ceil(double num)；向上取整</p>
-<p>public static double floor(double num)；向下取整</p>
-<p>public static double round(double num)；四舍五入</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">System.out.println(Math.abs(3.14));&#x2F;&#x2F;输出3.14</span><br><span class="line">System.out.println(Math.ceil(3.14));&#x2F;&#x2F;输出4.0</span><br><span class="line">System.out.println(Math.floor(3.14));&#x2F;&#x2F;输出3.0</span><br><span class="line">System.out.println(Math.round(3.14));&#x2F;&#x2F;输出3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="final关键字"><a href="#final关键字" class="headerlink" title="final关键字"></a>final关键字</h2><p>1.final修饰的类无法继承。</p>
-<p>2.final修饰的方法无法覆盖。</p>
-<p>3.final修饰的变量只能赋值一次。</p>
-<p>4.final修饰的引用一旦指向某个对象， 则不能再重新指向其他对象，但该引用指向的对象内部的数据是可以修改的。</p>
-<p>5.final修饰的实例变量必须手动初始化，不能采用系统默认值。</p>
-<p>6.final修饰的实例变量一般和static联合使用，成为常量。</p>
-<h2 id="抽象类和接口"><a href="#抽象类和接口" class="headerlink" title="抽象类和接口"></a>抽象类和接口</h2><p>1.抽象类定义：在class前添加abstract关键字就行。</p>
-<p>2.抽象类是无法实例化的，无法创建对象的，所以抽象类是用来被子类继承的。</p>
-<p>3.final和abstract不能联合使用，这两个关键字是对立的。</p>
-<p>4.抽象类的子类可以使抽象类，也可以是非抽象类。</p>
-<p>5.抽象类虽然无法实例化，但是抽象类有构造方法，这个构造方法是供子类使用的。</p>
-<p>6.抽象类中不一定有抽象方法，抽象方法必须出现在抽象类中。</p>
-<p>7.抽象方法怎么定义？</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public abstract void doSome();</span><br></pre></td></tr></table></figure>
-
-<p>8.一个非抽象类，继承抽象类，必须将抽象类中的抽象方法覆盖（实现）。</p>
-<ul>
-<li><p>面试题（判断题）：Java语言中凡是没有方法体的方法都是抽象方法。</p>
-<p>不对，错误的。</p>
-<p>Object类种就有很多都没有方法体，都是以“；“结尾的，但是他们都不是抽象方法，例如：</p>
-<p>public native int hashCode();</p>
-<p>这个方法底层调用了C++写的动态链接库程序。</p>
-<p>前面修饰符列表中没有：abstract。有一个native。表示调用JVM本地程序。</p>
-</li>
-<li><h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2></li>
-</ul>
-<p>1.接口是一种引用数据类型。编译之后也是一个class字节码文件。</p>
-<p>2.借口是完全抽象。</p>
-<p>3.接口怎么定义：[修饰符列表] interface 接口名{}</p>
-<p>4.接口支持多继承。</p>
-<p>5.接口中只包含常量+抽象方法。</p>
-<p>6.接口中的所有元素都是public修饰的。（都是公开的。）</p>
-<p>7.接口中的抽象方法定义时：public abstract修饰符可以省略。常量也是。</p>
-<p>8.接口中的方法都是抽象方法，所以接口中的方法不能有方法体。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;定义接口</span><br><span class="line">interface A&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;接口支持继承</span><br><span class="line">interface B extends A&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;支持多继承</span><br><span class="line">interface C extends A,B&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;我的数学方法</span><br><span class="line">interface MyMath&#123;</span><br><span class="line">	&#x2F;&#x2F;常量</span><br><span class="line">	public static final double PI &#x3D; 3.1415926;</span><br><span class="line">	&#x2F;&#x2F;也可以省略</span><br><span class="line">	double PI &#x3D; 3.1415926;&#x2F;&#x2F;PI是常量，不可变</span><br><span class="line">	</span><br><span class="line">	&#x2F;&#x2F;抽象方法</span><br><span class="line">	public abstract int sum(int a , int b);</span><br><span class="line">	&#x2F;&#x2F;也可以省略</span><br><span class="line">	&#x2F;&#x2F;int sum(int a , int b);</span><br><span class="line">	</span><br><span class="line">	&#x2F;&#x2F;接口中的方法可以有方法体嘛？</span><br><span class="line">	&#x2F;&#x2F;错误：接口抽象方法不能带有主体</span><br><span class="line">	&#x2F;*</span><br><span class="line">	void doSome()&#123;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">	*&#x2F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接口的基础语法：</p>
-<p>​    1.类和类之间叫做继承（关键字：extends），类和接口之间叫做实现（关键字：implements）。</p>
-<p>​    2.当一个<strong>非抽象</strong>的类实现接口的话，必须将接口中所有抽象方法全部实现（覆盖、重写）。</p>
-<p>java类名：interfaceTest</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class interfaceTest &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">    	&#x2F;&#x2F;多态</span><br><span class="line">        &#x2F;&#x2F;父类型的引用指向子类型的对象</span><br><span class="line">        MyMath mm &#x3D; new m();</span><br><span class="line">        &#x2F;&#x2F;面向接口编程</span><br><span class="line">        int sum &#x3D; mm.sum(10, 80);</span><br><span class="line">        int sub &#x3D; mm.sub(20, 5);</span><br><span class="line">        System.out.println(sum);</span><br><span class="line">        System.out.println(sub);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">interface MyMath&#123;</span><br><span class="line">    double PI &#x3D; 3.1415926;</span><br><span class="line">    int sum(int a , int b);&#x2F;&#x2F;默认public访问权限</span><br><span class="line">    int sub(int a , int b);</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;非抽象类实现接口</span><br><span class="line">class m implements MyMath&#123;</span><br><span class="line">    &#x2F;&#x2F;public不能省略，访问权限不能低于接口的访问权限</span><br><span class="line">    &#x2F;&#x2F;实现接口的方法</span><br><span class="line">    public int sum(int a , int b)&#123;</span><br><span class="line">        return a+b;</span><br><span class="line">    &#125;</span><br><span class="line">    public int sub(int a , int b)&#123;</span><br><span class="line">        return a-b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>一个类可以同时实现多个接口：</p>
-<p>这个机制弥补了Java中类和类之间的单继承（为了简单而出现）带来的缺陷。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class interfaceTest &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        &#x2F;&#x2F;父类型的引用指向子类型的对象</span><br><span class="line">        A a &#x3D; new C();</span><br><span class="line">        int sum &#x3D; a.sum(10, 20);</span><br><span class="line">        &#x2F;&#x2F;a.sub(20,10);  编译报错，A接口中没有sub（）方法</span><br><span class="line">        &#x2F;*</span><br><span class="line">        *接口和接口之间在进行强制类型转换的时候，没有继承关系，也可以强制转换</span><br><span class="line">        但注意：运行时可能出现ClassCastException异常</span><br><span class="line">        *编译没问题，运行有问题</span><br><span class="line">        B b &#x3D; (B) a;</span><br><span class="line">        a.sub(20,10);</span><br><span class="line">        **&#x2F;</span><br><span class="line">        &#x2F;&#x2F;向下转型记得转型前先 if+instanceof 进行判断</span><br><span class="line">        if(a instanceof B) &#123;</span><br><span class="line">            B b &#x3D; (B) a;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(sum);</span><br><span class="line">        &#x2F;&#x2F;也可以直接向下转型</span><br><span class="line">        C c &#x3D; (C) a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">interface A&#123;</span><br><span class="line">    public int sum(int a , int b);</span><br><span class="line">&#125;</span><br><span class="line">interface B&#123;</span><br><span class="line">    public int sub(int a , int b);</span><br><span class="line">&#125;</span><br><span class="line">class C implements A&#123;</span><br><span class="line">    public int sum(int a, int b) &#123;</span><br><span class="line">        return a+b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>-Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>修改电脑的DNS</title>
-    <url>/post/c2fc7544.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="关于电脑DNS的修改"><a href="#关于电脑DNS的修改" class="headerlink" title="关于电脑DNS的修改"></a>关于电脑DNS的修改</h1><a id="more"></a>
-
-<p>  之前在搭建博客的时候，发现了电脑没有办法打开GitHub之类的网站，以及没有办法打开Next的使用文档</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822090320.png"></p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822090628.png"></p>
-<p>  所以我只能转战gitee，但是我发现每次部署完之后，打开发现没有css和js</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822090912.png"></p>
-<p>于是，我去问了一些人，终于找到了一个这样的方法——修改电脑的DNS</p>
-<hr>
-<h2 id="正文开始"><a href="#正文开始" class="headerlink" title="正文开始"></a>正文开始</h2><h3 id="1-打开控制面板"><a href="#1-打开控制面板" class="headerlink" title="1.打开控制面板"></a>1.打开控制面板</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091212.png"></p>
-<h3 id="2-打开网络和共享中心"><a href="#2-打开网络和共享中心" class="headerlink" title="2.打开网络和共享中心"></a>2.打开网络和共享中心</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091358.png" alt="image-20200822091357982"></p>
-<h3 id="3-打开更改适配器设置"><a href="#3-打开更改适配器设置" class="headerlink" title="3.打开更改适配器设置"></a>3.打开更改适配器设置</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091430.png"></p>
-<h3 id="4-打开WLAN属性"><a href="#4-打开WLAN属性" class="headerlink" title="4.打开WLAN属性"></a>4.打开WLAN属性</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091528.png"></p>
-<h3 id="5-双击IPv4-取消勾选IPv6"><a href="#5-双击IPv4-取消勾选IPv6" class="headerlink" title="5.双击IPv4 取消勾选IPv6"></a>5.双击IPv4 取消勾选IPv6</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091703.png"></p>
-<h3 id="6-使用下面的DNS服务器地址"><a href="#6-使用下面的DNS服务器地址" class="headerlink" title="6.使用下面的DNS服务器地址"></a>6.使用下面的DNS服务器地址</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091823.png" alt="image-20200822091823427"></p>
-<p>首选DNS服务器： <code>114.114.114.114</code></p>
-<p>备用DNS服务器：<code>8.8.8.8</code></p>
-<p>这个地址是我从网上看到的</p>
-<hr>
-<p>  然后，我们就可以发现NexT文档和GitHub的网址都能使用了。</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822092041.png"></p>
-]]></content>
-      <categories>
-        <category>DNS</category>
-      </categories>
-      <tags>
-        <tag>修改DNS</tag>
+        <tag>--网盘神器 --网盘文件助手</tag>
       </tags>
   </entry>
   <entry>
@@ -430,6 +397,99 @@
       </categories>
       <tags>
         <tag>Git安装</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>gitee仓库</title>
+    <url>/post/4e62faf5.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="关于gitee仓库的建立"><a href="#关于gitee仓库的建立" class="headerlink" title="关于gitee仓库的建立"></a>关于gitee仓库的建立</h2><a id="more"></a>
+
+<p>注册好gitee账号登录后</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821141508.png"></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821141825.png"></p>
+<p>然后点击创建</p>
+]]></content>
+      <categories>
+        <category>gitee</category>
+      </categories>
+      <tags>
+        <tag>Hexo+Gitee+Node.js搭建博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>修改电脑的DNS</title>
+    <url>/post/c2fc7544.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="关于电脑DNS的修改"><a href="#关于电脑DNS的修改" class="headerlink" title="关于电脑DNS的修改"></a>关于电脑DNS的修改</h1><a id="more"></a>
+
+<p>  之前在搭建博客的时候，发现了电脑没有办法打开GitHub之类的网站，以及没有办法打开Next的使用文档</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822090320.png"></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822090628.png"></p>
+<p>  所以我只能转战gitee，但是我发现每次部署完之后，打开发现没有css和js</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822090912.png"></p>
+<p>于是，我去问了一些人，终于找到了一个这样的方法——修改电脑的DNS</p>
+<hr>
+<h2 id="正文开始"><a href="#正文开始" class="headerlink" title="正文开始"></a>正文开始</h2><h3 id="1-打开控制面板"><a href="#1-打开控制面板" class="headerlink" title="1.打开控制面板"></a>1.打开控制面板</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091212.png"></p>
+<h3 id="2-打开网络和共享中心"><a href="#2-打开网络和共享中心" class="headerlink" title="2.打开网络和共享中心"></a>2.打开网络和共享中心</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091358.png" alt="image-20200822091357982"></p>
+<h3 id="3-打开更改适配器设置"><a href="#3-打开更改适配器设置" class="headerlink" title="3.打开更改适配器设置"></a>3.打开更改适配器设置</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091430.png"></p>
+<h3 id="4-打开WLAN属性"><a href="#4-打开WLAN属性" class="headerlink" title="4.打开WLAN属性"></a>4.打开WLAN属性</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091528.png"></p>
+<h3 id="5-双击IPv4-取消勾选IPv6"><a href="#5-双击IPv4-取消勾选IPv6" class="headerlink" title="5.双击IPv4 取消勾选IPv6"></a>5.双击IPv4 取消勾选IPv6</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091703.png"></p>
+<h3 id="6-使用下面的DNS服务器地址"><a href="#6-使用下面的DNS服务器地址" class="headerlink" title="6.使用下面的DNS服务器地址"></a>6.使用下面的DNS服务器地址</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091823.png" alt="image-20200822091823427"></p>
+<p>首选DNS服务器： <code>114.114.114.114</code></p>
+<p>备用DNS服务器：<code>8.8.8.8</code></p>
+<p>这个地址是我从网上看到的</p>
+<hr>
+<p>  然后，我们就可以发现NexT文档和GitHub的网址都能使用了。</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822092041.png"></p>
+]]></content>
+      <categories>
+        <category>DNS</category>
+      </categories>
+      <tags>
+        <tag>修改DNS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>搭建hexo博客——GitHub篇</title>
+    <url>/post/fb98ceba.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Hexo-GIT-Node-js搭建博客"><a href="#Hexo-GIT-Node-js搭建博客" class="headerlink" title="Hexo+ GIT+Node.js搭建博客"></a><a href="http://zsquw5.coding-pages.com/2020/08/20/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94Gitee%E7%AF%87/">Hexo+ GIT+Node.js搭建博客</a></h1><a id="more"></a>
+
+<p>软件准备工作和之前的  搭建hexo博客——Gitee篇  一样，点击标题即可转接。</p>
+<h2 id="正文开始-以下命令都是在git中执行"><a href="#正文开始-以下命令都是在git中执行" class="headerlink" title="正文开始(以下命令都是在git中执行)"></a>正文开始(以下命令都是在git中执行)</h2><p>在本地建立一个文件夹，这个文件夹就是搭建hexo博客的开始。我的文件夹名字叫(博客)，便于理解。</p>
+<p>在博客内打开Git，就是Git Bash Here，输入：</p>
+<p><code>hexo init</code></p>
+<p>然后开始一段时间的等待……</p>
+<p>加载完成之后，你可以输入</p>
+<p><code>hexo s</code>        查看当前网站(注意：这是在本地4000端口查看的，不是网上能查出来的，是需要部署之后才能查看)</p>
+<hr>
+<p>之前说的不能查看GitHub相关的网站，我也在修改DNS中有提到过解决方法。</p>
+<p><a href="https://solitudehero.github.io/2020/08/22/%E4%BF%AE%E6%94%B9%E7%94%B5%E8%84%91%E7%9A%84DNS/#more">DNS修改</a></p>
+<p>ok，废话不多说，上干货。</p>
+<hr>
+<p>同样的，需要首先去<a href="https://github.com/">GitHub官网</a>那去创建一个仓库</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822195521.png"></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822195721.png"></p>
+<p>一般情况下，完成后，会返回你一个仓库地址值，如果没有返回也不要着急，在这也可以找到</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822195915.png" alt="image-20200822195914713"></p>
+<p>在 Blog 目录下安装一个 hexo 部署插件 </p>
+<p><code>cnpm install --save hexo-deployer-git</code></p>
+<p>找到 Blog 文件中的 _config.yml 文件，使用工具打开，如果不是很熟练，建议使用Visual Studio Code 打开，当然，如果觉得麻烦，也可以笔记本打开，但是容易出现错误。</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821142432.png"></p>
+<p>找到这行代码repo后输入接上刚刚让你复制的仓库地址。</p>
+<p>然后进行保存。</p>
+<p>在博客目录下打开的git里面输入<code>hexo d</code></p>
+<p>然后，你就可以直接打开自己的网址了，不需要再去Github上面部署了。</p>
+<p>等等……什么？你不知道网址？</p>
+<p>在这里</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822200115.png" alt="image-20200822200115078"></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822200156.png" alt="image-20200822200156187"></p>
+<p>如果你第一次勾选了那个README(就是创建仓库的时候)，你们会自动生成，如果没有勾选，按照我的这个设置之后，按save即可获取</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822200231.png" alt="image-20200822200231115"></p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo+Github+Node.js搭建博客</tag>
       </tags>
   </entry>
   <entry>
@@ -494,66 +554,6 @@
       </categories>
       <tags>
         <tag>Hexo+Gitee+Node.js搭建博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>快速下载网盘神器</title>
-    <url>/post/62944.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="亿寻"><a href="#亿寻" class="headerlink" title="亿寻"></a>亿寻</h1><a id="more"></a>
-
-<p>平时需要在网盘下载东西时，发现下载的东西很慢有木有，有时候一个连接不稳定还得重新下载，属实让人难受。</p>
-<p>所以，这里推一款软件——亿寻。附上网盘地址：</p>
-<p>链接：<a href="https://pan.baidu.com/s/19wDLbDDiEnnOPgkI821c1g">https://pan.baidu.com/s/19wDLbDDiEnnOPgkI821c1g</a><br>提取码：3q6h</p>
-<p>下载后，解压发现电脑提示有病毒的话，关掉安全管家就行了，如果安全管家太强大，比如我的安全管家就会把亿寻的exe程序删除，以至于我只有文件，没有启动程序，那么，就保留压缩的文件，到需要的时候，就仅仅解压exe文件即可</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200823212322.png"></p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200823212749.png" alt="image-20200823212748976"></p>
-]]></content>
-      <tags>
-        <tag>--网盘神器 --网盘文件助手</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>搭建hexo博客——GitHub篇</title>
-    <url>/post/fb98ceba.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Hexo-GIT-Node-js搭建博客"><a href="#Hexo-GIT-Node-js搭建博客" class="headerlink" title="Hexo+ GIT+Node.js搭建博客"></a><a href="http://zsquw5.coding-pages.com/2020/08/20/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94Gitee%E7%AF%87/">Hexo+ GIT+Node.js搭建博客</a></h1><a id="more"></a>
-
-<p>软件准备工作和之前的  搭建hexo博客——Gitee篇  一样，点击标题即可转接。</p>
-<h2 id="正文开始-以下命令都是在git中执行"><a href="#正文开始-以下命令都是在git中执行" class="headerlink" title="正文开始(以下命令都是在git中执行)"></a>正文开始(以下命令都是在git中执行)</h2><p>在本地建立一个文件夹，这个文件夹就是搭建hexo博客的开始。我的文件夹名字叫(博客)，便于理解。</p>
-<p>在博客内打开Git，就是Git Bash Here，输入：</p>
-<p><code>hexo init</code></p>
-<p>然后开始一段时间的等待……</p>
-<p>加载完成之后，你可以输入</p>
-<p><code>hexo s</code>        查看当前网站(注意：这是在本地4000端口查看的，不是网上能查出来的，是需要部署之后才能查看)</p>
-<hr>
-<p>之前说的不能查看GitHub相关的网站，我也在修改DNS中有提到过解决方法。</p>
-<p><a href="https://solitudehero.github.io/2020/08/22/%E4%BF%AE%E6%94%B9%E7%94%B5%E8%84%91%E7%9A%84DNS/#more">DNS修改</a></p>
-<p>ok，废话不多说，上干货。</p>
-<hr>
-<p>同样的，需要首先去<a href="https://github.com/">GitHub官网</a>那去创建一个仓库</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822195521.png"></p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822195721.png"></p>
-<p>一般情况下，完成后，会返回你一个仓库地址值，如果没有返回也不要着急，在这也可以找到</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822195915.png" alt="image-20200822195914713"></p>
-<p>在 Blog 目录下安装一个 hexo 部署插件 </p>
-<p><code>cnpm install --save hexo-deployer-git</code></p>
-<p>找到 Blog 文件中的 _config.yml 文件，使用工具打开，如果不是很熟练，建议使用Visual Studio Code 打开，当然，如果觉得麻烦，也可以笔记本打开，但是容易出现错误。</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821142432.png"></p>
-<p>找到这行代码repo后输入接上刚刚让你复制的仓库地址。</p>
-<p>然后进行保存。</p>
-<p>在博客目录下打开的git里面输入<code>hexo d</code></p>
-<p>然后，你就可以直接打开自己的网址了，不需要再去Github上面部署了。</p>
-<p>等等……什么？你不知道网址？</p>
-<p>在这里</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822200115.png" alt="image-20200822200115078"></p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822200156.png" alt="image-20200822200156187"></p>
-<p>如果你第一次勾选了那个README(就是创建仓库的时候)，你们会自动生成，如果没有勾选，按照我的这个设置之后，按save即可获取</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822200231.png" alt="image-20200822200231115"></p>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo+Github+Node.js搭建博客</tag>
       </tags>
   </entry>
   <entry>
