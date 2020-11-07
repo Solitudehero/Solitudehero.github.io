@@ -3,9 +3,7 @@
   <entry>
     <title>Java学习</title>
     <url>/post/8df0ec14.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Java学习"><a href="#Java学习" class="headerlink" title="Java学习"></a>Java学习</h1><a id="more"></a>
-
-<h2 id="数学工具类Math"><a href="#数学工具类Math" class="headerlink" title="数学工具类Math"></a>数学工具类Math</h2><p>public static double abs(double num)；绝对值</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Java学习"><a href="#Java学习" class="headerlink" title="Java学习"></a>Java学习</h1><h2 id="数学工具类Math"><a href="#数学工具类Math" class="headerlink" title="数学工具类Math"></a>数学工具类Math</h2><p>public static double abs(double num)；绝对值</p>
 <p>public static double ceil(double num)；向上取整</p>
 <p>public static double floor(double num)；向下取整</p>
 <p>public static double round(double num)；四舍五入</p>
@@ -55,7 +53,27 @@
 
 <p>一个类可以同时实现多个接口：</p>
 <p>这个机制弥补了Java中类和类之间的单继承（为了简单而出现）带来的缺陷。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class interfaceTest &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        &#x2F;&#x2F;父类型的引用指向子类型的对象</span><br><span class="line">        A a &#x3D; new C();</span><br><span class="line">        int sum &#x3D; a.sum(10, 20);</span><br><span class="line">        &#x2F;&#x2F;a.sub(20,10);  编译报错，A接口中没有sub（）方法</span><br><span class="line">        &#x2F;*</span><br><span class="line">        *接口和接口之间在进行强制类型转换的时候，没有继承关系，也可以强制转换</span><br><span class="line">        但注意：运行时可能出现ClassCastException异常</span><br><span class="line">        *编译没问题，运行有问题</span><br><span class="line">        B b &#x3D; (B) a;</span><br><span class="line">        a.sub(20,10);</span><br><span class="line">        **&#x2F;</span><br><span class="line">        &#x2F;&#x2F;向下转型记得转型前先 if+instanceof 进行判断</span><br><span class="line">        if(a instanceof B) &#123;</span><br><span class="line">            B b &#x3D; (B) a;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(sum);</span><br><span class="line">        &#x2F;&#x2F;也可以直接向下转型</span><br><span class="line">        C c &#x3D; (C) a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">interface A&#123;</span><br><span class="line">    public int sum(int a , int b);</span><br><span class="line">&#125;</span><br><span class="line">interface B&#123;</span><br><span class="line">    public int sub(int a , int b);</span><br><span class="line">&#125;</span><br><span class="line">class C implements A&#123;</span><br><span class="line">    public int sum(int a, int b) &#123;</span><br><span class="line">        return a+b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class interfaceTest &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        &#x2F;&#x2F;父类型的引用指向子类型的对象</span><br><span class="line">        A a &#x3D; new C();</span><br><span class="line">        int sum &#x3D; a.sum(10, 20);</span><br><span class="line">        &#x2F;&#x2F;a.sub(20,10);  编译报错，A接口中没有sub（）方法</span><br><span class="line">        &#x2F;*</span><br><span class="line">        *接口和接口之间在进行强制类型转换的时候，没有继承关系，也可以强制转换</span><br><span class="line">        但注意：运行时可能出现ClassCastException异常</span><br><span class="line">        *编译没问题，运行有问题</span><br><span class="line">        B b &#x3D; (B) a;</span><br><span class="line">        a.sub(20,10);</span><br><span class="line">        **&#x2F;</span><br><span class="line">        &#x2F;&#x2F;向下转型记得转型前先 if+instanceof 进行判断</span><br><span class="line">        if(a instanceof B) &#123;</span><br><span class="line">            B b &#x3D; (B) a;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(sum);</span><br><span class="line">        &#x2F;&#x2F;也可以直接向下转型</span><br><span class="line">        C c &#x3D; (C) a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">interface A&#123;</span><br><span class="line">    public int sum(int a , int b);</span><br><span class="line">&#125;</span><br><span class="line">interface B&#123;</span><br><span class="line">    public int sub(int a , int b);</span><br><span class="line">&#125;</span><br><span class="line">class C implements A&#123;</span><br><span class="line">    public int sum(int a, int b) &#123;</span><br><span class="line">        return a+b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="equals"><a href="#equals" class="headerlink" title="equals"></a>equals</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import java.util.Objects;</span><br><span class="line"></span><br><span class="line">public class equalsTest &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">            &#x2F;&#x2F;多态（自动类型转换）</span><br><span class="line">        Object o1&#x3D;new String();</span><br><span class="line">        Object o2&#x3D;new User();</span><br><span class="line">        Object o3&#x3D;new Address();</span><br><span class="line"></span><br><span class="line">        User u1&#x3D;new User(&quot;张三&quot;,new Address(&quot;河南&quot;,&quot;郑州&quot;,&quot;惠济区&quot;));</span><br><span class="line">        User u2&#x3D;new User(&quot;张三&quot;,new Address(&quot;河南&quot;,&quot;郑州&quot;,&quot;惠济区&quot;));</span><br><span class="line">        System.out.println(u1.equals(u2));&#x2F;&#x2F;true</span><br><span class="line">        User u3&#x3D;new User(&quot;李四&quot;,new Address(&quot;河南&quot;,&quot;郑州&quot;,&quot;惠济区&quot;));</span><br><span class="line">        System.out.println(u1.equals(u3));&#x2F;&#x2F;false</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class User&#123;</span><br><span class="line">    String name;</span><br><span class="line">    Address addr;</span><br><span class="line">    public User()&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    public User(String name,Address addr)&#123;</span><br><span class="line">        this.name&#x3D;name;</span><br><span class="line">        this.addr&#x3D;addr;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;equals重写</span><br><span class="line">    @Override</span><br><span class="line">    public boolean equals(Object o) &#123;</span><br><span class="line">        if (this &#x3D;&#x3D; o) return true;</span><br><span class="line">        if (o &#x3D;&#x3D; null || !(o instanceof User)) return false;</span><br><span class="line">        User user &#x3D; (User) o;</span><br><span class="line">        return name.equals(user.name) &amp;&amp;</span><br><span class="line">                addr.equals(user.addr);</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> class Address&#123;</span><br><span class="line">    String zipcode;</span><br><span class="line">    String street;</span><br><span class="line">    String city;</span><br><span class="line">    &#x2F;&#x2F;无形参</span><br><span class="line">    public Address()&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;有形参</span><br><span class="line">    public Address(String city,String street,String zipcode)&#123;</span><br><span class="line">        this.city&#x3D;city;</span><br><span class="line">        this.street&#x3D;street;</span><br><span class="line">        this.zipcode&#x3D;zipcode;</span><br><span class="line">    &#125;</span><br><span class="line">     &#x2F;&#x2F;equals重写</span><br><span class="line">     @Override</span><br><span class="line">     public boolean equals(Object o) &#123;</span><br><span class="line">         if (this &#x3D;&#x3D; o) return true;</span><br><span class="line">         if (o &#x3D;&#x3D; null || !(o instanceof Address)) return false;</span><br><span class="line">         Address address &#x3D; (Address) o;</span><br><span class="line">         return zipcode.equals(address.zipcode) &amp;&amp;</span><br><span class="line">                 street.equals(address.street) &amp;&amp;</span><br><span class="line">                 city.equals(address.city);</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="数据这种数据结构的优点和缺点是什么？"><a href="#数据这种数据结构的优点和缺点是什么？" class="headerlink" title="数据这种数据结构的优点和缺点是什么？"></a>数据这种数据结构的优点和缺点是什么？</h3><p>​    优点：查询/查找/检索某个下标上的元素时效率极高。可以说是查询效率最高的一个数据结构。</p>
+<p>​        为什么检索效率高？</p>
+<p>​            第一：每一个元素的内存地址在空间储存上是连续的。</p>
+<p>​            第二：每一个元素类型是相同的，所以占用的空间大小一样。</p>
+<p>​             第三：知道每一个元素内存地址，知道每一个元素占用空间的大小，又知道下标，所以通过一个数学表达式就可以计算出某个下标上元素的内存地址。直接通过内存地址定位元素。所以数据的检索效率是高的。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">public class arrayTest &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int[] x&#x3D;&#123;1,2,4,3,5&#125;;</span><br><span class="line">        printArray(x);</span><br><span class="line">        &#x2F;&#x2F;创建String数组</span><br><span class="line">        String[] stringArray&#x3D;&#123;&quot;asd&quot;,&quot;asd&quot;,&quot;asa&quot;,&quot;awq&quot;&#125;;</span><br><span class="line">        printArray(stringArray);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static void printArray(int[] a) &#123;</span><br><span class="line">        for (int i &#x3D; 0; i &lt;a.length ; i++) &#123;</span><br><span class="line">            System.out.println(a[i]);&#x2F;&#x2F;1,2,3,4,5</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void printArray(String[] args) &#123;</span><br><span class="line">        for (int i &#x3D; 0; i &lt;args.length ; i++) &#123;</span><br><span class="line">            System.out.println(&quot;String数组中的元素：&quot;+args[i]);&#x2F;&#x2F;String数组中的元素：asdString数组中的元素：asdString数组中的元素：asaString数组中的元素：awq</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="数组的拷贝"><a href="#数组的拷贝" class="headerlink" title="数组的拷贝"></a>数组的拷贝</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class arrayCopyTest &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int[] src &#x3D; &#123;1,2,3,4&#125;;&#x2F;&#x2F;创建拷贝源</span><br><span class="line">       &#x2F;* int[] dest &#x3D; new int[20];&#x2F;&#x2F;创建拷贝目标</span><br><span class="line">        System.arraycopy(src,1,dest,4,3);&#x2F;&#x2F;调用JDK System类中的arraycopy方法，完成数组的拷贝，注意下标是从0开始</span><br><span class="line">        for (int i &#x3D; 0; i &lt;dest.length ; i++) &#123;</span><br><span class="line">            System.out.println(dest[i]);&#x2F;&#x2F;0 0 0 0 2 3 4...0</span><br><span class="line">        &#125;*&#x2F;</span><br><span class="line">        int[] dest &#x3D; new int[10];</span><br><span class="line">        System.arraycopy(src,0,dest,0,src.length);&#x2F;&#x2F;复制拷贝源数组的全部数据</span><br><span class="line">        for (int i &#x3D; 0; i &lt;dest.length ; i++) &#123;</span><br><span class="line">            System.out.println(dest[i]);&#x2F;&#x2F;1 2 3 4 0 0...</span><br><span class="line">        &#125;</span><br><span class="line">        Object[] obj &#x3D; &#123;new Object(),new Object(),new Object()&#125;;</span><br><span class="line">        Object[] o &#x3D; new Object[20];</span><br><span class="line">        System.arraycopy(obj,0,o,0,obj.length);</span><br><span class="line">        for (int i &#x3D; 0; i &lt; o.length; i++) &#123;</span><br><span class="line">            &#x2F;&#x2F;输出obj对象的地址</span><br><span class="line">            System.out.println(o[i]);&#x2F;&#x2F;java.lang.Object@10f87f48 java.lang.Object@b4c966a java.lang.Object@2f4d3709 null null...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="冒泡排序算法"><a href="#冒泡排序算法" class="headerlink" title="冒泡排序算法"></a>冒泡排序算法</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class mq &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int[]a&#x3D;&#123;1,4,6,2,10,5&#125;;</span><br><span class="line">        int count&#x3D;0;</span><br><span class="line">        for (int i &#x3D; a.length-1; i &gt; 0; i--) &#123;</span><br><span class="line">            for (int j &#x3D; 0; j &lt; i; j++) &#123;</span><br><span class="line">                &#x2F;&#x2F;输出次数</span><br><span class="line">                count++;</span><br><span class="line">                if(a[j]&gt;a[j+1])&#123;</span><br><span class="line">                    int temp &#x3D; a[j];</span><br><span class="line">                    a[j]&#x3D;a[j+1];</span><br><span class="line">                    a[j+1]&#x3D;temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(&quot;比较次数:&quot;+count);&#x2F;&#x2F;比较次数:15</span><br><span class="line">        for (int i &#x3D; 0; i &lt; a.length; i++) &#123;</span><br><span class="line">            System.out.print(a[i]+&quot; &quot;);&#x2F;&#x2F;1 2 4 5 6 10</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="选择排序法"><a href="#选择排序法" class="headerlink" title="选择排序法"></a>选择排序法</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class select &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int[]a&#x3D;&#123;1,4,6,2,10,5&#125;;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; a.length-1; i++) &#123;</span><br><span class="line">            int min &#x3D; i;</span><br><span class="line">            for (int j &#x3D; i+1; j &lt; a.length; j++) &#123;</span><br><span class="line">                if(a[j]&lt;a[min])&#123;</span><br><span class="line">                    min&#x3D;j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            if(min!&#x3D;i)&#123;</span><br><span class="line">                int temp &#x3D; a[min];</span><br><span class="line">                a[min] &#x3D; a[i];</span><br><span class="line">                a[i] &#x3D; temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; a.length; i++) &#123;</span><br><span class="line">            System.out.print(a[i]+&quot; &quot;);&#x2F;&#x2F;1 2 4 5 6 10 </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="二分法"><a href="#二分法" class="headerlink" title="二分法"></a>二分法</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class ArrayUtil &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner in &#x3D; new Scanner(System.in);</span><br><span class="line">        int[] a&#x3D;&#123;100,201,300,401,500,600,800,1000&#125;;&#x2F;&#x2F;要求目标序列是拍好序的</span><br><span class="line">        System.out.print(&quot;元素中有：&quot;);</span><br><span class="line">        for (int i &#x3D; 0; i &lt; a.length; i++) &#123;</span><br><span class="line">            System.out.print(a[i]+&quot; &quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();&#x2F;&#x2F;转行</span><br><span class="line">        System.out.print(&quot;请输入想要查找下标的元素:&quot;);</span><br><span class="line">        int b &#x3D; in.nextInt();</span><br><span class="line">        int index &#x3D; binarySearch(a,b);</span><br><span class="line">        System.out.println(index &#x3D;&#x3D; -1 ? &quot;该元素不存在！&quot; : &quot;该元素下标：&quot;+index);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;@return -1表示该元素不存在，其他的表示返回该元素的下标</span><br><span class="line">    private static int binarySearch(int[] a,int dest) &#123;</span><br><span class="line">        int begin &#x3D; 0;</span><br><span class="line">        int end &#x3D; a.length-1;</span><br><span class="line">        while (begin &lt;&#x3D; end) &#123;</span><br><span class="line">            int mid &#x3D; (begin + end) &#x2F; 2;</span><br><span class="line">            if (a[mid] &#x3D;&#x3D; dest) &#123;</span><br><span class="line">                return mid;</span><br><span class="line">            &#125; else if (a[mid] &lt; dest) &#123;</span><br><span class="line">                &#x2F;&#x2F;目标在”中间“右边</span><br><span class="line">                &#x2F;&#x2F;开始元素小标需要发生变化</span><br><span class="line">                begin &#x3D; mid + 1;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                &#x2F;&#x2F;a[mid] &gt; dest</span><br><span class="line">                &#x2F;&#x2F;目标在“中间”左边</span><br><span class="line">                end &#x3D; mid - 1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">            return -1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>-Java学习</category>
+      </categories>
       <tags>
         <tag>-Java</tag>
       </tags>
@@ -347,6 +365,23 @@
       </tags>
   </entry>
   <entry>
+    <title>gitee仓库</title>
+    <url>/post/4e62faf5.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="关于gitee仓库的建立"><a href="#关于gitee仓库的建立" class="headerlink" title="关于gitee仓库的建立"></a>关于gitee仓库的建立</h2><a id="more"></a>
+
+<p>注册好gitee账号登录后</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821141508.png"></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821141825.png"></p>
+<p>然后点击创建</p>
+]]></content>
+      <categories>
+        <category>gitee</category>
+      </categories>
+      <tags>
+        <tag>Hexo+Gitee+Node.js搭建博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git安装</title>
     <url>/post/2dbf7e22.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Git简易安装流程"><a href="#Git简易安装流程" class="headerlink" title="Git简易安装流程"></a>Git简易安装流程</h2><a id="more"></a>
@@ -381,55 +416,6 @@
       </categories>
       <tags>
         <tag>Git安装</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>gitee仓库</title>
-    <url>/post/4e62faf5.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="关于gitee仓库的建立"><a href="#关于gitee仓库的建立" class="headerlink" title="关于gitee仓库的建立"></a>关于gitee仓库的建立</h2><a id="more"></a>
-
-<p>注册好gitee账号登录后</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821141508.png"></p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821141825.png"></p>
-<p>然后点击创建</p>
-]]></content>
-      <categories>
-        <category>gitee</category>
-      </categories>
-      <tags>
-        <tag>Hexo+Gitee+Node.js搭建博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>修改电脑的DNS</title>
-    <url>/post/c2fc7544.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="关于电脑DNS的修改"><a href="#关于电脑DNS的修改" class="headerlink" title="关于电脑DNS的修改"></a>关于电脑DNS的修改</h1><a id="more"></a>
-
-<p>  之前在搭建博客的时候，发现了电脑没有办法打开GitHub之类的网站，以及没有办法打开Next的使用文档</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822090320.png"></p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822090628.png"></p>
-<p>  所以我只能转战gitee，但是我发现每次部署完之后，打开发现没有css和js</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822090912.png"></p>
-<p>于是，我去问了一些人，终于找到了一个这样的方法——修改电脑的DNS</p>
-<hr>
-<h2 id="正文开始"><a href="#正文开始" class="headerlink" title="正文开始"></a>正文开始</h2><h3 id="1-打开控制面板"><a href="#1-打开控制面板" class="headerlink" title="1.打开控制面板"></a>1.打开控制面板</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091212.png"></p>
-<h3 id="2-打开网络和共享中心"><a href="#2-打开网络和共享中心" class="headerlink" title="2.打开网络和共享中心"></a>2.打开网络和共享中心</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091358.png" alt="image-20200822091357982"></p>
-<h3 id="3-打开更改适配器设置"><a href="#3-打开更改适配器设置" class="headerlink" title="3.打开更改适配器设置"></a>3.打开更改适配器设置</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091430.png"></p>
-<h3 id="4-打开WLAN属性"><a href="#4-打开WLAN属性" class="headerlink" title="4.打开WLAN属性"></a>4.打开WLAN属性</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091528.png"></p>
-<h3 id="5-双击IPv4-取消勾选IPv6"><a href="#5-双击IPv4-取消勾选IPv6" class="headerlink" title="5.双击IPv4 取消勾选IPv6"></a>5.双击IPv4 取消勾选IPv6</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091703.png"></p>
-<h3 id="6-使用下面的DNS服务器地址"><a href="#6-使用下面的DNS服务器地址" class="headerlink" title="6.使用下面的DNS服务器地址"></a>6.使用下面的DNS服务器地址</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091823.png" alt="image-20200822091823427"></p>
-<p>首选DNS服务器： <code>114.114.114.114</code></p>
-<p>备用DNS服务器：<code>8.8.8.8</code></p>
-<p>这个地址是我从网上看到的</p>
-<hr>
-<p>  然后，我们就可以发现NexT文档和GitHub的网址都能使用了。</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822092041.png"></p>
-]]></content>
-      <categories>
-        <category>DNS</category>
-      </categories>
-      <tags>
-        <tag>修改DNS</tag>
       </tags>
   </entry>
   <entry>
@@ -493,75 +479,41 @@
       </tags>
   </entry>
   <entry>
-    <title>搭建hexo博客——Gitee篇</title>
-    <url>/post/c04ba748.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Hexo-Git-Node-js搭建博客"><a href="#Hexo-Git-Node-js搭建博客" class="headerlink" title="Hexo+Git+Node.js搭建博客"></a>Hexo+Git+Node.js搭建博客</h1><a id="more"></a>
+    <title>修改电脑的DNS</title>
+    <url>/post/c2fc7544.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="关于电脑DNS的修改"><a href="#关于电脑DNS的修改" class="headerlink" title="关于电脑DNS的修改"></a>关于电脑DNS的修改</h1><a id="more"></a>
 
-<p>  经过了三天过程中的十几次搭建，最终对一些优化放弃了继续的挣扎，next的版本高，一些东西不会操作，导致重新开始，也算是小有心得，写下来当做第一篇博客！</p>
-<h2 id="软件准备"><a href="#软件准备" class="headerlink" title="软件准备"></a>软件准备</h2><p>(1) Git下载：</p>
-<p><a href="https://git-scm.com/">官网</a></p>
-<p><a href="npm.taobao.org/mirrors/git-for-windows">国内</a></p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821125321.png"></p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821125940.png"></p>
-<p><a href="https://solitudehero.github.io/2020/08/21/git%E5%AE%89%E8%A3%85/#more">Git安装</a></p>
-<p><a href="https://www.xuanfengge.com/using-ssh-key-link-github-photo-tour.html">Git配置</a>(我是看网上的)</p>
-<p>(2)<a href="https://nodejs.org/en/">Node.js安装</a></p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821135324.png"></p>
-<p>傻瓜式安装即可！</p>
-<p>(3)安装Hexo</p>
-<p>打开Git Bash Here</p>
+<p>  之前在搭建博客的时候，发现了电脑没有办法打开GitHub之类的网站，以及没有办法打开Next的使用文档</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822090320.png"></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822090628.png"></p>
+<p>  所以我只能转战gitee，但是我发现每次部署完之后，打开发现没有css和js</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822090912.png"></p>
+<p>于是，我去问了一些人，终于找到了一个这样的方法——修改电脑的DNS</p>
 <hr>
-<p>检测node是否安装成功</p>
-<p>node -v    (返回版本号)</p>
-<p>npm -v     (返回版本号)</p>
+<h2 id="正文开始"><a href="#正文开始" class="headerlink" title="正文开始"></a>正文开始</h2><h3 id="1-打开控制面板"><a href="#1-打开控制面板" class="headerlink" title="1.打开控制面板"></a>1.打开控制面板</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091212.png"></p>
+<h3 id="2-打开网络和共享中心"><a href="#2-打开网络和共享中心" class="headerlink" title="2.打开网络和共享中心"></a>2.打开网络和共享中心</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091358.png" alt="image-20200822091357982"></p>
+<h3 id="3-打开更改适配器设置"><a href="#3-打开更改适配器设置" class="headerlink" title="3.打开更改适配器设置"></a>3.打开更改适配器设置</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091430.png"></p>
+<h3 id="4-打开WLAN属性"><a href="#4-打开WLAN属性" class="headerlink" title="4.打开WLAN属性"></a>4.打开WLAN属性</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091528.png"></p>
+<h3 id="5-双击IPv4-取消勾选IPv6"><a href="#5-双击IPv4-取消勾选IPv6" class="headerlink" title="5.双击IPv4 取消勾选IPv6"></a>5.双击IPv4 取消勾选IPv6</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091703.png"></p>
+<h3 id="6-使用下面的DNS服务器地址"><a href="#6-使用下面的DNS服务器地址" class="headerlink" title="6.使用下面的DNS服务器地址"></a>6.使用下面的DNS服务器地址</h3><p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822091823.png" alt="image-20200822091823427"></p>
+<p>首选DNS服务器： <code>114.114.114.114</code></p>
+<p>备用DNS服务器：<code>8.8.8.8</code></p>
+<p>这个地址是我从网上看到的</p>
 <hr>
-<p>安装淘宝镜像源</p>
-<p><code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p>
-<p>检测</p>
-<p>cnpm         (返回 cnpm 的信息)</p>
-<p>cnpm -v     (返回 cnpm 的版本信息)</p>
-<hr>
-<p>安装hexo</p>
-<p><code>cnpm install -g hexo-cli</code></p>
-<p>hexo -v    (返回hexo的版本信息)</p>
-<h2 id="正文开始-以下命令都是在git中执行"><a href="#正文开始-以下命令都是在git中执行" class="headerlink" title="正文开始(以下命令都是在git中执行)"></a>正文开始(以下命令都是在git中执行)</h2><p>在本地建立一个文件夹，这个文件夹就是搭建hexo博客的开始。我的文件夹名字叫(博客)，便于理解。</p>
-<p>在博客内打开Git，就是Git Bash Here，输入：</p>
-<p><code>hexo init</code></p>
-<p>然后开始一段时间的等待……</p>
-<p>加载完成之后，你可以输入</p>
-<p><code>hexo s</code>        查看当前网站(注意：这是在本地4000端口查看的，不是网上能查出来的，是需要部署之后才能查看)</p>
-<hr>
-<p>因为我的电脑不知道什么情况不能查看GitHub相关的网站，所以我用的是Gitee部署的，Gitee是国内版的GitHub，速度相对于GitHub比较快，但是部署时会较GitHub麻烦一点，需要去码云那里更新一次，不然显示不出来更新效果。</p>
-<hr>
-<p>到gitee那里注册一个账号，然后创建一个仓库即可。不会的可以查看链接。</p>
-<p><a href="https://solitudehero.github.io/2020/08/21/gitee%E4%BB%93%E5%BA%93/#more">gitee仓库</a></p>
-<p>复制一下仓库URL(就是仓库地址的网址)</p>
-<hr>
-<p>在 Blog 目录下安装一个 hexo 部署插件 </p>
-<p><code>cnpm install --save hexo-deployer-git</code></p>
-<p>找到 Blog 文件中的 _config.yml 文件，使用工具打开，如果不是很熟练，建议使用Visual Studio Code 打开，当然，如果觉得麻烦，也可以笔记本打开，但是容易出现错误。</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821142432.png"></p>
-<p>找到这行代码repo后输入接上刚刚让你复制的仓库地址。</p>
-<p>然后进行保存。</p>
-<p>在博客目录下打开的git里面输入<code>hexo d</code></p>
-<p>然后再在码云仓库里</p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821142717.png"></p>
-<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821142755.png"></p>
-<p>然后那个网站地址就是你部署的，别人也可以通过搜那个网站进入你的博客了。</p>
+<p>  然后，我们就可以发现NexT文档和GitHub的网址都能使用了。</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200822092041.png"></p>
 ]]></content>
       <categories>
-        <category>hexo</category>
+        <category>DNS</category>
       </categories>
       <tags>
-        <tag>Hexo+Gitee+Node.js搭建博客</tag>
+        <tag>修改DNS</tag>
       </tags>
   </entry>
   <entry>
     <title>英语六级笔记整理</title>
     <url>/post/undefined.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="英语六级笔记整理"><a href="#英语六级笔记整理" class="headerlink" title="英语六级笔记整理"></a>英语六级笔记整理</h3><a id="more"></a>
-
-<p>bilibili看后总结   <a href="https://www.bilibili.com/video/BV1Ca4y177Zm/?spm_id_from=333.788.videocard.0">这里是原视频地址</a>（四级的也可以看这个视频）</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="英语六级笔记整理"><a href="#英语六级笔记整理" class="headerlink" title="英语六级笔记整理"></a>英语六级笔记整理</h3><p>bilibili看后总结   <a href="https://www.bilibili.com/video/BV1Ca4y177Zm/?spm_id_from=333.788.videocard.0">这里是原视频地址</a>（四级的也可以看这个视频）</p>
 <h2 id="时间规划以及顺序方面"><a href="#时间规划以及顺序方面" class="headerlink" title="时间规划以及顺序方面"></a>时间规划以及顺序方面</h2><p>1.写作 （30分钟，建议&lt;25分钟）</p>
 <p>2.听力   （30分钟）</p>
 <p>3.仔细阅读</p>
@@ -674,11 +626,88 @@
       </tags>
   </entry>
   <entry>
+    <title>酒店管理系统代码</title>
+    <url>/post/6348d4b5.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="酒店管理系统代码"><a href="#酒店管理系统代码" class="headerlink" title="酒店管理系统代码"></a>酒店管理系统代码</h1><h2 id="1-Room类"><a href="#1-Room类" class="headerlink" title="1.Room类"></a>1.Room类</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import java.util.Objects;</span><br><span class="line">&#x2F;&#x2F;关于酒店房间的设置</span><br><span class="line">public class Room &#123;</span><br><span class="line">        &#x2F;&#x2F;房间编号</span><br><span class="line">        private int no;</span><br><span class="line">        &#x2F;&#x2F;房间类型</span><br><span class="line">        private String type;</span><br><span class="line">        &#x2F;&#x2F;房间状态</span><br><span class="line">        private boolean status;</span><br><span class="line">        &#x2F;&#x2F;构造方法</span><br><span class="line">        public Room()&#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        public Room(int no,String type,boolean status)&#123;</span><br><span class="line">            this.no&#x3D;no;</span><br><span class="line">            this.type&#x3D;type;</span><br><span class="line">            this.status&#x3D;status;</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;setter and getter</span><br><span class="line">        public int getNo() &#123;</span><br><span class="line">            return no;</span><br><span class="line">        &#125;</span><br><span class="line">        public void setNo(int no) &#123;</span><br><span class="line">            this.no &#x3D; no;</span><br><span class="line">        &#125;</span><br><span class="line">        public String getType() &#123;</span><br><span class="line">            return type;</span><br><span class="line">        &#125;</span><br><span class="line">        public void setType(String type) &#123;</span><br><span class="line">            this.type &#x3D; type;</span><br><span class="line">        &#125;</span><br><span class="line">        public boolean getStatus() &#123;</span><br><span class="line">            return status;</span><br><span class="line">        &#125;</span><br><span class="line">        public void setStatus(boolean status) &#123;</span><br><span class="line">            this.status &#x3D; status;</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;toString重写</span><br><span class="line">        @Override</span><br><span class="line">        public String toString() &#123;</span><br><span class="line">            return &quot;[&quot; + no + &quot;,&quot; + type + &quot;,&quot; + (status ? &quot;空闲&quot; : &quot;占用&quot;) + &quot;]&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;equals重写</span><br><span class="line">        @Override</span><br><span class="line">        public boolean equals(Object o) &#123;</span><br><span class="line">            if (o &#x3D;&#x3D; null || !(o instanceof Room)) return false;</span><br><span class="line">            if(this &#x3D;&#x3D; o) return true;</span><br><span class="line">            Room room &#x3D; (Room) o;</span><br><span class="line">            return this.getNo() &#x3D;&#x3D; room.getNo();</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-Hotel类"><a href="#2-Hotel类" class="headerlink" title="2.Hotel类"></a>2.Hotel类</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Hotel &#123;</span><br><span class="line">    &#x2F;&#x2F;建房</span><br><span class="line">    private Room[][]rooms;</span><br><span class="line">    public Hotel() &#123;</span><br><span class="line">        &#x2F;&#x2F;动态初始化</span><br><span class="line">        rooms &#x3D; new Room[3][10];</span><br><span class="line">        &#x2F;&#x2F;创建数组，遍历</span><br><span class="line">        for (int i &#x3D; 0; i &lt;rooms.length ; i++) &#123;</span><br><span class="line">            for (int j &#x3D; 0; j &lt;rooms[i].length ; j++) &#123;</span><br><span class="line">               if(i &#x3D;&#x3D; 0)&#123;</span><br><span class="line">                   &#x2F;&#x2F;一层</span><br><span class="line">                   rooms[i][j] &#x3D; new Room((i+1)*100+j+1,&quot;单人间&quot;,true);</span><br><span class="line">               &#125;else if (i &#x3D;&#x3D; 1)&#123;</span><br><span class="line">                   &#x2F;&#x2F;二层</span><br><span class="line">                   rooms[i][j] &#x3D; new Room((i+1)*100+j+1,&quot;标准间&quot;,true);</span><br><span class="line">               &#125;else if (i &#x3D;&#x3D; 2)&#123;</span><br><span class="line">                   &#x2F;&#x2F;三层</span><br><span class="line">                   rooms[i][j] &#x3D; new Room((i+1)*100+j+1,&quot;总统套房&quot;,true);</span><br><span class="line">               &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;在酒店对象上提供一个打印房间列表的方法</span><br><span class="line">    public void print()&#123;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; rooms.length; i++) &#123;</span><br><span class="line">            for (int j &#x3D; 0; j &lt; rooms[i].length; j++) &#123;</span><br><span class="line">                Room room &#x3D; rooms[i][j];</span><br><span class="line">                System.out.print(room);</span><br><span class="line">            &#125;</span><br><span class="line">            &#x2F;&#x2F;换行</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;订房方法</span><br><span class="line">    public void order(int roomNo)&#123;</span><br><span class="line">        &#x2F;&#x2F;订房最主要的是将房间对象的status修改为false</span><br><span class="line">        Room room &#x3D; rooms[roomNo &#x2F; 100 - 1][roomNo % 100 - 1];</span><br><span class="line">        &#x2F;&#x2F;修改为占用</span><br><span class="line">        room.setStatus(false);</span><br><span class="line">        System.out.println(roomNo+&quot;已定房！&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;退房系统</span><br><span class="line">    public void exit(int roomNo)&#123;</span><br><span class="line">        Room room &#x3D; rooms[roomNo &#x2F; 100 - 1][roomNo % 100 - 1];</span><br><span class="line">        &#x2F;&#x2F;修改为空闲</span><br><span class="line">        room.setStatus(true);</span><br><span class="line">        System.out.println(roomNo+&quot;已退房！&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-Manage"><a href="#3-Manage" class="headerlink" title="3.Manage"></a>3.Manage</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;关于酒店管理系统</span><br><span class="line">public class Manage &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Hotel hotel &#x3D; new Hotel();</span><br><span class="line">        System.out.println(&quot;欢迎使用酒店管理系统，请认真阅读使用说明&quot;);</span><br><span class="line">        System.out.println(&quot;请输入对应的功能编号：[1]表示查看房间列表。[2]标识订房。[3]表示退房。[0]退出系统。&quot;);</span><br><span class="line">        Scanner scanner &#x3D; new Scanner(System.in);</span><br><span class="line">       while (true)&#123;</span><br><span class="line">           System.out.println(&quot;请输入功能编号：&quot;);</span><br><span class="line">           int i &#x3D; scanner.nextInt();</span><br><span class="line">           if (i &#x3D;&#x3D; 1)&#123;</span><br><span class="line">               hotel.print();</span><br><span class="line">           &#125;else if(i &#x3D;&#x3D; 2)&#123;</span><br><span class="line">               System.out.print(&quot;请输入房间编号：&quot;);</span><br><span class="line">               int roomNo &#x3D; scanner.nextInt();</span><br><span class="line">               hotel.order(roomNo);</span><br><span class="line">           &#125;else if(i &#x3D;&#x3D; 3)&#123;</span><br><span class="line">               System.out.print(&quot;请输入房间编号：&quot;);</span><br><span class="line">               int roomNo &#x3D; scanner.nextInt();</span><br><span class="line">               hotel.exit(roomNo);</span><br><span class="line">           &#125;else if(i &#x3D;&#x3D; 0)&#123;</span><br><span class="line">               System.out.println(&quot;退出系统！&quot;);</span><br><span class="line">               return;</span><br><span class="line">           &#125;else &#123;</span><br><span class="line">               System.out.println(&quot;输入编号有误，请重新输入！&quot;);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>-Java学习</category>
+      </categories>
+      <tags>
+        <tag>-Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>搭建hexo博客——Gitee篇</title>
+    <url>/post/c04ba748.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Hexo-Git-Node-js搭建博客"><a href="#Hexo-Git-Node-js搭建博客" class="headerlink" title="Hexo+Git+Node.js搭建博客"></a>Hexo+Git+Node.js搭建博客</h1><a id="more"></a>
+
+<p>  经过了三天过程中的十几次搭建，最终对一些优化放弃了继续的挣扎，next的版本高，一些东西不会操作，导致重新开始，也算是小有心得，写下来当做第一篇博客！</p>
+<h2 id="软件准备"><a href="#软件准备" class="headerlink" title="软件准备"></a>软件准备</h2><p>(1) Git下载：</p>
+<p><a href="https://git-scm.com/">官网</a></p>
+<p><a href="npm.taobao.org/mirrors/git-for-windows">国内</a></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821125321.png"></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821125940.png"></p>
+<p><a href="https://solitudehero.github.io/2020/08/21/git%E5%AE%89%E8%A3%85/#more">Git安装</a></p>
+<p><a href="https://www.xuanfengge.com/using-ssh-key-link-github-photo-tour.html">Git配置</a>(我是看网上的)</p>
+<p>(2)<a href="https://nodejs.org/en/">Node.js安装</a></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821135324.png"></p>
+<p>傻瓜式安装即可！</p>
+<p>(3)安装Hexo</p>
+<p>打开Git Bash Here</p>
+<hr>
+<p>检测node是否安装成功</p>
+<p>node -v    (返回版本号)</p>
+<p>npm -v     (返回版本号)</p>
+<hr>
+<p>安装淘宝镜像源</p>
+<p><code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p>
+<p>检测</p>
+<p>cnpm         (返回 cnpm 的信息)</p>
+<p>cnpm -v     (返回 cnpm 的版本信息)</p>
+<hr>
+<p>安装hexo</p>
+<p><code>cnpm install -g hexo-cli</code></p>
+<p>hexo -v    (返回hexo的版本信息)</p>
+<h2 id="正文开始-以下命令都是在git中执行"><a href="#正文开始-以下命令都是在git中执行" class="headerlink" title="正文开始(以下命令都是在git中执行)"></a>正文开始(以下命令都是在git中执行)</h2><p>在本地建立一个文件夹，这个文件夹就是搭建hexo博客的开始。我的文件夹名字叫(博客)，便于理解。</p>
+<p>在博客内打开Git，就是Git Bash Here，输入：</p>
+<p><code>hexo init</code></p>
+<p>然后开始一段时间的等待……</p>
+<p>加载完成之后，你可以输入</p>
+<p><code>hexo s</code>        查看当前网站(注意：这是在本地4000端口查看的，不是网上能查出来的，是需要部署之后才能查看)</p>
+<hr>
+<p>因为我的电脑不知道什么情况不能查看GitHub相关的网站，所以我用的是Gitee部署的，Gitee是国内版的GitHub，速度相对于GitHub比较快，但是部署时会较GitHub麻烦一点，需要去码云那里更新一次，不然显示不出来更新效果。</p>
+<hr>
+<p>到gitee那里注册一个账号，然后创建一个仓库即可。不会的可以查看链接。</p>
+<p><a href="https://solitudehero.github.io/2020/08/21/gitee%E4%BB%93%E5%BA%93/#more">gitee仓库</a></p>
+<p>复制一下仓库URL(就是仓库地址的网址)</p>
+<hr>
+<p>在 Blog 目录下安装一个 hexo 部署插件 </p>
+<p><code>cnpm install --save hexo-deployer-git</code></p>
+<p>找到 Blog 文件中的 _config.yml 文件，使用工具打开，如果不是很熟练，建议使用Visual Studio Code 打开，当然，如果觉得麻烦，也可以笔记本打开，但是容易出现错误。</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821142432.png"></p>
+<p>找到这行代码repo后输入接上刚刚让你复制的仓库地址。</p>
+<p>然后进行保存。</p>
+<p>在博客目录下打开的git里面输入<code>hexo d</code></p>
+<p>然后再在码云仓库里</p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821142717.png"></p>
+<p><img src="https://gitee.com/studynil/boke/raw/master/ing/20200821142755.png"></p>
+<p>然后那个网站地址就是你部署的，别人也可以通过搜那个网站进入你的博客了。</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo+Gitee+Node.js搭建博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JDBC</title>
     <url>/post/8fe47ff4.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="JDBC学习"><a href="#JDBC学习" class="headerlink" title="JDBC学习"></a>JDBC学习</h3><a id="more"></a>
-
-<h2 id="JDBC快速入门"><a href="#JDBC快速入门" class="headerlink" title="JDBC快速入门"></a>JDBC快速入门</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package cn.itcase.jdbc;</span><br><span class="line"></span><br><span class="line">import java.sql.Connection;</span><br><span class="line">import java.sql.DriverManager;</span><br><span class="line">import java.sql.Statement;</span><br><span class="line"></span><br><span class="line">public class jdbc &#123;</span><br><span class="line">    public static void main(String[] args) throws Exception&#123;</span><br><span class="line">        &#x2F;&#x2F;1.导入驱动jar包</span><br><span class="line">        &#x2F;&#x2F;2.注册驱动</span><br><span class="line">        Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;);</span><br><span class="line">        &#x2F;&#x2F;3.获取数据库连接对象</span><br><span class="line">        &#x2F;&#x2F;localhost:3306&#x2F;db3.root,root);</span><br><span class="line">        Connection connection &#x3D; DriverManager.getConnection(&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;stu?useUnicode&#x3D;true&amp;characterEncoding&#x3D;UTF-8&amp;serverTimezone&#x3D;Asia&#x2F;Shanghai&quot;, &quot;root&quot;, &quot;8023&quot;);</span><br><span class="line">        &#x2F;&#x2F;4.定义sql语言</span><br><span class="line">        String sql &#x3D;&quot;update class set score &#x3D; 100 where id&#x3D; 23&quot;;</span><br><span class="line">        &#x2F;&#x2F;5.获取执行sql的对象 Statement</span><br><span class="line">        Statement statement&#x3D;connection.createStatement();</span><br><span class="line">        &#x2F;&#x2F;6.执行sql</span><br><span class="line">        int i &#x3D; statement.executeUpdate(sql);</span><br><span class="line">        &#x2F;&#x2F;7.处理结果</span><br><span class="line">        System.out.println(i);</span><br><span class="line">        &#x2F;&#x2F;8.释放资源</span><br><span class="line">        statement.close();</span><br><span class="line">        connection.close();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="JDBC学习"><a href="#JDBC学习" class="headerlink" title="JDBC学习"></a>JDBC学习</h3><h2 id="JDBC快速入门"><a href="#JDBC快速入门" class="headerlink" title="JDBC快速入门"></a>JDBC快速入门</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package cn.itcase.jdbc;</span><br><span class="line"></span><br><span class="line">import java.sql.Connection;</span><br><span class="line">import java.sql.DriverManager;</span><br><span class="line">import java.sql.Statement;</span><br><span class="line"></span><br><span class="line">public class jdbc &#123;</span><br><span class="line">    public static void main(String[] args) throws Exception&#123;</span><br><span class="line">        &#x2F;&#x2F;1.导入驱动jar包</span><br><span class="line">        &#x2F;&#x2F;2.注册驱动</span><br><span class="line">        Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;);</span><br><span class="line">        &#x2F;&#x2F;3.获取数据库连接对象</span><br><span class="line">        &#x2F;&#x2F;localhost:3306&#x2F;db3.root,root);</span><br><span class="line">        Connection connection &#x3D; DriverManager.getConnection(&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;stu?useUnicode&#x3D;true&amp;characterEncoding&#x3D;UTF-8&amp;serverTimezone&#x3D;Asia&#x2F;Shanghai&quot;, &quot;root&quot;, &quot;8023&quot;);</span><br><span class="line">        &#x2F;&#x2F;4.定义sql语言</span><br><span class="line">        String sql &#x3D;&quot;update class set score &#x3D; 100 where id&#x3D; 23&quot;;</span><br><span class="line">        &#x2F;&#x2F;5.获取执行sql的对象 Statement</span><br><span class="line">        Statement statement&#x3D;connection.createStatement();</span><br><span class="line">        &#x2F;&#x2F;6.执行sql</span><br><span class="line">        int i &#x3D; statement.executeUpdate(sql);</span><br><span class="line">        &#x2F;&#x2F;7.处理结果</span><br><span class="line">        System.out.println(i);</span><br><span class="line">        &#x2F;&#x2F;8.释放资源</span><br><span class="line">        statement.close();</span><br><span class="line">        connection.close();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h2 id="详解各个对象"><a href="#详解各个对象" class="headerlink" title="详解各个对象"></a>详解各个对象</h2><p>1.DriverManager：驱动管理对象</p>
 <ul>
@@ -801,6 +830,9 @@
 
 <p>Student</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package cn.itcase.student;</span><br><span class="line"></span><br><span class="line">public class student &#123;</span><br><span class="line">    private int id;</span><br><span class="line">    private String name;</span><br><span class="line">    private String sex;</span><br><span class="line">    private int age;</span><br><span class="line">    private String address;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        return &quot;student&#123;&quot; +</span><br><span class="line">                &quot;id&#x3D;&quot; + id +</span><br><span class="line">                &quot;, name&#x3D;&#39;&quot; + name + &#39;\&#39;&#39; +</span><br><span class="line">                &quot;, sex&#x3D;&#39;&quot; + sex + &#39;\&#39;&#39; +</span><br><span class="line">                &quot;, age&#x3D;&quot; + age +</span><br><span class="line">                &quot;, address&#x3D;&#39;&quot; + address + &#39;\&#39;&#39; +</span><br><span class="line">                &#39;&#125;&#39;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int getId() &#123;</span><br><span class="line">        return id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setId(int id) &#123;</span><br><span class="line">        this.id &#x3D; id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setName(String name) &#123;</span><br><span class="line">        this.name &#x3D; name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getSex() &#123;</span><br><span class="line">        return sex;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setSex(String sex) &#123;</span><br><span class="line">        this.sex &#x3D; sex;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int getAge() &#123;</span><br><span class="line">        return age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setAge(int age) &#123;</span><br><span class="line">        this.age &#x3D; age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getAddress() &#123;</span><br><span class="line">        return address;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setAddress(String address) &#123;</span><br><span class="line">        this.address &#x3D; address;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public student() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public student(int id, String name, String sex, int age, String address) &#123;</span><br><span class="line">        this.id &#x3D; id;</span><br><span class="line">        this.name &#x3D; name;</span><br><span class="line">        this.sex &#x3D; sex;</span><br><span class="line">        this.age &#x3D; age;</span><br><span class="line">        this.address &#x3D; address;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>-Java学习</category>
+      </categories>
       <tags>
         <tag>JDBC</tag>
       </tags>
